@@ -23,11 +23,17 @@ namespace Tourism.Controllers
             //AddMonumentToDB();
             //
 
+            //var monuments = (from monument in db.Monuments select monument).ToList();
+            return View(/*monuments*/);
+        }
+
+        public ActionResult ShowDB()
+        {
             var monuments = (from monument in db.Monuments select monument).ToList();
             return View(monuments);
         }
 
-        #region // добавление в базу, надо будет позже вынести в отдельный класс
+        #region // парсинг и добавление в базу, надо будет позже вынести в отдельный класс
         public void AddMonumentToDB()
         {
             string firstPageAddress = "http://www.kulturnoe-nasledie.ru/regions.php?id=47";

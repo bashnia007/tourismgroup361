@@ -6,47 +6,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Index</h2>
-
-    <table>
-        <tr>
-            <th></th>
-            <th>
-                ID
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Address
-            </th>
-            <th>
-                Architectors
-            </th>
-            <th>
-                Date
-            </th>
-        </tr>
-
-    <% foreach (var item in Model) { %>
-    
-        <tr>
-            <td>
-                <%: item.ID %>
-            </td>
-            <td>
-                <%: item.Name %>
-            </td>
-            <td>
-                <%: item.Address %>
-            </td>
-            <td>
-                <%: item.Architectors %>
-            </td>
-        </tr>
-    
-    <% } %>
-
-    </table>
+    <h2>Главная страница</h2>
+    <p>
+        <%: Html.ActionLink("Посмотреть базу", "ShowDB") %>
+    </p>
 
 </asp:Content>
