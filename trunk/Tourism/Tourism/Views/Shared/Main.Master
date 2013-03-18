@@ -9,9 +9,10 @@
 </head>
 <body>
     <div>
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        
-        </asp:ContentPlaceHolder>
+        <!--<asp:ContentPlaceHolder ID="MainContent" runat="server">
+            HELLO
+        </asp:ContentPlaceHolder>--->
+        HELLO
     </div>
 </body>
 </html>
