@@ -8,6 +8,7 @@
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
 </head>
 <body>
+<div> <img src="http://www.ilovepetersburg.ru/sites/default/files/history_2/panorama_bashelye_3755x564_01.jpg" width="1350" height="150" /> </div>
     <div>
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
 
