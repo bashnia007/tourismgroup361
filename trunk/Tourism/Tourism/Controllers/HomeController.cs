@@ -108,6 +108,5 @@ namespace Tourism.Controllers
             return sb.ToString();
         }
         #endregion
-
     }
 }
