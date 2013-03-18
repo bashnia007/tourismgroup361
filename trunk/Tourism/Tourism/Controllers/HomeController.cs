@@ -33,6 +33,26 @@ namespace Tourism.Controllers
             return View(monuments);
         }
 
+        public ActionResult Contacts()
+        { 
+            return View();
+        }
+
+        public ActionResult MapOsSite()
+        {
+            return View();
+        }
+
+        public ActionResult StandartRoute()
+        {
+            return View();
+        }
+
+        public ActionResult OwnerRoute()
+        {
+            return View();
+        }
+
         #region // парсинг и добавление в базу, надо будет позже вынести в отдельный класс
         public void AddMonumentToDB()
         {

@@ -10,5 +10,17 @@
     <p>
         <%: Html.ActionLink("Посмотреть базу", "ShowDB") %>
     </p>
+    <p>
+        <%: Html.ActionLink("Контакты", "Contacts") %>
+    </p>
+    <p>
+        <%: Html.ActionLink("Свой маршрут", "OwnerRoute") %>
+    </p>
+    <p>
+        <%: Html.ActionLink("Стандартный маршрут", "StandartRoute") %>
+    </p>
+    <p>
+        <%: Html.ActionLink("Карта сайта", "MapOsSite") %>
+    </p>
 
 </asp:Content>

@@ -87,8 +87,12 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Views\Home\Contacts.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Home\MapOsSite.aspx" />
+    <Content Include="Views\Home\OwnerRoute.aspx" />
     <Content Include="Views\Home\ShowDB.aspx" />
+    <Content Include="Views\Home\StandartRoute.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
