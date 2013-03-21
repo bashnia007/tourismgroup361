@@ -12,17 +12,10 @@ namespace Tourism.Controllers
         //
         // GET: /Home/
 
-        private MuseumsDBEntities db = new MuseumsDBEntities();
+        private MuseumsDBEntities2 db = new MuseumsDBEntities2();
 
         public ActionResult Index()
         {
-            // как я понимаю, добавить надо в базу 1 раз, так что этот код не нужно расскоментировывать
-            //AddMonumentToDB();
-            //
-            //string str = deleteBR(getResponse("http://klingof.narod.ru/Peter/doc/Museums.htm"));
-            //parse(str);
-            //var monuments = (from monument in db.Monuments select monument).ToList();
-            //db.DeleteDatabase();
             return View();
         }
 
@@ -123,7 +116,7 @@ namespace Tourism.Controllers
         public ActionResult ShowMuseumsDB()
         {
             ParserMuseums parser = new ParserMuseums();
-            //parser.Parse();
+            parser.Parse();
             var museums = (from museum in db.Museums select museum).ToList();
             return View(museums);
         }
