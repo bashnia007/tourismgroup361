@@ -11,7 +11,7 @@ namespace Tourism
 {
     public class ParserMuseums
     {
-        private MuseumsDBEntities dataBase = new MuseumsDBEntities();
+        private MuseumsDBEntities2 dataBase = new MuseumsDBEntities2();
 
         public void Parse()
         {
@@ -76,7 +76,7 @@ namespace Tourism
                 */
             }
 
-            for (int i = 850; i < htmlCode.Length; i++)
+            for (int i = 880; i < htmlCode.Length; i++)
             {
                 if (arrayOfBR.Contains(i))
                 {
@@ -100,14 +100,14 @@ namespace Tourism
 
         private string parse(string htmlCode)
         {
-            string nameRUS = "", nameENG = "";
-            string phones = "";
-            string addressRUS = "", addressENG = "";
-            string description = "";
+            string nameRUS = " ", nameENG = " ";
+            string phones = " ";
+            string addressRUS = " ", addressENG = " ";
+            string description = " ";
             int propertyNumber = 0;
-            string result = "";
-            //bool isClosed = true;
-            for (int i = 850; i < htmlCode.Length; i++)
+            string result = " ";
+            bool isClosed = false;
+            for (int i = 0; i < htmlCode.Length; i++)
             {
                 /*if (htmlCode[i] == '<')
                 {
@@ -124,10 +124,11 @@ namespace Tourism
                     museum.contacts = phones;
                     museum.addressRUS = addressRUS;
                     museum.addressENG = addressENG;
+                    museum.description = description;
                     dataBase.AddToMuseums(museum);
                     dataBase.SaveChanges();
                 }
-
+                
                 if (htmlCode[i] == '>' && htmlCode[i + 1] != '<')
                 {
                     result = getText(htmlCode, i + 1);

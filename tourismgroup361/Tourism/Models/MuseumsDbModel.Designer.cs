@@ -24,32 +24,32 @@ namespace Tourism.Models
     /// <summary>
     /// Нет доступной документации по метаданным.
     /// </summary>
-    public partial class MuseumsDBEntities : ObjectContext
+    public partial class MuseumsDBEntities2 : ObjectContext
     {
         #region Конструкторы
     
         /// <summary>
-        /// Инициализирует новый объект MuseumsDBEntities, используя строку соединения из раздела "MuseumsDBEntities" файла конфигурации приложения.
+        /// Инициализирует новый объект MuseumsDBEntities2, используя строку соединения из раздела "MuseumsDBEntities2" файла конфигурации приложения.
         /// </summary>
-        public MuseumsDBEntities() : base("name=MuseumsDBEntities", "MuseumsDBEntities")
+        public MuseumsDBEntities2() : base("name=MuseumsDBEntities2", "MuseumsDBEntities2")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Инициализация нового объекта MuseumsDBEntities.
+        /// Инициализация нового объекта MuseumsDBEntities2.
         /// </summary>
-        public MuseumsDBEntities(string connectionString) : base(connectionString, "MuseumsDBEntities")
+        public MuseumsDBEntities2(string connectionString) : base(connectionString, "MuseumsDBEntities2")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Инициализация нового объекта MuseumsDBEntities.
+        /// Инициализация нового объекта MuseumsDBEntities2.
         /// </summary>
-        public MuseumsDBEntities(EntityConnection connection) : base(connection, "MuseumsDBEntities")
+        public MuseumsDBEntities2(EntityConnection connection) : base(connection, "MuseumsDBEntities2")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -325,15 +325,21 @@ namespace Tourism.Models
         /// </summary>
         /// <param name="id">Исходное значение свойства ID.</param>
         /// <param name="nameRUS">Исходное значение свойства nameRUS.</param>
+        /// <param name="nameENG">Исходное значение свойства nameENG.</param>
         /// <param name="contacts">Исходное значение свойства contacts.</param>
         /// <param name="addressRUS">Исходное значение свойства addressRUS.</param>
-        public static Museum CreateMuseum(global::System.Int32 id, global::System.String nameRUS, global::System.String contacts, global::System.String addressRUS)
+        /// <param name="addressENG">Исходное значение свойства addressENG.</param>
+        /// <param name="description">Исходное значение свойства description.</param>
+        public static Museum CreateMuseum(global::System.Int32 id, global::System.String nameRUS, global::System.String nameENG, global::System.String contacts, global::System.String addressRUS, global::System.String addressENG, global::System.String description)
         {
             Museum museum = new Museum();
             museum.ID = id;
             museum.nameRUS = nameRUS;
+            museum.nameENG = nameENG;
             museum.contacts = contacts;
             museum.addressRUS = addressRUS;
+            museum.addressENG = addressENG;
+            museum.description = description;
             return museum;
         }
 
@@ -371,7 +377,7 @@ namespace Tourism.Models
         /// <summary>
         /// Нет доступной документации по метаданным.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String nameRUS
         {
@@ -381,14 +387,11 @@ namespace Tourism.Models
             }
             set
             {
-                if (_nameRUS != value)
-                {
-                    OnnameRUSChanging(value);
-                    ReportPropertyChanging("nameRUS");
-                    _nameRUS = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("nameRUS");
-                    OnnameRUSChanged();
-                }
+                OnnameRUSChanging(value);
+                ReportPropertyChanging("nameRUS");
+                _nameRUS = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("nameRUS");
+                OnnameRUSChanged();
             }
         }
         private global::System.String _nameRUS;
@@ -398,7 +401,7 @@ namespace Tourism.Models
         /// <summary>
         /// Нет доступной документации по метаданным.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String nameENG
         {
@@ -410,7 +413,7 @@ namespace Tourism.Models
             {
                 OnnameENGChanging(value);
                 ReportPropertyChanging("nameENG");
-                _nameENG = StructuralObject.SetValidValue(value, true);
+                _nameENG = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("nameENG");
                 OnnameENGChanged();
             }
@@ -422,7 +425,7 @@ namespace Tourism.Models
         /// <summary>
         /// Нет доступной документации по метаданным.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String contacts
         {
@@ -432,14 +435,11 @@ namespace Tourism.Models
             }
             set
             {
-                if (_contacts != value)
-                {
-                    OncontactsChanging(value);
-                    ReportPropertyChanging("contacts");
-                    _contacts = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("contacts");
-                    OncontactsChanged();
-                }
+                OncontactsChanging(value);
+                ReportPropertyChanging("contacts");
+                _contacts = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("contacts");
+                OncontactsChanged();
             }
         }
         private global::System.String _contacts;
@@ -449,7 +449,7 @@ namespace Tourism.Models
         /// <summary>
         /// Нет доступной документации по метаданным.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String addressRUS
         {
@@ -459,14 +459,11 @@ namespace Tourism.Models
             }
             set
             {
-                if (_addressRUS != value)
-                {
-                    OnaddressRUSChanging(value);
-                    ReportPropertyChanging("addressRUS");
-                    _addressRUS = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("addressRUS");
-                    OnaddressRUSChanged();
-                }
+                OnaddressRUSChanging(value);
+                ReportPropertyChanging("addressRUS");
+                _addressRUS = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("addressRUS");
+                OnaddressRUSChanged();
             }
         }
         private global::System.String _addressRUS;
@@ -476,7 +473,7 @@ namespace Tourism.Models
         /// <summary>
         /// Нет доступной документации по метаданным.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String addressENG
         {
@@ -488,7 +485,7 @@ namespace Tourism.Models
             {
                 OnaddressENGChanging(value);
                 ReportPropertyChanging("addressENG");
-                _addressENG = StructuralObject.SetValidValue(value, true);
+                _addressENG = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("addressENG");
                 OnaddressENGChanged();
             }
@@ -500,7 +497,7 @@ namespace Tourism.Models
         /// <summary>
         /// Нет доступной документации по метаданным.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String description
         {
@@ -512,7 +509,7 @@ namespace Tourism.Models
             {
                 OndescriptionChanging(value);
                 ReportPropertyChanging("description");
-                _description = StructuralObject.SetValidValue(value, true);
+                _description = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("description");
                 OndescriptionChanged();
             }
