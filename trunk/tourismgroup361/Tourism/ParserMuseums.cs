@@ -176,10 +176,11 @@ namespace Tourism
         private bool isEnglish(string str)
         {
             str = str.ToLower();
-            string english = "qwertyuiopasdfghjklzxcvbnm";
-            for (int i = 0; i < english.Length; i++)
+            
+            for (int i = 0; i < str.Length; i++)
             {
-                if (str.Contains(english[i])) return true;
+                if (str[i] >= 'a' && str[i] <= 'z')
+                    return true;
             }
             return false;
         }
