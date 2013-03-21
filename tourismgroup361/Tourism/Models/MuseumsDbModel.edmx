@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MuseumsDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MuseumsDBModelStoreContainer">
+          <EntitySet Name="Monuments" EntityType="MuseumsDBModel.Store.Monuments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Museums" EntityType="MuseumsDBModel.Store.Museums" store:Type="Tables" store:Schema="dbo" store:Name="Museums">
+            <DefiningQuery>SELECT 
+      [Museums].[ID] AS [ID], 
+      [Museums].[nameRUS] AS [nameRUS], 
+      [Museums].[nameENG] AS [nameENG], 
+      [Museums].[contacts] AS [contacts], 
+      [Museums].[addressRUS] AS [addressRUS], 
+      [Museums].[addressENG] AS [addressENG], 
+      [Museums].[description] AS [description]
+      FROM [dbo].[Museums] AS [Museums]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Users" EntityType="MuseumsDBModel.Store.Users" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Monuments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="info" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "C:\USERS\ALEXANDR\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\TOURISM\TOURISM\APP_DATA\MUSEUMSDB.MDF.dbo.Museums" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="Museums">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="nameRUS" />
+            <PropertyRef Name="contacts" />
+            <PropertyRef Name="addressRUS" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="nameRUS" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="nameENG" Type="nvarchar(max)" />
+          <Property Name="contacts" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="addressRUS" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="addressENG" Type="nvarchar(max)" />
+          <Property Name="description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="e-mail" />
+          </Key>
+          <Property Name="e-mail" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MuseumsDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MuseumsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Monuments" EntityType="MuseumsDBModel.Monument" />
+          <EntitySet Name="Museums" EntityType="MuseumsDBModel.Museum" />
+          <EntitySet Name="Users" EntityType="MuseumsDBModel.User" />
+        </EntityContainer>
+        <EntityType Name="Monument">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="info" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="date" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Museum">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="nameRUS" />
+            <PropertyRef Name="contacts" />
+            <PropertyRef Name="addressRUS" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="nameRUS" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="nameENG" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="contacts" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="addressRUS" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="addressENG" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="e_mail" />
+          </Key>
+          <Property Name="e_mail" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MuseumsDBModelStoreContainer" CdmEntityContainer="MuseumsDBEntities">
+          <EntitySetMapping Name="Monuments">
+            <EntityTypeMapping TypeName="MuseumsDBModel.Monument">
+              <MappingFragment StoreEntitySet="Monuments">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="info" ColumnName="info" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Museums">
+            <EntityTypeMapping TypeName="MuseumsDBModel.Museum">
+              <MappingFragment StoreEntitySet="Museums">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="nameRUS" ColumnName="nameRUS" />
+                <ScalarProperty Name="nameENG" ColumnName="nameENG" />
+                <ScalarProperty Name="contacts" ColumnName="contacts" />
+                <ScalarProperty Name="addressRUS" ColumnName="addressRUS" />
+                <ScalarProperty Name="addressENG" ColumnName="addressENG" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MuseumsDBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="e_mail" ColumnName="e-mail" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="MuseumsDbModel">
+        <EntityTypeShape EntityType="MuseumsDBModel.Monument" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9802864583333331" IsExpanded="true" />
+        <EntityTypeShape EntityType="MuseumsDBModel.Museum" Width="1.5" PointX="2.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="MuseumsDBModel.User" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
