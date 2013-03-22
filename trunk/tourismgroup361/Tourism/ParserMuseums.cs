@@ -39,7 +39,7 @@ namespace Tourism
             return sb.ToString();
         }
 
-        // получаем количество музеев всего
+        // получаем общее количество музеев
         private static int numOfMuseums(string htmlCode)
         {
             string objectToSearch = "Всего музеев :";
@@ -62,7 +62,6 @@ namespace Tourism
             int posBR = 0;
             //int posOpenB = 0;
             //int posClosedB = 0;
-            int j = 0;
             while (/*posOpenB != -1 || */posBR != -1/* || posClosedB != -1*/)
             {
                 posBR = htmlCode.IndexOf("<BR>", posBR + 4);
@@ -106,13 +105,9 @@ namespace Tourism
             string description = " ";
             int propertyNumber = 0;
             string result = " ";
-            bool isClosed = false;
+
             for (int i = 0; i < htmlCode.Length; i++)
             {
-                /*if (htmlCode[i] == '<')
-                {
-                    isClosed = false;
-                }*/
                 if (htmlCode[i] == '<' && htmlCode[i + 1] == 'H')
                 {
                     propertyNumber = 0;
