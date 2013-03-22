@@ -14,8 +14,32 @@
       body { height: 100%; margin: 0; padding: 0 }
       #map_canvas { height: 100% }
     </style> --->
+    <div id = "header" align="center"><h1>Получение стандартного маршрута</h1></div>
+    <div id = "left">
+        <ul>
+            <li lang="ru"> <%: Html.ActionLink("Главная страница", "Index") %>
+            </li>
+            <li> <%: Html.ActionLink("Войти", "LogOn") %></li>
+            <li> <%: Html.ActionLink("Регистрация", "Register") %></li>
+            <li>
+                <%: Html.ActionLink("Составить маршрут", "Index") %>
+                <ul>
+                    <li> <%: Html.ActionLink("Стандартный маршрут", "StandartRoute") %> </li>
+                    <li> <%: Html.ActionLink("Свой маршрут", "OwnerRoute") %> </li>       
+                </ul>
+            </li>
+            <li>
+                <%: Html.ActionLink("Карта сайта", "MapOfSite") %>
+            </li>
+            <li> <%: Html.ActionLink("Контакты", "Contacts") %> </li>
+        </ul>
+    </div>
 
-    <script type="text/javascript"
+    <div id = "center">
+        Здесь Вы получите стандартный набор достопримечательностей. 
+        Он состоит из следующих ( сделать ListBox'ом)
+        Эрмитаж, Петропавловская крепость, Русский музей, Медный всадник, крейсер “Аврора”, домик Петра I, Казанский собор, храм Спаса на Крови, Исаакиевский собор, фонтаны Петергофа
+        <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCMrc1-qJQzZlCaIwNFJkoPrWc6PGNPhds&sensor=false">
     </script>
 
@@ -30,13 +54,9 @@
             mapOptions);
         }
     </script>
-
-    <h2>Стандартный маршрут</h2>
-    <p>
-        <%: Html.ActionLink("Назад", "Index") %>
-    </p>
+    </div>
     
     <body onload="initialize()">
         <div id="map_canvas" style="width:800px; height:500px"></div>
-  </body>
+    </body>
 </asp:Content>

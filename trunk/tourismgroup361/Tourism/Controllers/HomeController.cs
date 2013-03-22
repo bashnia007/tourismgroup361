@@ -78,6 +78,11 @@ namespace Tourism.Controllers
             return View();
         }
 
+        public ActionResult ResRoute()
+        {
+            return View();
+        }
+
         private bool isCorrectEnter(User user)
         {
             return (user.e_mail != null &&
