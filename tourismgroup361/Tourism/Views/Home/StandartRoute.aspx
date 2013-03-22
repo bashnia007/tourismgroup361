@@ -10,4 +10,14 @@
     <p>
         <%: Html.ActionLink("Назад", "Index") %>
     </p>
+    
+    <div id = "center">
+        <iframe name="example" src="https://maps.google.ru/maps?hl=ru&tab=wl" width="800" height="400">
+            
+        </iframe>
+        <script>
+            window.frames.example.location = "https://maps.google.ru/maps?hl=ru&tab=wl";
+        </script>
+
+    </div>
 </asp:Content>
