@@ -116,7 +116,7 @@ namespace Tourism.Controllers
         public ActionResult ShowMuseumsDB()
         {
             ParserMuseums parser = new ParserMuseums();
-            parser.Parse();
+            //parser.Parse();
             var museums = (from museum in db.Museums select museum).ToList();
             return View(museums);
         }
