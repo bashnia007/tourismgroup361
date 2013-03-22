@@ -36,6 +36,7 @@
         </ul>
     </div>
     
+    
     <div id = "right">
         <asp:Calendar ID="Calendar" runat="server" BackColor="#3366FF" 
             BorderColor="#006699" BorderStyle="Groove" FirstDayOfWeek="Monday" 

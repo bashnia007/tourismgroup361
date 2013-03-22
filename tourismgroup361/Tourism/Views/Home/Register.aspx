@@ -39,7 +39,7 @@
             </div>
             
             <p>
-                <input type="submit" value="Зарегестрироватсья" />
+                <input type="submit" value="Зарегистрироватсья" />
             </p>
         </fieldset>
 

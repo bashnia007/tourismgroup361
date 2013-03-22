@@ -39,7 +39,7 @@
     <% } %>
 
         <div>
-        <%: Html.ActionLink("Зарегестрироваться", "Register") %>
+        <%: Html.ActionLink("Зарегистрироваться", "Register") %>
     </div>
 
 </asp:Content>
