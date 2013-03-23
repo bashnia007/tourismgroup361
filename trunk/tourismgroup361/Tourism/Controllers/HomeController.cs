@@ -72,7 +72,7 @@ namespace Tourism.Controllers
         {
             if (isValid(model.Name, model.Password))
             {
-                return RedirectToAction("HomePage");
+                return RedirectToAction("AdminPage");
             }
 
             return View();
@@ -107,7 +107,7 @@ namespace Tourism.Controllers
                     {
                         db.AddToUsers(user);
                         db.SaveChanges();
-                        return RedirectToAction("Index");
+                        return RedirectToAction("AdminPage");
                     }
                 }
                 catch (Exception ex)
