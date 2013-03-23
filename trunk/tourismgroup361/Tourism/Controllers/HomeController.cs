@@ -52,12 +52,22 @@ namespace Tourism.Controllers
             return false;
         }
 
+        private bool isAdmin(string name, string password)
+        {
+            return (name == "админ" && password == "пингвины");
+        }
+
         public ActionResult OwnerRoute()
         {
             return View();
         }
 
         public ActionResult AdminPage()
+        {
+            return View();
+        }
+
+        public ActionResult HomePage()
         {
             return View();
         }
@@ -70,13 +80,14 @@ namespace Tourism.Controllers
         [HttpPost]
         public ActionResult LogOn(AccountModel model)
         {
-            if (isValid(model.Name, model.Password))
-            {
-                return RedirectToAction("AdminPage");
-            }
+            if (isAdmin(model.Name, model.Password)) return RedirectToAction("AdminPage");
+
+            if (isValid(model.Name, model.Password)) return RedirectToAction("HomePage");
 
             return View();
         }
+
+        
 
         public ActionResult ResRoute()
         {
