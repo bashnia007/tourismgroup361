@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="Home/Index" title="Главная страница"  description="Главная страница нашего сайта">
+      <siteMapNode url="" title="Выбор маршрута"  description="">
+          <siteMapNode url="Home/StandartRoute" title="Получение стандартного маршрута"  description="Получение стандартного маршрута" />
+          <siteMapNode url="Home/OwnerRoute" title="Получение своего маршрута"  description="Получение маршрута по заданным пользователем объектам" />
+      </siteMapNode>
+      <siteMapNode url="Home/Contacts" title="Контакты"  description="В кого кидаться помидорами в случае чего">
+      </siteMapNode>
+    </siteMapNode>
+</siteMap>

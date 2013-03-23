@@ -4,8 +4,8 @@
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
     }
+
 </script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Главная страница

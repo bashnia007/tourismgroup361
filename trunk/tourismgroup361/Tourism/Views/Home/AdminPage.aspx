@@ -1,35 +1,46 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Contacts
+    AdminPage
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="contactsForm" runat="server">
-        
-        <div id = "line_for_register" align="right">
-            <%: Html.ActionLink("Войти", "LogOn") %>
-            <%: Html.ActionLink("Регистрация", "Register") %>
-        </div>
-        
+    <form id="adminPageForm" runat="server">
+        <div id = "header" align="center"><h1>Администраторская</h1></div>
         <div id = "left">
             <ul>
-                <li lang="ru"> <%: Html.ActionLink("Главная страница", "Index") %>
+                <li>
+                    <%: Html.ActionLink("Главная страница", "Index") %></li>
+                <li>
+                    <%: Html.ActionLink ("Посмотреть базу культурного наследия", "ShowMonumentsDB") %>
+                </li>
+                <li>
+                    <%: Html.ActionLink ("Посмотреть базу музеев", "ShowMuseumsDB") %>
                 </li>
                 <li>
                     <%: Html.ActionLink("Составить маршрут", "Index") %>
                     <ul>
-                        <li> <%: Html.ActionLink("Стандартный маршрут", "StandartRoute") %> </li>
-                        <li> <%: Html.ActionLink("Свой маршрут", "OwnerRoute") %> </li>       
+                        <li>
+                            <%: Html.ActionLink("Стандартный маршрут", "StandartRoute") %>
+                        </li>
+                        <li>
+                            <%: Html.ActionLink("Свой маршрут", "OwnerRoute") %>
+                        </li>
                     </ul>
                 </li>
                 <li>
                     <%: Html.ActionLink("Карта сайта", "MapOfSite") %>
                 </li>
-                <li> <%: Html.ActionLink("Контакты", "Contacts") %> </li>
+                <li>
+                    <%: Html.ActionLink("Контакты", "Contacts") %>
+                </li>
+                <!---
+                    <li>
+                        <%: Html.ActionLink("Обновить БД Культурное наследие", "UpdateKultNasDB") %>
+                    </li>
+                --->
             </ul>
-        
-            <asp:Calendar ID="Calendar" runat="server" BackColor="#3366FF" 
+
+            <asp:Calendar ID="Calendar1" runat="server" BackColor="#3366FF" 
                 BorderColor="#006699" BorderStyle="Groove" FirstDayOfWeek="Monday" 
                 Font-Bold="True" Font-Names="Tahoma" Font-Overline="False" 
                 Font-Strikeout="False" Font-Underline="False" ForeColor="White" 
@@ -45,15 +56,12 @@
                 <WeekendDayStyle BackColor="#0000CC" />
             </asp:Calendar>
         </div>
-        
-        <div id="right">
-        <p>Здесь будет всякая реклама располагаться.</p>
-        </div>
-        
-        <div id = "header"><h1 align="center">Контакты</h1></div>
-
-        <div id = "center">
-            <p>Все претензии высказывать большому рыжему человеку по адресу: alexanderkavokin@gmail.com</p>
+    
+        <div id = "center">Какой-то текст</div>
+            <div id = "right">
+        <p>
+            Здесь будет всякая реклама располагаться. Например, Кознова
+        </p>
         </div>
     </form>
 </asp:Content>
