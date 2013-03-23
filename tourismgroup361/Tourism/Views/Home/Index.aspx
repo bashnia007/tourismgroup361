@@ -16,8 +16,8 @@
     <form id="form1" runat="server">
     
     <div id = "line_for_register" align="right">
-        <%: Html.ActionLink("Войти", "LogOn") %>
-        <%: Html.ActionLink("Регистрация", "Register") %>
+        <%: Html.ActionLink("Войти", "LogOn", "Account") %>
+        <%: Html.ActionLink("Регистрация", "Register", "Account")%>
     </div>
 
     <div id = "left">
@@ -28,8 +28,8 @@
             <li>
                 <%: Html.ActionLink("Составить маршрут", "Index") %>
                 <ul>
-                    <li> <%: Html.ActionLink("Стандартный маршрут", "StandartRoute") %> </li>
-                    <li> <%: Html.ActionLink("Свой маршрут", "OwnerRoute") %> </li>       
+                    <li> <%: Html.ActionLink("Стандартный маршрут", "StandartRoute", "Route")%> </li>
+                    <li> <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route")%> </li>       
                 </ul>
             </li>
             <li>
@@ -56,6 +56,9 @@
     </div>
     
     <div id = "right">
+        <img src="http://cs402319.vk.me/v402319278/6700/Fo5QlrnPoOM.jpg" width="200px" height="200px"/>
+        <img src="http://habrastorage.org/storage/358afb35/50487b87/6d885d83/bd8f6494.gif" width="200px" height="200px"/>
+        <img src="http://spbso.ru/images/logo/spo_skazka_2009_200px.png" width="200px" height="200px"/>
         <p>
             Здесь будет всякая реклама располагаться.
         </p>
