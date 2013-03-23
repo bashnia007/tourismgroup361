@@ -4,7 +4,7 @@
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
 </script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
@@ -14,14 +14,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <form id="form1" runat="server">
+    
+    <div id = "line_for_register" align="right">
+        <%: Html.ActionLink("Войти", "LogOn") %>
+        <%: Html.ActionLink("Регистрация", "Register") %>
+    </div>
 
-    <div id = "header"><h1 align="center">Добро пожаловать на наш сайт!</h1></div>
     <div id = "left">
         <ul>
-            <li lang="ru"> <%: Html.ActionLink("Главная страница", "Index") %>
+            <li lang="ru">
+                 <%: Html.ActionLink("Главная страница", "Index") %>
             </li>
-            <li> <%: Html.ActionLink("Войти", "LogOn") %></li>
-            <li> <%: Html.ActionLink("Регистрация", "Register") %></li>
             <li>
                 <%: Html.ActionLink("Составить маршрут", "Index") %>
                 <ul>
@@ -34,15 +37,13 @@
             </li>
             <li> <%: Html.ActionLink("Контакты", "Contacts") %> </li>
         </ul>
-    </div>
-    
-    
-    <div id = "right">
+        
         <asp:Calendar ID="Calendar" runat="server" BackColor="#3366FF" 
             BorderColor="#006699" BorderStyle="Groove" FirstDayOfWeek="Monday" 
             Font-Bold="True" Font-Names="Tahoma" Font-Overline="False" 
             Font-Strikeout="False" Font-Underline="False" ForeColor="White" 
-            ShowGridLines="True" TitleFormat="Month">
+            ShowGridLines="True" TitleFormat="Month" ClientIDMode="AutoID" 
+            ViewStateMode="Disabled">
             <DayHeaderStyle ForeColor="White" HorizontalAlign="Center" 
                 VerticalAlign="Middle" />
             <DayStyle BorderStyle="Solid" Wrap="True" />
@@ -52,6 +53,18 @@
             <TodayDayStyle BorderWidth="5px" />
             <WeekendDayStyle BackColor="#0000CC" />
         </asp:Calendar>
+    </div>
+    
+    <div id = "right">
+        <p>
+            Здесь будет всякая реклама располагаться.
+        </p>
+    </div>
+    
+    <div id = "header">
+        <h1 align="center">
+            Добро пожаловать на наш сайт!
+        </h1>
     </div>
     
     <div id = "center">
@@ -72,6 +85,10 @@
             Да, Александр! Не вздумайте удалять дизайн главной страницы!
         </p>
     </div>
+
+    <div class = "clear">
+    </div>
+
     </form>
 
 </asp:Content>

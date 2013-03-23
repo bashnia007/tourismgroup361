@@ -35,27 +35,39 @@
   margin-right: 15%;
 }
 
+#line_for_register 
+{
+    color: blue;
+    margin-left: 15%;
+    margin-top: 0%;
+    width: 100%;
+}
+
 #left 
 {
   color: blue;
   float: left;
   margin-top: 0%;
   width: 15%;
-    margin-right: 40px;
 }
 
 #right 
 { 
   color: blue;
   float: right;
-  margin-top: 5%; 
+  margin-top: 0%;
   width: 15%;
 }
 
 #center 
 { 
   color: black;
-  margin-top: 5%;
+  margin-top: 0%;
   margin-left: 200px;
   margin-right: 200px; 
+}
+
+.clear 
+{
+  clear: both;
 }
