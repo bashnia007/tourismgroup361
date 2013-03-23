@@ -8,8 +8,8 @@
     <form id="contactsForm" runat="server">
         
         <div id = "line_for_register" align="right">
-            <%: Html.ActionLink("Войти", "LogOn") %>
-            <%: Html.ActionLink("Регистрация", "Register") %>
+            <%: Html.ActionLink("Войти", "LogOn", "Account")%>
+            <%: Html.ActionLink("Регистрация", "Register", "Account")%>
         </div>
         
         <div id = "left">
@@ -19,8 +19,8 @@
                 <li>
                     <%: Html.ActionLink("Составить маршрут", "Index") %>
                     <ul>
-                        <li> <%: Html.ActionLink("Стандартный маршрут", "StandartRoute") %> </li>
-                        <li> <%: Html.ActionLink("Свой маршрут", "OwnerRoute") %> </li>       
+                        <li> <%: Html.ActionLink("Стандартный маршрут", "StandartRoute", "Route")%> </li>
+                        <li> <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route")%> </li>       
                     </ul>
                 </li>
                 <li>
@@ -53,7 +53,20 @@
         <div id = "header"><h1 align="center">Контакты</h1></div>
 
         <div id = "center">
-            <p>Все претензии высказывать большому рыжему человеку по адресу: alexanderkavokin@gmail.com</p>
+            <p>По вопросам насчет сайта обращайтесь к разработчикам:
+            <br />Александру Кавокину, alexanderkavokin@gmail.com
+            <br />Андрею Иванову, ivanov-vas93@yandex.ru</p>
+            
+            <p>Если наш сайт Вас заинтересовал, Вы хотите получить что-то подобное или разместить рекламу на нашем сайте, то обращайтесь по выше указанным адресам
+            <br />Цены можно узнать лично</p>
+            <br />Если Вы хотите предложить трудоустройство талантливым программистам, освоившим за месяц веб-программирование с нуля, также обращайтесь по указанным выше адресам
+            
+            <p>Разработкой документов к данном сайту занимались:
+            <br />Андрею Иванову, ivanov-vas93@yandex.ru
+            <br />Александру Кавокину, alexanderkavokin@gmail.com
+            <br />Дарья Николаева, daryanika@gmail.com</p>
+            
+            <p>Также в нашей команде зарегистрированы Альбина Борисова и Ксения Царева</p>
         </div>
     </form>
 </asp:Content>
