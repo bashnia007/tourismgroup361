@@ -59,4 +59,5 @@
     <body onload="initialize()">
         <div id="map_canvas" style="width:800px; height:500px"></div>
     </body>
+    
 </asp:Content>
