@@ -92,6 +92,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Views\Home\Contacts.aspx" />
     <Content Include="Views\Home\AdminPage.aspx" />
+    <Content Include="Views\Home\HomePage.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Home\LogOn.aspx" />
     <Content Include="Views\Home\MapOfSite.aspx" />
