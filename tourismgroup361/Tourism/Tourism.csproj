@@ -97,7 +97,7 @@
     <Content Include="Views\Home\MapOfSite.aspx" />
     <Content Include="Views\Home\OwnerRoute.aspx" />
     <Content Include="Views\Home\Register.aspx" />
-    <Content Include="Views\Home\ResRoutr.aspx" />
+    <Content Include="Views\Home\ResRoute.aspx" />
     <Content Include="Views\Home\ShowMonumentsDB.aspx" />
     <Content Include="Views\Home\ShowMuseumsDB.aspx" />
     <Content Include="Views\Home\StandartRoute.aspx" />
