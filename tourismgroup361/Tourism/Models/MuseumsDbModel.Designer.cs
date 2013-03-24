@@ -24,32 +24,32 @@ namespace Tourism.Models
     /// <summary>
     /// Нет доступной документации по метаданным.
     /// </summary>
-    public partial class MuseumsDBEntities2 : ObjectContext
+    public partial class MuseumsDBEntities3 : ObjectContext
     {
         #region Конструкторы
     
         /// <summary>
-        /// Инициализирует новый объект MuseumsDBEntities2, используя строку соединения из раздела "MuseumsDBEntities2" файла конфигурации приложения.
+        /// Инициализирует новый объект MuseumsDBEntities3, используя строку соединения из раздела "MuseumsDBEntities3" файла конфигурации приложения.
         /// </summary>
-        public MuseumsDBEntities2() : base("name=MuseumsDBEntities2", "MuseumsDBEntities2")
+        public MuseumsDBEntities3() : base("name=MuseumsDBEntities3", "MuseumsDBEntities3")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Инициализация нового объекта MuseumsDBEntities2.
+        /// Инициализация нового объекта MuseumsDBEntities3.
         /// </summary>
-        public MuseumsDBEntities2(string connectionString) : base(connectionString, "MuseumsDBEntities2")
+        public MuseumsDBEntities3(string connectionString) : base(connectionString, "MuseumsDBEntities3")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Инициализация нового объекта MuseumsDBEntities2.
+        /// Инициализация нового объекта MuseumsDBEntities3.
         /// </summary>
-        public MuseumsDBEntities2(EntityConnection connection) : base(connection, "MuseumsDBEntities2")
+        public MuseumsDBEntities3(EntityConnection connection) : base(connection, "MuseumsDBEntities3")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -517,6 +517,30 @@ namespace Tourism.Models
         private global::System.String _description;
         partial void OndescriptionChanging(global::System.String value);
         partial void OndescriptionChanged();
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String type
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                OntypeChanging(value);
+                ReportPropertyChanging("type");
+                _type = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("type");
+                OntypeChanged();
+            }
+        }
+        private global::System.String _type;
+        partial void OntypeChanging(global::System.String value);
+        partial void OntypeChanged();
 
         #endregion
 

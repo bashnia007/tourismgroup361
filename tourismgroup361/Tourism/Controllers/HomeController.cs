@@ -12,7 +12,7 @@ namespace Tourism.Controllers
         //
         // GET: /Home/
 
-        private MuseumsDBEntities2 db = new MuseumsDBEntities2();
+        private MuseumsDBEntities3 db = new MuseumsDBEntities3();
         private bool isEnglish = false;
 
         public ActionResult Index()
@@ -48,6 +48,11 @@ namespace Tourism.Controllers
         {
             ParserKN parser = new ParserKN();
             //parser.AddMonumentToDB();
+            return View();
+        }
+
+        public ActionResult Error404()
+        {
             return View();
         }
     }

@@ -12,7 +12,7 @@ namespace Tourism.Controllers
         //
         // GET: /Account/
 
-        private MuseumsDBEntities2 db = new MuseumsDBEntities2();
+        private MuseumsDBEntities3 db = new MuseumsDBEntities3();
 
         public bool isValid(string name, string password)
         {
