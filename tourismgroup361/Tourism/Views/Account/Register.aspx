@@ -37,6 +37,14 @@
                 <%: Html.PasswordFor(model => model.password) %>
                 <%: Html.ValidationMessageFor(model => model.password) %>
             </div>
+
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.confirmPassword) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.PasswordFor(model => model.confirmPassword)%>
+                <%: Html.ValidationMessageFor(model => model.confirmPassword)%>
+            </div>
             
             <p>
                 <input type="submit" value="Зарегистрироватсья" />

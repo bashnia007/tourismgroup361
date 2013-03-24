@@ -32,6 +32,9 @@
             <th>
                 description
             </th>
+            <th>
+                type
+            </th>
         </tr>
 
     <% foreach (var item in Model) { %>
@@ -57,6 +60,9 @@
             </td>
             <td>
                 <%: item.description %>
+            </td>
+            <td>
+                <%: item.type %>
             </td>
         </tr>
     
