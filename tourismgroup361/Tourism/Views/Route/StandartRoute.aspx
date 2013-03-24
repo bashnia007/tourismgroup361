@@ -1,5 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" culture="auto" meta:resourcekey="PageResource2" uiculture="auto" %>
 
+<script runat="server">
+
+    protected void titlePage_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Стандартный маршрут
 </asp:Content>
@@ -16,6 +23,20 @@
         <div id = "line_for_register" align="right">
             <%: Html.ActionLink("Войти", "LogOn", "Account") %>
             <%: Html.ActionLink("Регистрация", "Register", "Account") %>
+        </div>
+        
+        <div id="header" align="center">
+            <asp:TextBox ID="titlePage" runat="server" Height="15%" Width="72%"
+                    ontextchanged="titlePage_TextChanged"
+                    AutoCompleteType="Disabled" BorderColor="White" BorderWidth="0px" 
+                    Font-Bold="True" Font-Names="Tahoma" Font-Size="X-Large" ForeColor="#0000CC" 
+                    ReadOnly="True" 
+            meta:resourcekey="titlePageResource1" BackColor="White" BorderStyle="None" 
+                CausesValidation="True" Columns="35" Enabled="False" 
+                EnableTheming="False" EnableViewState="False" MaxLength="100" TabIndex="4" 
+                ViewStateMode="Disabled" >
+                    Получение стандартного маршрута
+            </asp:TextBox>
         </div>
         <div id="left">
             <ul>
@@ -38,7 +59,7 @@
                 Font-Bold="True" Font-Names="Tahoma" Font-Overline="False" 
                 Font-Strikeout="False" Font-Underline="False" ForeColor="White" 
                 ShowGridLines="True" TitleFormat="Month" ClientIDMode="AutoID" 
-                ViewStateMode="Disabled">
+                ViewStateMode="Disabled" meta:resourcekey="CalendarResource1">
                 <DayHeaderStyle ForeColor="White" HorizontalAlign="Center" 
                     VerticalAlign="Middle" />
                 <DayStyle BorderStyle="Solid" Wrap="True" />
@@ -52,16 +73,24 @@
 
         <div id="right">
             <p>Здесь будет всякая реклама располагаться. Например, "Базеля".</p>
+            <img src="http://www.footballtop.com/sites/default/files/photos/clubs/fc_basel.png" width="200px" height="200px"/>
         </div>
 
-        <div id = "header" align="center">
-            <h1>Получение стандартного маршрута</h1>
-        </div>
+        
 
         <div id="center">
-            Здесь Вы получите стандартный набор достопримечательностей. 
-            Он состоит из следующих ( сделать ListBox'ом)
-            Эрмитаж, Петропавловская крепость, Русский музей, Медный всадник, крейсер “Аврора”, домик Петра I, Казанский собор, храм Спаса на Крови, Исаакиевский собор, фонтаны Петергофа
+            <asp:TextBox ID="mainContent" runat="server" BackColor="White" 
+                BorderColor="White" ReadOnly="True" TextMode="MultiLine" 
+                AutoCompleteType="Company" 
+                BorderWidth="0px" ForeColor="Black" 
+                ClientIDMode="Static" Enabled="False" 
+                EnableTheming="False" EnableViewState="False" 
+                meta:resourcekey="mainContentResource1" Height="563px" 
+                style="margin-top: 0px" Width="80%">
+    Здесь Вы получите стандартный набор достопримечательностей. 
+    Он состоит из следующих ( сделать ListBox'ом)
+    Эрмитаж, Петропавловская крепость, Русский музей, Медный всадник, крейсер “Аврора”, домик Петра I, Казанский собор, храм Спаса на Крови, Исаакиевский собор, фонтаны Петергофа
+            </asp:TextBox>
             <script type="text/javascript"
           src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCMrc1-qJQzZlCaIwNFJkoPrWc6PGNPhds&sensor=false">
             </script>
@@ -77,8 +106,11 @@
                 }
             </script>
         </div>
-        <body onload="initialize()">
+        <body>
             <div id="map_canvas" style="width:800px; height:500px"></div>
         </body>
+        
+        <div class = "clear">
+        </div>
     </form>
 </asp:Content>

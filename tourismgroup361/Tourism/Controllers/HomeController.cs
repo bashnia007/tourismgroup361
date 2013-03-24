@@ -13,6 +13,7 @@ namespace Tourism.Controllers
         // GET: /Home/
 
         private MuseumsDBEntities2 db = new MuseumsDBEntities2();
+        private bool isEnglish = false;
 
         public ActionResult Index()
         {

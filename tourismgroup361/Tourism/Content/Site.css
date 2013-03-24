@@ -30,9 +30,9 @@
 #header
 {
   color: blue;
-  margin-left: 15%;
+  margin-left: 0%;
   margin-top: 0%;
-  margin-right: 15%;
+  margin-right: 0%;
 }
 
 #line_for_register 
@@ -48,7 +48,7 @@
   color: blue;
   float: left;
   margin-top: 0%;
-  width: 15%;
+  width: 16%;
 }
 
 #right 
@@ -56,15 +56,15 @@
   color: blue;
   float: right;
   margin-top: 0%;
-  width: 15%;
+  width: 16%;
 }
 
 #center 
 { 
   color: black;
-  margin-top: 0%;
-  margin-left: 15%;
-  margin-right: 15%; 
+  margin-top: 1%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .clear

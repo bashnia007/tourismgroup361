@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <script runat="server">
 
@@ -6,6 +6,10 @@
     {
     }
 
+    protected void titlePage_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 </script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Главная страница
@@ -16,8 +20,19 @@
     <form id="form1" runat="server">
     
     <div id = "line_for_register" align="right">
-        <%: Html.ActionLink("Войти", "LogOn", "Account") %>
-        <%: Html.ActionLink("Регистрация", "Register", "Account")%>
+        <%: Html.ActionLink("Войти", "LogOn", "Account") %><%: Html.ActionLink("Регистрация", "Register", "Account")%>
+    </div>
+    
+    <div id="header" align="center">
+        <asp:TextBox ID="titlePage" runat="server" Height="15%" Width="37%"
+                ontextchanged="titlePage_TextChanged"
+                AutoCompleteType="Disabled" BorderColor="White" BorderWidth="0px" 
+                Font-Bold="True" Font-Names="Tahoma" Font-Size="X-Large" ForeColor="#0000CC" 
+                ReadOnly="True" 
+        meta:resourcekey="titlePageResource1" BackColor="White" BorderStyle="None" 
+            CausesValidation="True" Columns="35" Enabled="False" 
+            EnableTheming="False" EnableViewState="False" MaxLength="100" TabIndex="4" 
+            ViewStateMode="Disabled" >Добро пожаловать на наш сайт!</asp:TextBox>
     </div>
 
     <div id = "left">
@@ -34,7 +49,7 @@
             </li>
             <li>
                 <%: Html.ActionLink("Карта сайта", "MapOfSite") %>
-            </li>
+            </li>    
             <li> <%: Html.ActionLink("Контакты", "Contacts") %> </li>
         </ul>
         
@@ -43,7 +58,7 @@
             Font-Bold="True" Font-Names="Tahoma" Font-Overline="False" 
             Font-Strikeout="False" Font-Underline="False" ForeColor="White" 
             ShowGridLines="True" TitleFormat="Month" ClientIDMode="AutoID" 
-            ViewStateMode="Disabled">
+            ViewStateMode="Disabled" meta:resourcekey="CalendarResource1">
             <DayHeaderStyle ForeColor="White" HorizontalAlign="Center" 
                 VerticalAlign="Middle" />
             <DayStyle BorderStyle="Solid" Wrap="True" />
@@ -64,30 +79,34 @@
         </p>
     </div>
     
-    <div id = "header">
+    <!---<div id = "header">
         <h1 align="center">
-            Добро пожаловать на наш сайт!
+            <%: @Html.ViewData["Header"] %>
         </h1>
-    </div>
+    </div>--->
     
-    <div id = "center">
-        <p>
-            Дорогой друг! Когда-нибудь до этого места доберется одна из женщин и что-то здесь напишет. А перед тем, как написать, будет очень сильно ругаться. Но нам не привыкать. 
-            Такие они, эти женщины, злые. И только шоколадка может нас хоть как-то спасти. В некоторых случаях годится, впрочем, и финская водка. Не так ли, Александр?
-        </p>
-        <p>
-            Но женщины до сюда доберутся только в конце апреля. Так что можно пока просто потыкать по клавишам.
-        </p>
-        <p>
-            Я старался выдержать цвет календаря так, чтобы он не сильно контрастировал с вехней картинкой. Плюс подобная цветовая гамма очень похожа на цвета одной команды, которая любит проигрывать важные матчи всяких "Базелям", "Бенфикам", "Твенте", "Осерам".
-        </p>
-        <p>
-            Я потом вспомню, как правильно делать отступы для абзацей. Не сейчас.
-        </p>
-        <p>
-            Да, Александр! Не вздумайте удалять дизайн главной страницы!
-        </p>
-    </div>
+    <div id = "center" align="center">
+        <asp:TextBox ID="mainContent" runat="server" BackColor="White" 
+            BorderColor="White" ReadOnly="True" TextMode="MultiLine" 
+            AutoCompleteType="Company" 
+            BorderWidth="0px" ForeColor="Black" 
+            ClientIDMode="Static" Enabled="False" 
+            EnableTheming="False" EnableViewState="False" 
+            meta:resourcekey="mainContentResource1" Height="563px" 
+            style="margin-top: 0px" Width="80%">
+    Дорогой друг! 
+         
+    Когда-нибудь до этого места доберется одна из женщин и что-то здесь напишет. А перед тем, как написать, будет очень сильно ругаться. Но нам не привыкать. 
+
+    Такие они, эти женщины, злые. И только шоколадка может нас хоть как-то спасти. В некоторых случаях годится, впрочем, и финская водка. Не так ли, Александр?
+                    
+    Но женщины до сюда доберутся только в конце апреля. Так что можно пока просто потыкать по клавишам.
+                    
+    Я старался выдержать цвет календаря так, чтобы он не сильно контрастировал с вехней картинкой. Плюс подобная цветовая гамма очень похожа на цвета одной команды, которая любит проигрывать важные матчи всяких "Базелям", "Бенфикам", "Твенте", "Осерам".
+                    
+    Да, Александр! Не вздумайте удалять дизайн главной страницы!
+        </asp:TextBox>
+     </div>
 
     <div class = "clear">
     </div>
