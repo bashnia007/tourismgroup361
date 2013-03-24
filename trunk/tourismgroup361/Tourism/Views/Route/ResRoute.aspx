@@ -1,8 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" culture="auto" meta:resourcekey="PageResource2" uiculture="auto" %>
 
+<script runat="server">
+
+    protected void titlePage_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	resRoutr
-</asp:Content>
+	resRoutr</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="resRouteForm" runat="server">
@@ -10,7 +16,17 @@
             <%: Html.ActionLink("Войти", "LogOn", "Account") %>
             <%: Html.ActionLink("Регистрация", "Register", "Account") %>
         </div>
-        
+        <div id="header" align="center">
+            <asp:TextBox ID="titlePage" runat="server" Height="15%" Width="37%"
+                ontextchanged="titlePage_TextChanged"
+                AutoCompleteType="Disabled" BorderColor="White" BorderWidth="0px" 
+                Font-Bold="True" Font-Names="Tahoma" Font-Size="X-Large" ForeColor="#0000CC" 
+                ReadOnly="True" 
+            meta:resourcekey="titlePageResource1" BackColor="White" BorderStyle="None" 
+            CausesValidation="True" Columns="35" Enabled="False" 
+            EnableTheming="False" EnableViewState="False" MaxLength="100" TabIndex="4" 
+            ViewStateMode="Disabled" > Ваш маршрут </asp:TextBox>
+        </div>
         <div id="left">
             <ul>
                 <li lang="ru"> <%: Html.ActionLink("Главная страница", "Index", "Home") %>
@@ -33,7 +49,7 @@
                 Font-Bold="True" Font-Names="Tahoma" Font-Overline="False" 
                 Font-Strikeout="False" Font-Underline="False" ForeColor="White" 
                 ShowGridLines="True" TitleFormat="Month" ClientIDMode="AutoID" 
-                ViewStateMode="Disabled">
+                ViewStateMode="Disabled" meta:resourcekey="CalendarResource1">
                 <DayHeaderStyle ForeColor="White" HorizontalAlign="Center" 
                     VerticalAlign="Middle" />
                 <DayStyle BorderStyle="Solid" Wrap="True" />
@@ -48,7 +64,7 @@
         <div id="right">
             Здесь всякая реклама располагается. 
         </div>
-        <div id="header"><h1 align="center">Ваш рекомендуемый маршрут</h1></div>
+       
         <div id="center">
             <p>
                 Вот Ваш маршрут:
