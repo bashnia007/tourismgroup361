@@ -63,6 +63,7 @@
         
         <div id="right">
             <p>Здесь будет всякая реклама располагаться.</p>
+            <img src="http://www.nickelodeon.ru/wp-content/uploads/2011/05/Kovalskiy.gif" width="200px"/>
         </div>
         
         

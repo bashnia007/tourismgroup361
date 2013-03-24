@@ -64,7 +64,8 @@
         </div>
         
         <div id="right">
-        <p>Здесь будет всякая реклама располагаться.</p>
+            <p>Здесь будет всякая реклама располагаться.</p>
+            <img src="http://www.abakan-gazeta.ru/files/u1/gon_021209_13.jpg" />
         </div>
         
         <div id = "center">
