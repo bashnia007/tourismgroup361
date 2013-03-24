@@ -72,11 +72,8 @@
         </div>
 
         <div id="right">
-            <p>Здесь будет всякая реклама располагаться. Например, "Базеля".</p>
-            <img src="http://www.footballtop.com/sites/default/files/photos/clubs/fc_basel.png" width="200px" height="200px"/>
+            <img src="http://www.nickelodeon.ru/wp-content/uploads/2011/05/Kovalskiy.gif" width="200px"/>
         </div>
-
-        
 
         <div id="center">
             <asp:TextBox ID="mainContent" runat="server" BackColor="White" 
