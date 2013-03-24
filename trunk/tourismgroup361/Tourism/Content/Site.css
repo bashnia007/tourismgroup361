@@ -29,10 +29,11 @@
 
 #header
 {
-  color: blue;
-  margin-left: 0%;
-  margin-top: 0%;
-  margin-right: 0%;
+    color: blue;
+    margin-left: 0%;
+    margin-top: 0%;
+    margin-right: 0%;
+    width: 100%;
 }
 
 #line_for_register 
@@ -45,29 +46,29 @@
 
 #left 
 {
-  color: blue;
-  float: left;
-  margin-top: 0%;
-  width: 16%;
+    color: blue;
+    float: left;
+    margin-top: 0%;
+    width: 16%;
 }
 
 #right 
 { 
-  color: blue;
-  float: right;
-  margin-top: 0%;
-  width: 16%;
+    color: blue;
+    float: right;
+    margin-top: 0%;
+    width: 16%;
 }
 
 #center 
 { 
-  color: black;
-  margin-top: 1%;
-  margin-left: 10%;
-  margin-right: 10%;
+    color: black;
+    margin-top: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .clear
 {
-  clear: both;
+    clear: both;
 }
