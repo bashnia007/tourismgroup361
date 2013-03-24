@@ -26,7 +26,7 @@
     </div>
     
     <div id="header" align="center">
-        <asp:TextBox ID="titlePage" runat="server" Height="15%" Width="40%"
+        <asp:TextBox ID="titlePage" runat="server" Height="15%" Width="69%"
                 ontextchanged="titlePage_TextChanged"
                 AutoCompleteType="Disabled" BorderColor="White" BorderWidth="0px" 
                 Font-Bold="True" Font-Names="Tahoma" Font-Size="X-Large" ForeColor="#0000CC" 
@@ -34,7 +34,9 @@
         meta:resourcekey="titlePageResource1" BackColor="White" BorderStyle="None" 
             CausesValidation="True" Columns="35" Enabled="False" 
             EnableTheming="False" EnableViewState="False" MaxLength="100" TabIndex="4" 
-            ViewStateMode="Disabled" style="margin-left: 0px" >Добро пожаловать на наш сайт!</asp:TextBox>
+            ViewStateMode="Disabled" style="margin-left: 0px" >
+            Добро пожаловать на наш сайт!
+        </asp:TextBox>
     </div>
 
     <div id = "left">
@@ -95,7 +97,21 @@
             ClientIDMode="Static" Enabled="False" 
             EnableTheming="False" EnableViewState="False" 
             meta:resourcekey="mainContentResource1" Height="563px" 
-            style="margin-top: 0px" Width="80%" Font-Names="Tahoma"></asp:TextBox>
+            style="margin-top: 0px" Width="80%" Font-Names="Tahoma">
+    
+    Дорогой друг! 
+         
+    Когда-нибудь до этого места доберется одна из женщин и что-то здесь напишет. А перед тем, как написать, будет очень сильно ругаться. Но нам не привыкать. 
+
+    Такие они, эти женщины, злые. И только шоколадка может нас хоть как-то спасти. В некоторых случаях годится, впрочем, и финская водка. Не так ли, Александр?
+                    
+    Но женщины до сюда доберутся только в конце апреля. Так что можно пока просто потыкать по клавишам.
+                    
+    Я старался выдержать цвет календаря так, чтобы он не сильно контрастировал с вехней картинкой. Плюс подобная цветовая гамма очень похожа на цвета одной команды, которая любит проигрывать важные матчи всяких "Базелям", "Бенфикам", "Твенте", "Осерам".
+                    
+    Да, Александр! Не вздумайте удалять дизайн главной страницы!
+        
+        </asp:TextBox>
      </div>
 
     <div class = "clear">
