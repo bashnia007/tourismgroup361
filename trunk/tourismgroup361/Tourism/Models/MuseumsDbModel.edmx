@@ -31,6 +31,7 @@
           <Property Name="addressRUS" Type="nvarchar(max)" Nullable="false" />
           <Property Name="addressENG" Type="nvarchar(max)" Nullable="false" />
           <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -45,7 +46,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MuseumsDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="MuseumsDBEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MuseumsDBEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Monuments" EntityType="MuseumsDBModel.Monument" />
           <EntitySet Name="Museums" EntityType="MuseumsDBModel.Museum" />
           <EntitySet Name="Users" EntityType="MuseumsDBModel.User" />
@@ -71,6 +72,7 @@
           <Property Name="addressRUS" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="addressENG" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -85,7 +87,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MuseumsDBModelStoreContainer" CdmEntityContainer="MuseumsDBEntities2">
+        <EntityContainerMapping StorageEntityContainer="MuseumsDBModelStoreContainer" CdmEntityContainer="MuseumsDBEntities3">
           <EntitySetMapping Name="Monuments">
             <EntityTypeMapping TypeName="MuseumsDBModel.Monument">
               <MappingFragment StoreEntitySet="Monuments">
@@ -107,6 +109,7 @@
                 <ScalarProperty Name="addressRUS" ColumnName="addressRUS" />
                 <ScalarProperty Name="addressENG" ColumnName="addressENG" />
                 <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="type" ColumnName="type" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -141,7 +144,7 @@
     <Diagrams>
       <Diagram Name="MuseumsDbModel">
         <EntityTypeShape EntityType="MuseumsDBModel.Monument" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9802864583333331" IsExpanded="true" />
-        <EntityTypeShape EntityType="MuseumsDBModel.Museum" Width="1.5" PointX="2.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="MuseumsDBModel.Museum" Width="1.5" PointX="2.75" PointY="0.75" Height="2.5571907552083326" IsExpanded="true" />
         <EntityTypeShape EntityType="MuseumsDBModel.User" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
       </Diagram>
     </Diagrams>

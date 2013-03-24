@@ -11,7 +11,7 @@ namespace Tourism
 {
     public class ParserMuseums
     {
-        private MuseumsDBEntities2 dataBase = new MuseumsDBEntities2();
+        private MuseumsDBEntities3 dataBase = new MuseumsDBEntities3();
 
         public void Parse()
         {
@@ -51,6 +51,80 @@ namespace Tourism
                 number += htmlCode[positionInCode++];
             }
             return Convert.ToInt32(number);
+        }
+
+        private void AddType(Museum museum, string description)
+        {
+            if (description.Contains("исторические и историко-бытовые"))
+            {
+                museum.type = "исторические и историко-бытовые";
+                return;
+            }
+            if (description.Contains("военные и военно-исторические"))
+            {
+                museum.type = "военные и военно-исторические";
+                return;
+            }
+            if (description.Contains("учебные"))
+            {
+                museum.type = "учебные";
+                return;
+            }
+            if (description.Contains("естественно-научные и технические"))
+            {
+                museum.type = "естественно-научные и технические";
+                return;
+            }
+            if (description.Contains("литературные"))
+            {
+                museum.type = "литературные";
+                return;
+            }
+            if (description.Contains("историко-краеведческий"))
+            {
+                museum.type = "историко-краеведческий";
+                return;
+            }
+            if (description.Contains("художественные"))
+            {
+                museum.type = "художественные";
+                return;
+            }
+            if (description.Contains("выставочные залы"))
+            {
+                museum.type = "выставочные залы";
+                return;
+            }
+            if (description.Contains("технические") && !description.Contains("естественно-научные"))
+            {
+                museum.type = "технические";
+                return;
+            }
+            if (description.Contains("театрально-музыкальные"))
+            {
+                museum.type = "театрально-музыкальные";
+                return;
+            }
+            if (description.Contains("дворцы-музеи, усадьбы, парки и заповедники"))
+            {
+                museum.type = "дворцы-музеи, усадьбы, парки и заповедники";
+                return;
+            }
+            if (description.Contains("истории промышленных предприятий"))
+            {
+                museum.type = "истории промышленных предприятий";
+                return;
+            }
+            if (description.Contains("истории учебных заведений"))
+            {
+                museum.type = "истории учебных заведений";
+                return;
+            }
+            if (description.Contains("этнографические"))
+            {
+                museum.type = "этнографические";
+                return;
+            }
         }
 
         private string deleteBR(string htmlCode)
@@ -124,7 +198,7 @@ namespace Tourism
                     museum.description = description;
                     dataBase.AddToMuseums(museum);
                     dataBase.SaveChanges();
-
+                    AddType(museum, description);
                     nameRUS = " ";
                     nameENG = " ";
                     phones = " ";

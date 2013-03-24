@@ -11,7 +11,7 @@ namespace Tourism
 {
     public class ParserKN
     {
-        private MuseumsDBEntities2 dataBase = new MuseumsDBEntities2();
+        private MuseumsDBEntities3 dataBase = new MuseumsDBEntities3();
 
         public ParserKN()
         {}
