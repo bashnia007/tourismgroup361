@@ -97,6 +97,7 @@ namespace Tourism
             return result;
         }
 
+        // исправить
         private string parse(string htmlCode)
         {
             string nameRUS = " ", nameENG = " ";
@@ -108,6 +109,7 @@ namespace Tourism
 
             for (int i = 0; i < htmlCode.Length; i++)
             {
+
                 if (htmlCode[i] == '<' && htmlCode[i + 1] == 'H')
                 {
                     propertyNumber = 0;
@@ -122,8 +124,16 @@ namespace Tourism
                     museum.description = description;
                     dataBase.AddToMuseums(museum);
                     dataBase.SaveChanges();
+
+                    nameRUS = " ";
+                    nameENG = " ";
+                    phones = " ";
+                    addressRUS = " ";
+                    addressENG = " ";
+                    description = " ";
+                    result = " ";
                 }
-                
+
                 if (htmlCode[i] == '>' && htmlCode[i + 1] != '<')
                 {
                     result = getText(htmlCode, i + 1);
@@ -144,16 +154,38 @@ namespace Tourism
                             }
                             break;
                         case 2:
-                            phones += result;
+                            //if (isPhone(result))
+                            if (phones != result)
+                                phones += result;
                             break;
                         case 3:
-                            addressRUS = result;
+                            if (result.Contains("Ежедневно ") || result.Contains(" - "))
+                            {
+                                phones += result; break;
+                            }
+                            if (!isPhone(result) && !isEnglish(result))
+                                addressRUS = result;
                             break;
                         case 4:
+                            if (result.Contains("Санкт-Петербург"))
+                            {
+                                addressRUS = result;
+                            }
                             if (isEnglish(result))
                             {
                                 addressENG = result;
                             }
+                            break;
+                        case 5:
+                            if (result.Contains("Санкт-Петербург"))
+                            {
+                                addressRUS = result; break;
+                            }
+                            if (isEnglish(result))
+                            {
+                                addressENG = result; break;
+                            }
+                            description += result;
                             break;
                         default:
                             description += result;
@@ -168,10 +200,22 @@ namespace Tourism
             return result;
         }
 
+        private bool isPhone(string str)
+        {
+            str = str.ToLower();
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if ((str[i] < '1' || str[i] > '9') && str[i] != '(' && str[i] != ')' && str[i] != '0' && !str.Contains("Ежедневно")) return false;
+            }
+
+            return true;
+        }
+
         private bool isEnglish(string str)
         {
             str = str.ToLower();
-            
+
             for (int i = 0; i < str.Length; i++)
             {
                 if (str[i] >= 'a' && str[i] <= 'z')
