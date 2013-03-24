@@ -111,7 +111,9 @@
     <Content Include="Views\Home\ShowMuseumsDB.aspx" />
     <Content Include="Views\Route\StandartRoute.aspx" />
     <Content Include="Views\Home\UpdateKultNasDB.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

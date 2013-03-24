@@ -650,6 +650,30 @@ namespace Tourism.Models
         private global::System.String _name;
         partial void OnnameChanging(global::System.String value);
         partial void OnnameChanged();
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String confirmPassword
+        {
+            get
+            {
+                return _confirmPassword;
+            }
+            set
+            {
+                OnconfirmPasswordChanging(value);
+                ReportPropertyChanging("confirmPassword");
+                _confirmPassword = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("confirmPassword");
+                OnconfirmPasswordChanged();
+            }
+        }
+        private global::System.String _confirmPassword;
+        partial void OnconfirmPasswordChanging(global::System.String value);
+        partial void OnconfirmPasswordChanged();
 
         #endregion
 

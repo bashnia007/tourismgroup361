@@ -40,6 +40,7 @@
           <Property Name="e-mail" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="confirmPassword" Type="nvarchar" MaxLength="50" />
         </EntityType>
       </Schema>
     </edmx:StorageModels>
@@ -81,6 +82,7 @@
           <Property Name="e_mail" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="confirmPassword" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -119,6 +121,7 @@
                 <ScalarProperty Name="e_mail" ColumnName="e-mail" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="confirmPassword" ColumnName="confirmPassword" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -145,7 +148,7 @@
       <Diagram Name="MuseumsDbModel">
         <EntityTypeShape EntityType="MuseumsDBModel.Monument" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9802864583333331" IsExpanded="true" />
         <EntityTypeShape EntityType="MuseumsDBModel.Museum" Width="1.5" PointX="2.75" PointY="0.75" Height="2.5571907552083326" IsExpanded="true" />
-        <EntityTypeShape EntityType="MuseumsDBModel.User" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MuseumsDBModel.User" Width="1.5" PointX="4.75" PointY="0.75" Height="1.7879850260416665" IsExpanded="true" />
       </Diagram>
     </Diagrams>
   </Designer>

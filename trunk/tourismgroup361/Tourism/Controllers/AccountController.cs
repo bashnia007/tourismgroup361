@@ -68,11 +68,11 @@ namespace Tourism.Controllers
             {
                 try
                 {
-                    if (ModelState.IsValid)
+                    if (ModelState.IsValid && user.password == user.confirmPassword)  
                     {
                         db.AddToUsers(user);
                         db.SaveChanges();
-                        return RedirectToAction("AdminPage");
+                        return RedirectToAction("HomePage");
                     }
                 }
                 catch (Exception ex)
