@@ -60,7 +60,7 @@ namespace Tourism
                         break;
 
                     default:
-                        viewResult.ViewName = "Error";
+                        //viewResult.ViewName = "Error";
                         break;
                 }
             }
