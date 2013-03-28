@@ -97,10 +97,13 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Views\Route\Map.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Home\Contacts.aspx" />
     <Content Include="Views\Account\AdminPage.aspx" />
     <Content Include="Views\Account\HomePage.aspx" />
-    <Content Include="Views\Home\Error404.aspx" />
+    <Content Include="Views\Shared\Error401.aspx" />
+    <Content Include="Views\Shared\Error404.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Account\LogOn.aspx" />
     <Content Include="Views\Home\MapOfSite.aspx" />
