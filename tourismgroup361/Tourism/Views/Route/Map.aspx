@@ -1,9 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Map
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+﻿
     <head>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCMrc1-qJQzZlCaIwNFJkoPrWc6PGNPhds&sensor=false">
@@ -45,12 +40,24 @@
             }
 
             google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+        </script>
     </head>
     <body onload="initialize()">
-        <div id="map-canvas" style="float: left; width: 800%; height: 500%">
+        <div id="control">
+            <strong>Start:</strong>
+            <select id="start" onchange="calcRoute();">
+                <option value="chicago, il">Chicago</option>
+                <option value="st louis, mo">St Louis</option>
+            </select>
+            <strong>End:</strong>
+            <select id="end" onchange="calcRoute();">
+                <option value="chicago, il">Chicago</option>
+                <option value="st louis, mo">St Louis</option>
+            </select>
         </div>
-        <div id="directionsPanel" style="float: right; width: 100%; height: 500%">
+        <div id="map-canvas" style="float: left; width: 70%; height: 100%">
+        </div>
+        <div id="directions-panel" style="float: right; width: 30%; height: 100%">
         </div>
     </body>
 </asp:Content>
