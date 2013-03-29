@@ -6,7 +6,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Регистрация</h2>
+    <div id="header" align="center">
+        <h1><%: Html.ViewData["header"] %></h1>
+    </div>
+
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
 
@@ -47,7 +50,7 @@
             </div>
             
             <p>
-                <input type="submit" value="Зарегистрироватсья" />
+                <input type="submit" value="Зарегистрироваться" />
             </p>
         </fieldset>
 

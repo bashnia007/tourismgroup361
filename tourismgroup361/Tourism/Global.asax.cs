@@ -33,7 +33,7 @@ namespace Tourism
         }
 
 
-        protected void Application_Error(object sender, EventArgs e)
+       /* protected void Application_Error(object sender, EventArgs e)
         {
             HttpContext ctx = HttpContext.Current;
             Exception ex = ctx.Server.GetLastError();
@@ -73,6 +73,6 @@ namespace Tourism
                 context.RouteData.GetRequiredString("action"));
             viewResult.ExecuteResult(context);
             ctx.Server.ClearError();
-        }
+        }*/
     }
 }

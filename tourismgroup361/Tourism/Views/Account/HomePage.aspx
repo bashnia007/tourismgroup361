@@ -6,6 +6,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Домашняя страница для простых смертных</h2>
+    <div id="header" align="center">
+        <h1><%: Html.ViewData["header"] %></h1>
+    </div>
 
 </asp:Content>

@@ -6,7 +6,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>База данных из культурного наследия</h2>
+    <div id="header" align="center">
+        <h1><%: Html.ViewData["header"] %></h1>
+    </div>
 
     <p>
         <%: Html.ActionLink("Назад", "Index") %>
