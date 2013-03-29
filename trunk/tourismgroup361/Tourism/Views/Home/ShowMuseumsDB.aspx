@@ -6,7 +6,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>ShowMuseumsDB</h2>
+    <div id="header" align="center">
+            <h1><%: Html.ViewData["header"] %></h1>
+    </div>
 
     <table>
         <tr>

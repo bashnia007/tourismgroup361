@@ -5,9 +5,17 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>404</h1>
-    <h2>Данный URL не существует</h2>
+    <div id="header" align ="center">
+        <h1>
+            <%: Html.ViewData["header] %>;
+        </h1>
+    </div>
     
+    <div id="center">
+        <h2>
+            <%: Html.ViewData["center"] %>;
+        </h2>
+    </div>
     <div id="right">
         <img src="http://images5.fanpop.com/image/answers/2248000/2248259_1324050654376.58res_162_162.jpg"/>
     </div>

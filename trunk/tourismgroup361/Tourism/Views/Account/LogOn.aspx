@@ -7,7 +7,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Вход</h2>
+    <div id="header" align="center">
+            <h1><%: Html.ViewData["header"] %></h1>
+    </div>
+    
     <% using (Html.BeginForm())
        {%>
     <%: Html.ValidationSummary(true) %>
@@ -30,7 +33,6 @@
             <%: Html.PasswordFor(model => model.password) %>
             <%: Html.ValidationMessageFor(model => model.password) %>
         </div>
-        
         
         <p>
             <input type="submit" value="Войти" />

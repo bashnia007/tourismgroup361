@@ -1,36 +1,25 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>"
-    Culture="auto" meta:resourcekey="PageResource2" UICulture="auto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    resRoutr</asp:Content>
+	Links
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
-    <form id="resRouteForm" runat="server">
-    
-        <div id="header" align="center">
-            <asp:TextBox ID="titlePage" runat="server" Height="15%" Width="37%" OnTextChanged="titlePage_TextChanged"
-                AutoCompleteType="Disabled" BorderColor="White" BorderWidth="0px" Font-Bold="True"
-                Font-Names="Tahoma" Font-Size="X-Large" ForeColor="#0000CC" ReadOnly="True" meta:resourcekey="titlePageResource1"
-                BackColor="White" BorderStyle="None" CausesValidation="True" Columns="35" Enabled="False"
-                EnableTheming="False" EnableViewState="False" MaxLength="100" TabIndex="4" ViewStateMode="Disabled"> Ваш маршрут </asp:TextBox>
-        </div>
-        
+
+    <form id="linksContent" runat="server">
         <div id="left">
             <ul>
                 <li lang="ru">
                     <%: Html.ActionLink("Главная страница", "Index", "Home") %>
                 </li>
-                <li>
-                    <%: Html.ActionLink("Составить маршрут", "Index", "Home") %>
-                    <ul>
-                        <li>
-                            <%: Html.ActionLink("Стандартный маршрут", "StandartRoute", "Route") %>
-                        </li>
-                        <li>
-                            <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route") %>
-                        </li>
+                <ul>
+                    <li>
+                        <%: Html.ActionLink("Стандартный маршрут", "StandartRoute", "Route") %>
+                    </li>
+                    <li>
+                        <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route") %>
+                    </li>
                     </ul>
-                </li>
                 <li>
                     <%: Html.ActionLink("Карта сайта", "MapOfSite", "Home") %>
                 </li>
@@ -56,13 +45,12 @@
             </asp:Calendar>
         </div>
 
-        <div id="right">
-            Здесь всякая реклама располагается.
-        </div>
-        <div id="center">
-            <p>
-                Вот Ваш маршрут:
-            </p>
+        <div id="center" align="left">
+            <p> Мы рекомендуем ознакомиться со следующими ссылками, так или иначе посвященными Санкт-Петербургу:</p>
+            <ul>
+                <a href="http://vk.com/piter">Интересный паблик в социальной сети "Вконтакте"</a>
+            </ul>
         </div>
     </form>
+
 </asp:Content>

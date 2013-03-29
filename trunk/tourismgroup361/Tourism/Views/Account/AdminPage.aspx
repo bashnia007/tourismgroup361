@@ -5,7 +5,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="adminPageForm" runat="server">
-        <div id = "header" align="center"><h1>Администраторская</h1></div>
+        <div id = "header" align="center">
+            <h1>Администраторская</h1>
+        </div>
         <div id = "left">
             <ul>
                 <li>

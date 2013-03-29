@@ -57,6 +57,7 @@ namespace Tourism.Controllers
 
         public ActionResult Register()
         {
+            ViewData["header"] = "Регистрация";
             User user = new User();
             return View(user);
         }
@@ -64,6 +65,7 @@ namespace Tourism.Controllers
         [HttpPost]
         public ActionResult Register(User user)
         {
+            ViewData["header"] = "Вход";
             if (isCorrectEnter(user))
             {
                 try
@@ -85,11 +87,13 @@ namespace Tourism.Controllers
 
         public ActionResult AdminPage()
         {
+            ViewData["header"] = "Администраторская";
             return View();
         }
 
         public ActionResult HomePage()
         {
+            ViewData["header"] = "Домашняя страница";
             return View();
         }
     }
