@@ -83,6 +83,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\DataManager.cs" />
     <Compile Include="Models\MuseumsDbModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,6 +136,7 @@
     <Content Include="Views\Home\ShowMuseumsDB.aspx" />
     <Content Include="Views\Route\StandartRoute.aspx" />
     <Content Include="Views\Home\UpdateKultNasDB.aspx" />
+    <Content Include="Views\Shared\_LoginPartial.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -12,8 +12,7 @@
     </div>
     
     <div id = "line_for_register" align="right">
-                <%: Html.ActionLink("Войти", "LogOn", "Account") %>
-                <%: Html.ActionLink("Регистрация", "Register", "Account") %>
+            <%: Html.Partial("_LoginPartial") %>
     </div>
    
     <asp:ContentPlaceHolder ID="MainContent" runat="server">

@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>"
     Culture="auto" meta:resourcekey="PageResource2" UICulture="auto" %>
+<%@ Import Namespace="Tourism.Models" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     resRoutr</asp:Content>
@@ -8,11 +9,7 @@
     <form id="resRouteForm" runat="server">
     
         <div id="header" align="center">
-            <asp:TextBox ID="titlePage" runat="server" Height="15%" Width="37%" OnTextChanged="titlePage_TextChanged"
-                AutoCompleteType="Disabled" BorderColor="White" BorderWidth="0px" Font-Bold="True"
-                Font-Names="Tahoma" Font-Size="X-Large" ForeColor="#0000CC" ReadOnly="True" meta:resourcekey="titlePageResource1"
-                BackColor="White" BorderStyle="None" CausesValidation="True" Columns="35" Enabled="False"
-                EnableTheming="False" EnableViewState="False" MaxLength="100" TabIndex="4" ViewStateMode="Disabled"> Ваш маршрут </asp:TextBox>
+            <%: Html.ViewData["header"] %>
         </div>
         
         <div id="left">
@@ -60,9 +57,13 @@
             Здесь всякая реклама располагается.
         </div>
         <div id="center">
-            <p>
-                Вот Ваш маршрут:
-            </p>
+            Ваш выбор:
+            <% foreach (Museum value in ViewData.Model)
+                { %>
+                <input type="checkbox" value="<%: value.addressRUS %>" /><%: value.nameRUS %><br/>
+            <% } %>
+            <br/>
+            <input type="submit" value="Получить маршрут!"/>
         </div>
     </form>
 </asp:Content>
