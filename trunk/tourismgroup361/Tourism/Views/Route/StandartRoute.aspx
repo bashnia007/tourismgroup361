@@ -38,6 +38,7 @@
                     <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %>
                 </li>
             </ul>
+            
             <asp:Calendar ID="Calendar" runat="server" BackColor="#3366FF" BorderColor="#006699"
                 BorderStyle="Groove" FirstDayOfWeek="Monday" Font-Bold="True" Font-Names="Tahoma"
                 Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="White"
@@ -60,12 +61,15 @@
 
         <div id="center" align="left">
             <p>Выберите объекты, которые Вы хотите посетить:</p>
-            
-            <% foreach (string value in Model)
-            {%>
-                <input type="checkbox" name="checkedValues" value="<%=value%>"/><%=value%><br/>
+            <% using (Html.BeginForm()) %>
+            <%{%>
+                <%: Html.ValidationSummary(true) %>
+                <% foreach (var value in ViewData.Model) %>
+                <%{%>
+                    <input type="checkbox" name="standartList" value="<%: value.nameRUS %>" /><%: value.nameRUS %><br/>
+                <%}%>
+                    <input type="submit" value="Далее"/>
             <%}%>
-            <input type="button" name="Choose" value="Получить маршрут!"/>
         </div>
         
         <div class = "clear">

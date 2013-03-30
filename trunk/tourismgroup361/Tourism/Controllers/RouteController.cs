@@ -11,40 +11,49 @@ namespace Tourism.Controllers
     {
         //
         // GET: /Route/
-
-        private MuseumsDBEntities3 db = new MuseumsDBEntities3();
+        private DataManager dm = new DataManager();
+        //private Museum[] _userChoice;
 
         public ActionResult StandartRoute()
         {
             ViewData["header"] = "Получение маршрута из стандартных объектов";
-            /*var standartList = (from museums in db.Museums where museums.ID == 6 || museums.ID == 5
-                                select museums.addressRUS).ToList();
-            //var model = new RouteModel(standartList);*/
-            string[] standartList = new string[]
-                {
-                    "Эрмитаж",
-                    "Русский музей",
-                    "Петропавловская крепость",
-                    "Медный всадник",
-                    "Домик Петра Первого",
-                    "Крейсер \"Аврора\"",
-                    "Казанский собор",
-                    "Исакиевский собор",
-                    "Храм Спаса на Крови",
-                    "Фонтаны Петергофа",
-                };
-            return View(standartList);
+            ViewData.Model = dm.GetStandartMuseum();
+            return View();
         }
+
+        /*
+        [HttpPost]
+        public ActionResult StandartRoute (RouteModel model)
+        {
+            if (model.museumCollection != null)
+            {
+                foreach (var checkBoxTestItem in model.museumCollection)
+                    ModelState.AddModelError("", string.Format("Checked CheckBox item: {0}", checkBoxTestItem));
+            }
+            GenerateListItems();
+            return View(model);
+        }*/
+
+        /*private void GenerateListItems()
+        {
+            var dm = new DataManager();
+            var checkBoxTestItems = dm.GetStandartMuseum();
+            //var checkBoxTestItemsChecked = new[] { "CheckBoxTestItem2", "CheckBoxTestItem4" };
+            ViewData["CheckBoxTestItems"] = new SelectList(checkBoxTestItems/*, checkBoxTestItemsChecked);
+        }*/
 
         public ActionResult OwnerRoute()
         {
             ViewData["header"] = "Составление своего маршрута";
+            ViewData["list"] = dm.Types;
             return View();
         }
 
-        public ActionResult ResRoute()
+        // it works incorrectly :'-(
+        public ActionResult ResRoute(Museum[] checkedMuseums)
         {
-            ViewData["header"] = "Итоговый маршрут";
+            ViewData["header"] = "Ваш выбор объектов:";
+            ViewData.Model = checkedMuseums;
             return View();
         }
 
