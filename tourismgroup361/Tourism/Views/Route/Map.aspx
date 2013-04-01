@@ -24,6 +24,7 @@
         }
 
         function calcRoute() {
+            var selectedMode = document.getElementById("mode").value;
             var start = document.getElementById("start").value;
             var end = document.getElementById("end").value;
             var waypts = [];
@@ -42,7 +43,8 @@
                 destination: end,
                 waypoints: waypts,
                 optimizeWaypoints: true,
-                travelMode: google.maps.TravelMode.DRIVING
+                travelMode: google.maps.TravelMode[selectedMode]
+                //travelMode: google.maps.TravelMode.DRIVING
             };
             directionsService.route(request, function (response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
@@ -51,13 +53,13 @@
                     var summaryPanel = document.getElementById("directions_panel");
                     summaryPanel.innerHTML = "";
                     // For each route, display summary information.
-                    for (var i = 0; i < route.legs.length; i++) {
-                        var routeSegment = i + 1;
-                        summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment + "</b><br />";
-                        summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
-                        summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
-                        summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
-                    }
+                    /*for (var i = 0; i < route.legs.length; i++) {
+                    var routeSegment = i + 1;
+                    summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment + "</b><br />";
+                    summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
+                    summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
+                    summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
+                    }*/
                 }
             });
         }
@@ -71,7 +73,41 @@
     <div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
     </div>
-    <div id="map-canvas" style="float: left; width: 65%; height: 100%;">
+    <div id="left">
+        <ul>
+            <li lang="ru">
+                <%: Html.ActionLink("Главная страница", "Index", "Home") %>
+            </li>
+            <li>
+                <%: Html.ActionLink("Составить маршрут", "Index", "Home") %>
+                <ul>
+                    <li>
+                        <%: Html.ActionLink("Стандартный маршрут", "Map", "Route") %>
+                    </li>
+                    <li>
+                        <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route") %>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <%: Html.ActionLink("Карта сайта", "MapOfSite", "Home") %>
+            </li>
+            <li>
+                <%: Html.ActionLink("Контакты", "Contacts", "Home") %>
+            </li>
+            <li>
+                <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <strong>Выберите способ передвижения: </strong>
+        <select id="mode" onchange="calcRoute();">
+            <option value="WALKING">Пешком</option>
+            <option value="DRIVING">На машине</option>
+        </select>
+    </div>
+    <div id="map-canvas" style="float: right; width: 65%; height: 100%;">
     </div>
     <div id="control_panel" style="float: right; width: 35%; text-align: left; padding-top: 20px">
         <div style="margin: 20px; border-width: 2px;">
@@ -106,7 +142,6 @@
             <br>
             <b>Конец пути:</b>
             <select id="end">
-                <option value="Эрмитаж, spb">Эрмитаж</option>
                 <option value="Аврора, spb">Аврора</option>
                 <option value="Русский музей, spb">Русский музей</option>
                 <option value="Казанский собор, spb">Казанский собор</option>
@@ -115,6 +150,7 @@
                 <option value="Спас на крови, spb">Спас на крови</option>
                 <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
                 <option value="Медный всадник, spb">Медный всадник</option>
+                <option value="Эрмитаж, spb">Эрмитаж</option>
             </select>
             <br>
             <input type="submit" onclick="calcRoute();">
