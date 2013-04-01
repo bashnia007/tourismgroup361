@@ -166,7 +166,9 @@
     <Content Include="Views\Shared\Main.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.sitemap" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Route\App_LocalResources\StandartRoute.aspx.resx" />
