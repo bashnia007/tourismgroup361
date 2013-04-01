@@ -17,7 +17,7 @@
                 </li>
                 <ul>
                     <li>
-                        <%: Html.ActionLink("Стандартный маршрут", "StandartRoute", "Route") %>
+                        <%: Html.ActionLink("Стандартный маршрут", "Map", "Route") %>
                     </li>
                     <li>
                         <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route") %>
