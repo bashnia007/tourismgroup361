@@ -1,5 +1,6 @@
 ﻿<head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCMrc1-qJQzZlCaIwNFJkoPrWc6PGNPhds&sensor=false">
     </script>
     <script>
@@ -73,34 +74,17 @@
     <div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
     </div>
-    <div id="left">
-        <ul>
-            <li lang="ru">
-                <%: Html.ActionLink("Главная страница", "Index", "Home") %>
-            </li>
-            <li>
-                <%: Html.ActionLink("Составить маршрут", "Index", "Home") %>
-                <ul>
-                    <li>
-                        <%: Html.ActionLink("Стандартный маршрут", "Map", "Route") %>
-                    </li>
-                    <li>
-                        <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route") %>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <%: Html.ActionLink("Карта сайта", "MapOfSite", "Home") %>
-            </li>
-            <li>
-                <%: Html.ActionLink("Контакты", "Contacts", "Home") %>
-            </li>
-            <li>
-                <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %>
-            </li>
-        </ul>
-    </div>
+    
     <div>
+        <script type="text/javascript" src="../../Scripts/calendar_ru.js"></script>
+        <form action="">
+            <p><big>Выберите дни, в которые вы будете осматривать достопримечательности</big><br>
+                с <input type="text" value="dd-mm-yy" onfocus="this.select();lcs(this)"
+	                    onclick="event.cancelBubble=true;this.select();lcs(this)"/></input>
+                по <input type="text" value="dd-mm-yy" onfocus="this.select();lcs(this)"
+	                    onclick="event.cancelBubble=true;this.select();lcs(this)"></input>
+            </p>
+        </form>
         <strong>Выберите способ передвижения: </strong>
         <select id="mode" onchange="calcRoute();">
             <option value="WALKING">Пешком</option>

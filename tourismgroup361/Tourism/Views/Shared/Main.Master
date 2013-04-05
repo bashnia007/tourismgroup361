@@ -14,7 +14,33 @@
     <div id = "line_for_register" align="right">
             <%: Html.Partial("_LoginPartial") %>
     </div>
-   
+    <div id="left">
+            <ul>
+                <li lang="ru">
+                    <%: Html.ActionLink("Главная страница", "Index", "Home") %>
+                </li>
+                <li>
+                    <%: Html.ActionLink("Составить маршрут", "Index", "Home") %>
+                    <ul>
+                        <li>
+                            <%: Html.ActionLink("Стандартный маршрут", "Map", "Route") %>
+                        </li>
+                        <li>
+                            <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route") %>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <%: Html.ActionLink("Карта сайта", "MapOfSite", "Home") %>
+                </li>
+                <li>
+                    <%: Html.ActionLink("Контакты", "Contacts", "Home") %>
+                </li>
+                <li>
+                    <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %>
+                </li>
+            </ul>
+        </div>
     <asp:ContentPlaceHolder ID="MainContent" runat="server">
             
     </asp:ContentPlaceHolder>
