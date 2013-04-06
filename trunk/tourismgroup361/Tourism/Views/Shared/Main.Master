@@ -5,44 +5,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
         <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="../../Content/Menu.css" rel="stylesheet" type="text/css" />
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
 </head>
 <body>
     <div> <img src="http://www.ilovepetersburg.ru/sites/default/files/history_2/panorama_bashelye_3755x564_01.jpg" width="1350" height="150" /> 
     </div>
     
-    <div id = "line_for_register" align="right">
+    <div id="line_for_register" align="right">
             <%: Html.Partial("_LoginPartial") %>
     </div>
-    <div id="left">
-            <ul>
-                <li lang="ru">
-                    <%: Html.ActionLink("Главная страница", "Index", "Home") %>
-                </li>
-                <li>
-                    <%: Html.ActionLink("Составить маршрут", "Index", "Home") %>
-                    <ul>
-                        <li>
-                            <%: Html.ActionLink("Стандартный маршрут", "Map", "Route") %>
-                        </li>
-                        <li>
-                            <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route") %>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <%: Html.ActionLink("Карта сайта", "MapOfSite", "Home") %>
-                </li>
-                <li>
-                    <%: Html.ActionLink("Контакты", "Contacts", "Home") %>
-                </li>
-                <li>
-                    <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %>
-                </li>
-            </ul>
-        </div>
+
+    <script type="text/javascript" src="../../Scripts/menu_script.js"></script>    
+    <div id="left" class="mlmenu vertical blindv blackwhite inaccesible">
+        <ul id="navlist">
+			<li><%: Html.ActionLink("Главная страница", "Index", "Home") %></li>
+			<li><%: Html.ActionLink("Составить маршрут", "Index", "Home") %>
+				<ul>
+					<li><%: Html.ActionLink("Стандартный маршрут", "Map", "Route") %></li>
+					<li><%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route") %></li>
+				</ul>
+			</li>
+			<li><%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
+			<li><%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
+            <li><%: Html.ActionLink("Карта сайта", "MapOfSite", "Home") %></li>
+		</ul>
+    </div>
+    
     <asp:ContentPlaceHolder ID="MainContent" runat="server">
             
     </asp:ContentPlaceHolder>
 </body>
 </html>
+
+

@@ -99,10 +99,12 @@
     <Content Include="App_Data\MuseumsDB_log.ldf">
       <DependentUpon>MuseumsDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Menu.css" />
     <Content Include="EntityFramework.Migrations.ReadMe.txt" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\calendar_ru.js" />
+    <Content Include="Scripts\menu_script.js" />
     <Content Include="TreeLineImages\dash.gif" />
     <Content Include="TreeLineImages\dashminus.gif" />
     <Content Include="TreeLineImages\dashplus.gif" />
