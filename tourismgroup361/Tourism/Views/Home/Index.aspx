@@ -6,12 +6,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <form id="form1" runat="server">
+    <form id="indexForm" runat="server">
     
         <div id="header" align="center">
             <h1><%: @Html.ViewData["Header"] %></h1>
         </div>
-
         <div id="right">
             <img src="http://cs402319.vk.me/v402319278/6700/Fo5QlrnPoOM.jpg" width="200px" height="200px"/>
             <img src="http://habrastorage.org/storage/358afb35/50487b87/6d885d83/bd8f6494.gif" width="200px" height="200px"/>
@@ -37,7 +36,6 @@
 
         <div class = "clear">
         </div>
-
     </form>
 
 </asp:Content>

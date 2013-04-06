@@ -7,6 +7,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <form id="linksContent" runat="server">
+        <div id="header" align="center">
+            <h1> <%: Html.ViewData["header"] %></h1>
+        </div>
         <div id="center" align="left">
             <p> Мы рекомендуем ознакомиться со следующими ссылками, так или иначе посвященными Санкт-Петербургу:</p>
             <ul>

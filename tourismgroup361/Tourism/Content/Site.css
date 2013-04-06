@@ -49,24 +49,25 @@
     color: blue;
     float: left;
     margin-top: 0%;
-    width: 16%;
+    width: 15%;
+    margin-bottom: 0%;
 }
-
 
 #right 
 { 
     color: blue;
     float: right;
     margin-top: 0%;
-    width: 16%;
+    width: 15%;
+    margin-bottom: 0%;
 }
 
 #center 
 { 
     color: black;
     margin-top: 1%;
-    margin-left: 15%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .clear
@@ -74,3 +75,6 @@
     clear: both;
 }
 
+
+/*this is the css for the vertical version*/
+		
