@@ -11,7 +11,7 @@
         <div id="header" align="center">
             <h1><%: @Html.ViewData["Header"] %></h1>
         </div>
-        <div id="right">
+        <div id="left">
             <img src="http://cs402319.vk.me/v402319278/6700/Fo5QlrnPoOM.jpg" width="200px" height="200px"/>
             <img src="http://habrastorage.org/storage/358afb35/50487b87/6d885d83/bd8f6494.gif" width="200px" height="200px"/>
             <img src="http://spbso.ru/images/logo/spo_skazka_2009_200px.png" width="200px" height="200px"/>

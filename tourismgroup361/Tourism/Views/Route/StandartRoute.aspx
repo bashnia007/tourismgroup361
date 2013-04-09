@@ -12,7 +12,7 @@
             <h1><%: Html.ViewData["header"] %></h1>
         </div>
         
-        <div id="right">
+        <div id="left">
             <p>Здесь будет всякая реклама располагаться.</p>
             <img src="http://www.nickelodeon.ru/wp-content/uploads/2011/05/Kovalskiy.gif" width="200px"/>
         </div>

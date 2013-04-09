@@ -8,7 +8,7 @@
     <h1>404</h1>
     <h2>Данный URL не существует</h2>
     
-    <div id="right">
+    <div id="left">
         <img src="http://images5.fanpop.com/image/answers/2248000/2248259_1324050654376.58res_162_162.jpg" width="200px"/>
     </div>
 </asp:Content>

@@ -10,7 +10,7 @@
             <h1> <%: ViewData["header"] %> </h1>
         </div>
     
-        <div id="right">
+        <div id="left">
             <p>
                 Здесь будет всякая реклама располагаться.
             </p>
