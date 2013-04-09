@@ -11,7 +11,7 @@
 
         <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
         
-        <div id="right">
+        <div id="left">
             <p>И даже здесь будет всякая реклама располагаться.</p>     
         </div>
         

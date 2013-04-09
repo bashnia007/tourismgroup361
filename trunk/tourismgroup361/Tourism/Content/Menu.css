@@ -1,230 +1,71 @@
-﻿.vertical ul
-{
-	list-style-type: none;
-	padding: 0px;
-	border-top: 1px solid;
-	width: 10%;
+﻿.horizontalcssmenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
 }
 
-.vertical li a
-{
-	display: block;
-	width: 10%;
-	text-decoration: none;
-	height: 1.2em;
-	padding: .1em 1px;
-	border: 1px solid;
-	border-top: 0px;
+/*Top level list items*/
+.horizontalcssmenu ul li{
+position: relative;
+display: inline;
+float: left;
+
 }
 
-.vertical li
-{
-	/*Needed for IE. Don't ask me why, It was a lucky guess.*/
-	display: inline;
+/*Top level menu link items style*/
+.horizontalcssmenu ul li a{
+display: block;
+width: 120px; /*Width of top level menu link items*/
+padding: 2px 8px;
+border: 1px solid #202020;
+border-left-width: 0;
+text-decoration: none;
+background: url(menubg.gif) center center repeat-x;
+color: black;
+font: bold 13px Tahoma;
+}
+	
+/*Sub level menu*/
+.horizontalcssmenu ul li ul{
+left: 0;
+top: 0;
+border-top: 1px solid #202020;
+position: absolute;
+display: block;
+visibility: hidden;
+z-index: 100;
 }
 
-.vertical li ul
-{
-	position: absolute;
-	margin-top: 1em;
-	margin-left: 10%;
+/*Sub level menu list items*/
+.horizontalcssmenu ul li ul li{
+display: inline;
+float: none;
 }
 
-/*this is the css for the horizontal version*/
-.horizontal ul
-{
-	list-style-type: none;
-	padding: 0px;
-	border-left: 1px solid;
-	display: block;
-	height: 2em;
+
+/* Sub level menu links style */
+.horizontalcssmenu ul li ul li a{
+width: 160px; /*width of sub menu levels*/
+font-weight: normal;
+padding: 2px 5px;
+background: #e3f1bd;
+border-width: 0 1px 1px 1px;
 }
 
-.horizontal li
-{
-	float: left;
-	display: inline;
+.horizontalcssmenu ul li a:hover{
+background: url(menubgover.gif) center center repeat-x;
 }
 
-.horizontal li a
-{
-	text-decoration: none;
-	height: 1.5em;
-	float: left;
-	display: block;
-	width: 10%;
-	padding: .1em 1px;
-	border: 1px solid;
-	border-left: none;
+.horizontalcssmenu ul li ul li a:hover{
+background: #cde686;
 }
 
-.horizontal li li a
-{
-	border-top: none;
-	border-left: 1px solid;
+.horizontalcssmenu .arrowdiv{
+position: absolute;
+right: 0;
+background: transparent url(menuarrow.gif) no-repeat center left;
 }
 
-.horizontal li ul
-{
-	position: absolute; 
-	margin-top: 1.3em;
-	margin-left: -1px;
-	width: 10%;
-	border: none;
-	display: block;
-	height: auto;
-	border-top: 1px solid;
-}
-
-.horizontal li li ul
-{
-	position: absolute;
-	margin-top: .1em;
-	margin-left: 10%;
-}
-
-.horizontal li ul li a
-{
-    width: 10%;
-}
-
-/*This section makes the menu not work in non-javascript enabled browsers by not showing the menu by default-This can be worked around by making top level links point to a sitemap*/
-/*Not sure if I recommend this or not*/
-.inaccesible li ul
-{
-	display: none;
-}
-
-/*Arrow code - looks like <a class="haschild" href="#">Text <span>Arrow</span></a> can be turned on/off with arrow class*/
-/*
-.arrow a span
-{
-	padding-left: 1em;
-	font-size: 85%;  
-}
-
-.arrow a:hover span
-{
-	padding-left: 2em;
-}
-
-.arrow a span.noshow
-{
-	visibility: hidden;
-}
-*/
-*/
-/*Plus code*/
-.plus a span
-{
-	padding-left: .5em;
-}
-
-/*colors for menu*/
-.blackwhite li a
-{
-	background-color: white;
-	color: black;
-	border-color: black;
-}
-
-.blackwhite li a:hover
-{
-	background-color: black;
-	color: white;
-	border-color: black;
-}
-
-.blackwhite ul
-{
-	border-color: black;
-}
-
-.bluewhite li a
-{
-	background-color: white;
-	color: #000033;
-	border-color: #000033;
-}
-
-.bluewhite li a:hover
-{
-	background-color: #000033;
-	color: white;
-	border-color: #000033;
-}
-
-.bluewhite ul
-{
-	border-color: #000033;
-}
-
-/*Not really sure why IE needs all these,but hey it works!*/
-/*.horizontal  li ul{
-    margin-top: 1.4em;
-    margin-left: -129px;
-}	
-
-.horizontal  li li ul
-{
-    position: absolute;
-    left: 0px;
-}
-
-/*These assist the iframe shim*/
-.mlmenu iframe
-{
-    position: absolute;
-    display: none;
-    filter: alpha(opacity=0);
-    z-index: 2;
-}
-
-select,object,iframe
-{
-    z-index: 1;
-}
-
-#navlist
-{
-    padding: 0 1px 1px;
-    margin-left: 0;
-    font: bold 12px Verdana, sans-serif;
-    background: white;
-    width: 12em;
-    height: 20%;
-}
-
-#navlist li
-{
-    list-style: none;
-    margin: 0;
-    border-top: 1px solid black;
-    text-align: left;
-}
-
-#navlist li a
-{
-    display: block;
-    padding: 0.25em 0.5em 0.25em 0.75em;
-    left: 1em solid #AAB;
-    background: #CCD;
-    text-decoration: none;
-}
-
-#navlist li a:link 
-{ 
-    color: #448; 
-} 
-
-#navlist li a:visited 
-{
-    color: #667; 
-}
-
-#navlist li a:hover
-{
-    border-color: #FE3;
-    color: blue;
-    background: #332;
+* html p#iepara{ /*For a paragraph (if any) that immediately follows menu, add 1em top spacing between the two in IE*/
+padding-top: 1em;
 }
