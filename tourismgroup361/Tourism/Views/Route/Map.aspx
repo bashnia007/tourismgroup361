@@ -103,7 +103,7 @@
                 <option value="Казанский собор, spb">Казанский собор</option>
                 <option value="Домик Петра Первого, spb">Домик Петра Первого</option>
                 <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
-                <option value="Спас на крови, spb">Спас на крови</option>
+                <option value="Спас на крови, spb">Спас на Крови</option>
                 <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
                 <option value="Медный всадник, spb">Медный всадник</option>
             </select>
@@ -118,7 +118,7 @@
                 <option value="Казанский собор, spb">Казанский собор</option>
                 <option value="Домик Петра Первого, spb">Домик Петра Первого</option>
                 <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
-                <option value="Спас на крови, spb">Спас на крови</option>
+                <option value="Спас на крови, spb">Спас на Крови</option>
                 <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
                 <option value="Медный всадник, spb">Медный всадник</option>
                 <option value="Эрмитаж, spb">Эрмитаж</option>
@@ -131,7 +131,7 @@
                 <option value="Казанский собор, spb">Казанский собор</option>
                 <option value="Домик Петра Первого, spb">Домик Петра Первого</option>
                 <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
-                <option value="Спас на крови, spb">Спас на крови</option>
+                <option value="Спас на крови, spb">Спас на Крови</option>
                 <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
                 <option value="Медный всадник, spb">Медный всадник</option>
                 <option value="Эрмитаж, spb">Эрмитаж</option>
