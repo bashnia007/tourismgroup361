@@ -16,6 +16,7 @@ namespace Tourism.Models
         public DataManager()
         {
             db = new MuseumsDBEntities3(); 
+            // убрать это непотребство!
             _standartIdList = new int[]
                 {
                     306, //The State Museum of the History of Religion
@@ -70,6 +71,12 @@ namespace Tourism.Models
                        where museum.type == type
                        select museum);
             return res.ToList();
+        }
+
+        public List<Museum> Search(string name)
+        {
+            var allMuseums = (from museum in db.Museums select museum).ToList();
+            return allMuseums;
         }
     }
 }

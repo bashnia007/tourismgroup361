@@ -1,13 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>"
+    Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Главная страница
+    Главная страница
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
     <form id="indexForm" runat="server">
-    
         <div id="header" align="center">
             <h1><%: @Html.ViewData["Header"] %></h1>
         </div>
@@ -37,5 +35,4 @@
         <div class = "clear">
         </div>
     </form>
-
 </asp:Content>
