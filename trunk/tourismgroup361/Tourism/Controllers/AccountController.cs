@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Tourism.Models;
 
 namespace Tourism.Controllers
@@ -23,7 +24,9 @@ namespace Tourism.Controllers
                                     select user).First();
                 return !selectedUser.Equals(null);
             }
-            catch { }
+            catch
+            {
+            }
             return false;
         }
 
@@ -37,16 +40,30 @@ namespace Tourism.Controllers
             return View();
         }
 
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index","Home");
+        }
+
+        [HttpPost]
+        public ActionResult LogOff(AccountModel model)
+        {
+            return RedirectToAction("HomePage");
+        }
+
         [HttpPost]
         public ActionResult LogOn(AccountModel model)
         {
-            if (isAdmin(model.Name, model.Password)) return RedirectToAction("AdminPage");
+            FormsAuthentication.SetAuthCookie(model.Name, false);
+            if (isAdmin(model.Name, model.Password))
+                return RedirectToAction("AdminPage");
 
-            if (isValid(model.Name, model.Password)) return RedirectToAction("HomePage");
+            if (isValid(model.Name, model.Password))
+                return RedirectToAction("HomePage");
 
             return View();
         }
-
 
         private bool isCorrectEnter(User user)
         {
@@ -70,7 +87,7 @@ namespace Tourism.Controllers
             {
                 try
                 {
-                    if (ModelState.IsValid && user.password == user.confirmPassword)  
+                    if (ModelState.IsValid && user.password == user.confirmPassword)
                     {
                         db.AddToUsers(user);
                         db.SaveChanges();
@@ -85,9 +102,10 @@ namespace Tourism.Controllers
             return View();
         }
 
+        [Authorize(Users = "админ")]
         public ActionResult AdminPage()
         {
-            ViewData["header"] = "Администраторская";
+            ViewData["header"] = "Администраторская(Прегадкое название)";
             return View();
         }
 

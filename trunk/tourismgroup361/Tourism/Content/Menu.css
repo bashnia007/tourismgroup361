@@ -48,7 +48,7 @@ float: none;
 width: 160px; /*width of sub menu levels*/
 font-weight: normal;
 padding: 2px 5px;
-background: #e3f1bd;
+background: #ff7f50;
 border-width: 0 1px 1px 1px;
 }
 
@@ -57,7 +57,7 @@ background: url(menubgover.gif) center center repeat-x;
 }
 
 .horizontalcssmenu ul li ul li a:hover{
-background: #cde686;
+background: #ff7f50;
 }
 
 .horizontalcssmenu .arrowdiv{
