@@ -3,6 +3,7 @@
 <% if (Request.IsAuthenticated)
    {%>
         <b>Welcome, <%: Context.User.Identity.Name%></b>
+<%: Html.ActionLink("Выйти", "LogOff", "Account") %>
     <%}%>
     <% else
         {%>

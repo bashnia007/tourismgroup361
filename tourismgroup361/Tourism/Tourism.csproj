@@ -100,7 +100,6 @@
       <DependentUpon>MuseumsDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\Menu.css" />
-    <Content Include="EntityFramework.Migrations.ReadMe.txt" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\calendar_ru.js" />
