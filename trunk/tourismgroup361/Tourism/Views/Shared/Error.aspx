@@ -8,7 +8,9 @@
 </head>
 <body>
     <div>
-        БЯКА!
+       Ошибка!
+       <br/>
+       <img src="../../Img/SHkiper1.gif" />
     </div>
 </body>
 </html>

@@ -1,7 +1,8 @@
 /* Стили для вспомогательных объектов проверки
 -----------------------------------------------------------*/
-body {
-    background-color: #add8e6;
+body
+{
+    background-color: #c2c9cb;
 }
 .field-validation-error
 {
@@ -32,45 +33,52 @@ body {
 
 #header
 {
-    color: #4682b4;
+    color: #194a74;
+    text-align: center;
     margin-left: 0%;
     margin-top: 0%;
     margin-right: 0%;
     width: 100%;
+    min-width: 100px;
 }
 
-#line_for_register 
+#line_for_register
 {
-    color: #4682b4;
+    color: #194a74;
     margin-left: 0%;
     margin-top: 0%;
     width: 100%;
+    min-width: 100px;
 }
 
-#left 
+#left
 {
-    color: blue;
+    color: #194a74;
     float: left;
     margin-top: 0%;
     width: 20%;
+    min-width: 100px;
     margin-bottom: 0%;
 }
 
-#right 
-{ 
-    color: blue;
+#right
+{
+    color: #194a74;
     float: right;
     margin-top: 0%;
     width: 15%;
     margin-bottom: 0%;
+    min-width: 80px;
 }
 
-#center 
-{ 
-    color: black;
-    margin-top: 1%;
+#center
+{
+    color: #194a74;
+    margin-top: 0%;
     margin-left: 20%;
     margin-right: 20%;
+    text-indent: 1.5em;
+    min-width: 100px;
 }
 
 .clear
