@@ -109,6 +109,8 @@ namespace Tourism.Controllers
             return View();
         }
 
+
+        // delete this shame!!!!
         public ActionResult HomePage()
         {
             ViewData["header"] = "Домашняя страница";

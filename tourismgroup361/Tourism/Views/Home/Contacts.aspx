@@ -10,8 +10,7 @@
         </div>
         
         <div id="left">
-            <p>Здесь будет всякая реклама располагаться.</p>
-            <img src="http://www.abakan-gazeta.ru/files/u1/gon_021209_13.jpg" />
+            <img src="../../Img/Ryadovoy.gif" width="250" />
         </div>
         
         <div id="center">
