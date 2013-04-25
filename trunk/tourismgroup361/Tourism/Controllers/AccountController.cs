@@ -60,7 +60,7 @@ namespace Tourism.Controllers
                 return RedirectToAction("AdminPage");
 
             if (isValid(model.Name, model.Password))
-                return RedirectToAction("HomePage");
+                return RedirectToAction("Index", "Home");
 
             return View();
         }

@@ -33,46 +33,56 @@ namespace Tourism
         }
 
 
-       /* protected void Application_Error(object sender, EventArgs e)
+        protected void Application_Error(object sender, EventArgs e)
         {
-            HttpContext ctx = HttpContext.Current;
-            Exception ex = ctx.Server.GetLastError();
-            ctx.Response.Clear();
-
-            RequestContext rc = ((MvcHandler)ctx.CurrentHandler).RequestContext;
-            IController controller = new HomeController();
-            // Тут можно использовать любой контроллер, например тот что используется в качестве базового типа
-            var context = new ControllerContext(rc, (ControllerBase)controller);
-
-            var viewResult = new ViewResult();
-
-            var httpException = ex as HttpException;
-            if (httpException != null)
+            try
             {
-                switch (httpException.GetHttpCode())
+                HttpContext ctx = HttpContext.Current;
+                Exception ex = ctx.Server.GetLastError();
+                ctx.Response.Clear();
+
+                RequestContext rc = ((MvcHandler)ctx.CurrentHandler).RequestContext;
+                IController controller = new HomeController();
+                // Тут можно использовать любой контроллер, например тот что используется в качестве базового типа
+                var context = new ControllerContext(rc, (ControllerBase)controller);
+
+                var viewResult = new ViewResult();
+
+                var httpException = ex as HttpException;
+                if (httpException != null)
                 {
-                    case 404:
-                        viewResult.ViewName = "Error404";
-                        break;
+                    switch (httpException.GetHttpCode())
+                    {
+                        case 404:
+                            viewResult.ViewName = "Error404";
+                            break;
 
-                    case 401:
-                        viewResult.ViewName = "Error401";
-                        break;
+                        case 401:
+                            viewResult.ViewName = "Error401";
+                            break;
 
-                    default:
-                        //viewResult.ViewName = "Error";
-                        break;
+                        default:
+                            viewResult.ViewName = "Error";
+                            break;
+                    }
                 }
-            }
-            else
-            {
-                viewResult.ViewName = "Error";
-            }
+                else
+                {
+                    viewResult.ViewName = "Error";
+                }
 
-            viewResult.ViewData.Model = new HandleErrorInfo(ex, context.RouteData.GetRequiredString("controller"),
-                context.RouteData.GetRequiredString("action"));
-            viewResult.ExecuteResult(context);
-            ctx.Server.ClearError();
-        }*/
+                viewResult.ViewData.Model = new HandleErrorInfo(ex, context.RouteData.GetRequiredString("controller"),
+                    context.RouteData.GetRequiredString("action"));
+                viewResult.ExecuteResult(context);
+                ctx.Server.ClearError();
+            }
+            catch (Exception)
+            {
+                var viewResult = new ViewResult();
+                viewResult.ViewName = "Error";
+                //throw;
+            }
+           
+        }
     }
 }
