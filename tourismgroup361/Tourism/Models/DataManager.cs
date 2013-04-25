@@ -75,8 +75,15 @@ namespace Tourism.Models
 
         public List<Museum> Search(string name)
         {
-            var allMuseums = (from museum in db.Museums select museum).ToList();
-            return allMuseums;
+            name = name.ToLower();
+            var allMuseums = (from museum in db.Museums select museum).ToArray();
+            var res = new List<Museum>();
+            for (int i = 0; i < allMuseums.Length; i++)
+            {
+                if (allMuseums[i].nameRUS.ToLower().IndexOf(name) >= 0 || allMuseums[i].description.ToLower().IndexOf(name) >= 0)
+                    res.Add(allMuseums[i]);
+            }
+            return res;
         }
     }
 }
