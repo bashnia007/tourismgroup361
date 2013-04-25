@@ -13,7 +13,7 @@
            {%>
         <%: Html.ValidationSummary(true) %>
         <fieldset>
-            <legend>Зарегистрироватсья</legend>
+            <legend>Зарегистрироваться</legend>
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.name) %>
             </div>

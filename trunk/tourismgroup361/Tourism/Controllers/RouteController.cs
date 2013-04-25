@@ -45,22 +45,38 @@ namespace Tourism.Controllers
         public ActionResult OwnerRoute()
         {
             ViewData["header"] = "Составление своего маршрута";
-            ViewData["list"] = dm.Types;
-            return View();
+            var types = dm.Types;
+            return View(types);
         }
 
+        /*public ActionResult OwnerRoute(SelectList types)
+        {
+            var res = new List<Museum>();
+            foreach (string type in types)
+            {
+                res.Add(dm.GetMuseumForType(type));
+            }
+            return View();
+        }*/
+
         // it works incorrectly :'-(
-        public ActionResult ResRoute(Museum[] checkedMuseums)
+        /*public ActionResult ResRoute(Museum[] checkedMuseums)
         {
             ViewData["header"] = "Ваш выбор объектов:";
             ViewData.Model = checkedMuseums;
             return View();
-        }
+        }*/
 
         public ActionResult Map()
         {
             ViewData["header"] = "Итоговый маршрут";
             return View();
+        }
+
+        public ViewResult Search(string query)
+        {
+            var result = dm.Search(query);
+            return View(result);
         }
     }
 }
