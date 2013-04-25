@@ -1,6 +1,5 @@
 ﻿<head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCMrc1-qJQzZlCaIwNFJkoPrWc6PGNPhds&sensor=false">
     </script>
     <script>
@@ -23,13 +22,78 @@
             control.style.display = 'block';
             map.controls[google.maps.ControlPosition.TOP].push(control);
         }
+        
+        function getDate() {
+            var start = document.getElementById("startDate").value;
+            var end = document.getElementById("endDate").value;
+            promt(start);
+            promt(end);
+        }
 
         function calcRoute() {
+            //promt('1');
+            //getDate();
             var selectedMode = document.getElementById("mode").value;
             var start = document.getElementById("start").value;
             var end = document.getElementById("end").value;
             var waypts = [];
             var checkboxArray = document.getElementById("waypoints");
+            var startSubway, endSubway;
+            waypts.push({
+                location: start,
+                stopover: true
+            });
+            waypts.push({
+                location: end,
+                stopover: true
+            });
+            
+            switch (start) {
+                case 'Эрмитаж, spb':
+                    startSubway = 'метро Адмиралтейская, spb'; break;
+                case 'Аврора, spb':
+                    startSubway = 'метро Горьковская, spb';break;
+                case 'Русский музей, spb':
+                    startSubway = 'метро Невский проспект, spb';break;
+                case 'Казанский собор, spb':
+                    startSubway = 'метро Невский проспект, spb';break;
+                case 'Домик Петра Первого, spb':
+                    startSubway = 'метро Горьковская, spb';break;
+                case 'Петропавловская крепость, spb':
+                    startSubway = 'метро Горьковская, spb';break;
+                case 'Спас на крови, spb':
+                    startSubway = 'метро Невский проспект, spb';break;
+                case 'Исаакиевский собор, spb':
+                    startSubway = 'метро Адмиралтейская, spb';break;
+                case "Медный всадник, spb":
+                    startSubway = 'метро Адмиралтейская, spb'; break;
+                default:
+                    startSubway = 'метро Невский проспект, spb';
+            }
+
+            switch (end) {
+                case 'Эрмитаж, spb':
+                    endSubway = 'метро Адмиралтейская, spb';break;
+                case 'Аврора, spb':
+                    endSubway = 'метро Горьковская, spb';break;
+                case 'Русский музей, spb':
+                    endSubway = 'метро Невский проспект, spb';break;
+                case 'Казанский собор, spb':
+                    endSubway = 'метро Невский проспект, spb';break;
+                case 'Домик Петра Первого, spb':
+                    endSubway = 'метро Горьковская, spb';break;
+                case 'Петропавловская крепость, spb':
+                    endSubway = 'метро Горьковская, spb';break;
+                case 'Спас на крови, spb':
+                    endSubway = 'метро Невский проспект, spb';break;
+                case 'Исаакиевский собор, spb':
+                    endSubway = 'метро Адмиралтейская, spb';break;
+                case "Медный всадник, spb":
+                    endSubway = 'метро Адмиралтейская, spb'; break;
+                default:
+                    endSubway = 'метро Невский проспект, spb';
+            }
+
             for (var i = 0; i < checkboxArray.length; i++) {
                 if (checkboxArray.options[i].selected == true) {
                     waypts.push({
@@ -40,8 +104,8 @@
             }
 
             var request = {
-                origin: start,
-                destination: end,
+                origin: startSubway,
+                destination: endSubway,
                 waypoints: waypts,
                 optimizeWaypoints: true,
                 travelMode: google.maps.TravelMode[selectedMode]
@@ -51,16 +115,18 @@
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
                     var route = response.routes[0];
+                    // убрать под спойлер
                     var summaryPanel = document.getElementById("directions_panel");
                     summaryPanel.innerHTML = "";
                     // For each route, display summary information.
-                    /*for (var i = 0; i < route.legs.length; i++) {
+                    for (var i = 0; i < route.legs.length; i++) {
                     var routeSegment = i + 1;
                     summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment + "</b><br />";
                     summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
                     summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
+                    summaryPanel.innerHTML += route.legs[i].duration.text + "<br />";
                     summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
-                    }*/
+                    }
                 }
             });
         }
@@ -74,16 +140,19 @@
     <div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
     </div>
-    
     <div>
         <script type="text/javascript" src="../../Scripts/calendar_ru.js"></script>
         <form action="">
-            <p><big>Выберите дни, в которые вы будете осматривать достопримечательности</big><br>
-                с <input type="text" value="dd-mm-yy" onfocus="this.select();lcs(this)"
-	                    onclick="event.cancelBubble=true;this.select();lcs(this)"/></input>
-                по <input type="text" value="dd-mm-yy" onfocus="this.select();lcs(this)"
-	                    onclick="event.cancelBubble=true;this.select();lcs(this)"></input>
-            </p>
+        <p>
+            <big>Выберите дни, в которые вы будете осматривать достопримечательности</big><br>
+            с
+            <input type="text" id = "startDate" value="dd-mm-yy" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)" />
+            
+            по
+            <input type="text" id = "endDate" value="dd-mm-yy" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)" />
+               
+            
+        </p>
         </form>
         <strong>Выберите способ передвижения: </strong>
         <select id="mode" onchange="calcRoute();">
@@ -97,6 +166,10 @@
         <div style="margin: 20px; border-width: 2px;">
             <b>Начало пути:</b>
             <select id="start">
+                <!---
+                <option value="метро Адмиралтейская, spb">Адмиралтейская</option>
+                <option value="метро Горьковская, spb">Горковская</option>
+                --->
                 <option value="Эрмитаж, spb">Эрмитаж</option>
                 <option value="Аврора, spb">Аврора</option>
                 <option value="Русский музей, spb">Русский музей</option>
@@ -105,14 +178,13 @@
                 <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
                 <option value="Спас на крови, spb">Спас на Крови</option>
                 <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
-                <option value="Медный всадник, spb">Медный всадник</option>
             </select>
             <br>
             <b>Ключевые точки:</b>
             <br>
             <i>(Для выбора нескольких точек используйте Ctrl + ЛКМ)</i>
             <br>
-            <select multiple id="waypoints" size="9">
+            <select multiple id="waypoints" size="8">
                 <option value="Аврора, spb">Аврора</option>
                 <option value="Русский музей, spb">Русский музей</option>
                 <option value="Казанский собор, spb">Казанский собор</option>
@@ -120,7 +192,6 @@
                 <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
                 <option value="Спас на крови, spb">Спас на Крови</option>
                 <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
-                <option value="Медный всадник, spb">Медный всадник</option>
                 <option value="Эрмитаж, spb">Эрмитаж</option>
             </select>
             <br>
@@ -133,13 +204,12 @@
                 <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
                 <option value="Спас на крови, spb">Спас на Крови</option>
                 <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
-                <option value="Медный всадник, spb">Медный всадник</option>
                 <option value="Эрмитаж, spb">Эрмитаж</option>
             </select>
             <br>
             <input type="submit" onclick="calcRoute();">
         </div>
-        <div id="directions_panel" style="margin: 20px; background-color: #FFEE77;">
+        <div id="directions_panel" style="margin: 20px; background-color: #f5fffa;">
         </div>
     </div>
 </body>
