@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>"
+ <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>"
     Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
@@ -24,6 +24,9 @@
             </p>
             <p>
                 #злаяАльбинастёрламоёпророчество,котороепочтисбылось.Возможноэтосамыйдлинныйтег
+            </p>
+            <p>
+              Даша может писать текст прямо здесь
             </p>
         </div>
 
