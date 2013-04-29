@@ -49,7 +49,7 @@ namespace Tourism.Controllers
         [HttpPost]
         public ActionResult LogOff(AccountModel model)
         {
-            return RedirectToAction("HomePage");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -82,7 +82,7 @@ namespace Tourism.Controllers
         [HttpPost]
         public ActionResult Register(User user)
         {
-            ViewData["header"] = "Вход";
+            ViewData["header"] = "Авторизация";
             if (isCorrectEnter(user))
             {
                 try
@@ -91,7 +91,7 @@ namespace Tourism.Controllers
                     {
                         db.AddToUsers(user);
                         db.SaveChanges();
-                        return RedirectToAction("HomePage");
+                        return RedirectToAction("Index", "Home");
                     }
                 }
                 catch (Exception ex)
@@ -105,15 +105,7 @@ namespace Tourism.Controllers
         [Authorize(Users = "админ")]
         public ActionResult AdminPage()
         {
-            ViewData["header"] = "Администраторская(Прегадкое название)";
-            return View();
-        }
-
-
-        // delete this shame!!!!
-        public ActionResult HomePage()
-        {
-            ViewData["header"] = "Домашняя страница";
+            ViewData["header"] = "Администраторский раздел";
             return View();
         }
     }
