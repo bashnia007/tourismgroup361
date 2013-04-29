@@ -8,7 +8,8 @@
 
         function initialize() {
             directionsDisplay = new google.maps.DirectionsRenderer();
-            var mapOptions = {
+            var mapOptions = 
+            {
                 zoom: 10,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 center: new google.maps.LatLng(59.95, 30.19)
@@ -22,12 +23,23 @@
             control.style.display = 'block';
             map.controls[google.maps.ControlPosition.TOP].push(control);
         }
-        
-        function getDate() {
+
+        function getDate() 
+        {
             var start = document.getElementById("startDate").value;
+            document.right('<b> ' + start + '</b>');
             var end = document.getElementById("endDate").value;
-            promt(start);
-            promt(end);
+            if (isValidDates(start, end)) 
+            {
+                window.promt(start);
+                window.promt(end);
+            }
+        }
+
+        function isValidDates(start, end) {
+            if (start.getFullYear() > end.getFullYear())
+                return false;
+            else return true;
         }
 
         function calcRoute() {

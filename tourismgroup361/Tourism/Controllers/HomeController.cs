@@ -16,7 +16,7 @@ namespace Tourism.Controllers
         
         public ActionResult Index()
         {
-            ViewData["header"] = "Добро пожаловать на наш сайт!";
+            ViewData["header"] = "Добро пожаловать на сайт!";
             return View();
         }
 
@@ -54,7 +54,7 @@ namespace Tourism.Controllers
             return View(museums);
         }
 
-        public ActionResult UpdateKultNasDB()
+        public ActionResult UpdateKultNasDb()
         {
             ViewData["header"] = "Обновление базы данных";
             //ParserKN parser = new ParserKN();

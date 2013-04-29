@@ -12,7 +12,7 @@
         <div id="left">
             <img src="../../Img/zenit.gif" width="200px" height="200px" />
             <img src="../../Img/matmex.gif" width="200px" height="200px" />
-            <img src="../../Img/spo_skazka.png"width="200px" height="200px"/>
+            <!---<img src="../../Img/spo_skazka.png"width="200px" height="200px"/> --->
         </div>
        
         <div id="center" align="left">
