@@ -2,20 +2,22 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCMrc1-qJQzZlCaIwNFJkoPrWc6PGNPhds&sensor=false">
     </script>
+    <link href="../../Content/Menu.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <script>
         var directionDisplay;
         var directionsService = new google.maps.DirectionsService();
 
         function initialize() {
             directionsDisplay = new google.maps.DirectionsRenderer();
-            var mapOptions = 
+            var mapOptions =
             {
                 zoom: 10,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 center: new google.maps.LatLng(59.95, 30.19)
             };
             var map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
+                mapOptions);
             directionsDisplay.setMap(map);
             directionsDisplay.setPanel(document.getElementById('directions_panel'));
 
@@ -24,14 +26,16 @@
             map.controls[google.maps.ControlPosition.TOP].push(control);
         }
 
-        function getDate() 
-        {
+        function getDate() {
+            promt("")
             var start = document.getElementById("startDate").value;
+            var startDt = document.getElementById("startDate").toString;
+            promt(startDt);
             document.right('<b> ' + start + '</b>');
             var end = document.getElementById("endDate").value;
-            if (isValidDates(start, end)) 
+            //if (isValidDates(start, end)) 
             {
-                window.promt(start);
+                window.promt(startDT);
                 window.promt(end);
             }
         }
@@ -59,24 +63,24 @@
                 location: end,
                 stopover: true
             });
-            
+
             switch (start) {
                 case 'Эрмитаж, spb':
                     startSubway = 'метро Адмиралтейская, spb'; break;
                 case 'Аврора, spb':
-                    startSubway = 'метро Горьковская, spb';break;
+                    startSubway = 'метро Горьковская, spb'; break;
                 case 'Русский музей, spb':
-                    startSubway = 'метро Невский проспект, spb';break;
+                    startSubway = 'метро Невский проспект, spb'; break;
                 case 'Казанский собор, spb':
-                    startSubway = 'метро Невский проспект, spb';break;
+                    startSubway = 'метро Невский проспект, spb'; break;
                 case 'Домик Петра Первого, spb':
-                    startSubway = 'метро Горьковская, spb';break;
+                    startSubway = 'метро Горьковская, spb'; break;
                 case 'Петропавловская крепость, spb':
-                    startSubway = 'метро Горьковская, spb';break;
+                    startSubway = 'метро Горьковская, spb'; break;
                 case 'Спас на крови, spb':
-                    startSubway = 'метро Невский проспект, spb';break;
+                    startSubway = 'метро Невский проспект, spb'; break;
                 case 'Исаакиевский собор, spb':
-                    startSubway = 'метро Адмиралтейская, spb';break;
+                    startSubway = 'метро Адмиралтейская, spb'; break;
                 case "Медный всадник, spb":
                     startSubway = 'метро Адмиралтейская, spb'; break;
                 default:
@@ -85,21 +89,21 @@
 
             switch (end) {
                 case 'Эрмитаж, spb':
-                    endSubway = 'метро Адмиралтейская, spb';break;
+                    endSubway = 'метро Адмиралтейская, spb'; break;
                 case 'Аврора, spb':
-                    endSubway = 'метро Горьковская, spb';break;
+                    endSubway = 'метро Горьковская, spb'; break;
                 case 'Русский музей, spb':
-                    endSubway = 'метро Невский проспект, spb';break;
+                    endSubway = 'метро Невский проспект, spb'; break;
                 case 'Казанский собор, spb':
-                    endSubway = 'метро Невский проспект, spb';break;
+                    endSubway = 'метро Невский проспект, spb'; break;
                 case 'Домик Петра Первого, spb':
-                    endSubway = 'метро Горьковская, spb';break;
+                    endSubway = 'метро Горьковская, spb'; break;
                 case 'Петропавловская крепость, spb':
-                    endSubway = 'метро Горьковская, spb';break;
+                    endSubway = 'метро Горьковская, spb'; break;
                 case 'Спас на крови, spb':
-                    endSubway = 'метро Невский проспект, spb';break;
+                    endSubway = 'метро Невский проспект, spb'; break;
                 case 'Исаакиевский собор, spb':
-                    endSubway = 'метро Адмиралтейская, spb';break;
+                    endSubway = 'метро Адмиралтейская, spb'; break;
                 case "Медный всадник, spb":
                     endSubway = 'метро Адмиралтейская, spb'; break;
                 default:
@@ -132,12 +136,12 @@
                     summaryPanel.innerHTML = "";
                     // For each route, display summary information.
                     for (var i = 0; i < route.legs.length; i++) {
-                    var routeSegment = i + 1;
-                    summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment + "</b><br />";
-                    summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
-                    summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
-                    summaryPanel.innerHTML += route.legs[i].duration.text + "<br />";
-                    summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
+                        var routeSegment = i + 1;
+                        summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment + "</b><br />";
+                        summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
+                        summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
+                        summaryPanel.innerHTML += route.legs[i].duration.text + "<br />";
+                        summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
                     }
                 }
             });
@@ -146,24 +150,44 @@
 </head>
 <body onload="initialize()">
     <div>
-        <img src="http://www.ilovepetersburg.ru/sites/default/files/history_2/panorama_bashelye_3755x564_01.jpg"
-            width="1350" height="150" />
+        <a href="<%= Url.Action("Index", "Home") %>">
+            <img src="../../Img/main_banner.jpg" width="100%" onclick="" />
+        </a>
     </div>
     <div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
+    </div>
+    <div id="center" class="horizontalcssmenu">
+        <ul id="cssmenu1">
+            <li style="border-left: 1px solid #202020;">
+                <%: Html.ActionLink("Главная страница", "Index", "Home") %>
+                <li>
+                    <%: Html.ActionLink("Составить маршрут", "Index", "Home") %>
+                    <ul>
+                        <li>
+                            <%: Html.ActionLink("Стандартный маршрут", "Map", "Route") %></li>
+                        <li>
+                            <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route") %></li>
+                    </ul>
+                    <li>
+                        <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
+                    <li>
+                        <%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
+        </ul>
+        <br style="clear: left;" />
     </div>
     <div>
         <script type="text/javascript" src="../../Scripts/calendar_ru.js"></script>
         <form action="">
         <p>
-            <big>Выберите дни, в которые вы будете осматривать достопримечательности</big><br>
+            <big>Выберите дни, в которые вы будете осматривать достопримечательности</big>
+            <br>
             с
-            <input type="text" id = "startDate" value="dd-mm-yy" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)" />
-            
+            <input type="text" id="startDate" value="dd-mm-yy" onfocus="this.select();lcs(this)"
+                onclick="event.cancelBubble=true;this.select();lcs(this)" />
             по
-            <input type="text" id = "endDate" value="dd-mm-yy" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)" />
-               
-            
+            <input type="text" id="endDate" value="dd-mm-yy" onfocus="this.select();lcs(this)"
+                onclick="event.cancelBubble=true;this.select();lcs(this)" />
         </p>
         </form>
         <strong>Выберите способ передвижения: </strong>
@@ -178,10 +202,10 @@
         <div style="margin: 20px; border-width: 2px;">
             <b>Начало пути:</b>
             <select id="start">
-                <!---
+                
                 <option value="метро Адмиралтейская, spb">Адмиралтейская</option>
                 <option value="метро Горьковская, spb">Горковская</option>
-                --->
+                
                 <option value="Эрмитаж, spb">Эрмитаж</option>
                 <option value="Аврора, spb">Аврора</option>
                 <option value="Русский музей, spb">Русский музей</option>
@@ -191,6 +215,7 @@
                 <option value="Спас на крови, spb">Спас на Крови</option>
                 <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
             </select>
+            
             <br>
             <b>Ключевые точки:</b>
             <br>
@@ -218,6 +243,7 @@
                 <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
                 <option value="Эрмитаж, spb">Эрмитаж</option>
             </select>
+            
             <br>
             <input type="submit" onclick="calcRoute();">
         </div>
