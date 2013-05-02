@@ -216,7 +216,6 @@
     <Folder Include="App_Themes\Theme1\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <Content Include="Views\Shared\Route.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

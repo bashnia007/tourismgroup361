@@ -43,9 +43,8 @@ namespace Tourism.Models
                     new {Id = 10, Name = "театрально-музыкальные"},
                     new {Id = 11, Name = "дворцы-музеи, усадьбы, парки и заповедники"},
                     new {Id = 12, Name = "истории промышленных предприятий"},
-                    new {Id = 13, Name = "истории промышленных предприятий"},
-                    new {Id = 14, Name = "истории учебных заведений"},
-                    new {Id = 15, Name = "этнографические"},
+                    new {Id = 13, Name = "истории учебных заведений"},
+                    new {Id = 14, Name = "этнографические"},
                 },
                 "Id", "Name", 1);
         }
@@ -76,13 +75,29 @@ namespace Tourism.Models
         public List<Museum> Search(string name)
         {
             name = name.ToLower();
+            string[] keys = name.Split(' ');
+
             var allMuseums = (from museum in db.Museums select museum).ToArray();
+            
             var res = new List<Museum>();
             for (int i = 0; i < allMuseums.Length; i++)
             {
-                if (allMuseums[i].nameRUS.ToLower().IndexOf(name) >= 0 || allMuseums[i].description.ToLower().IndexOf(name) >= 0)
+                var museumName = allMuseums[i].nameRUS.ToLower();
+                var museumDescription = allMuseums[i].description.ToLower();
+                bool flag = true;
+                foreach (string word in keys)
+                {
+                    if (flag)
+                    {
+                        if (word == "музей") continue;
+                        flag = museumName.IndexOf(word) >= 0 || museumDescription.IndexOf(word) >= 0;
+
+                    }
+                }
+                if (flag)
                     res.Add(allMuseums[i]);
             }
+
             return res;
         }
     }

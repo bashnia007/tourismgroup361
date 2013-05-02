@@ -11,16 +11,17 @@
         <% for (int i = 0; i < Model.Count; i++) %>
         <%
            { %>
-                <li>
+                <li><b>
                 Полное название: <%: Model[i].nameRUS %>
+                </b><br/>
+                Тип: <i><%: Model[i].type %></i>
                 <br/>
-                Тип: <%: Model[i].type %>
+                Контакты: <i><%: Model[i].contacts %></i>
                 <br/>
-                Контакты: <%: Model[i].contacts %>
-                <br/>
-                Адрес: <%: Model[i].addressRUS %>
+                Адрес: <i><%: Model[i].addressRUS %></i>
                 <br/>
                 Описание: <%: Model[i].description %>
+                <br/>
                 <br/>
                 </li>
         <% } %>
