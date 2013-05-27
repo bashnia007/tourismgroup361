@@ -204,7 +204,7 @@
             <select id="start">
                 
                 <option value="метро Адмиралтейская, spb">Адмиралтейская</option>
-                <option value="метро Горьковская, spb">Горковская</option>
+                <option value="метро Горьковская, spb">Горьковская</option>
                 
                 <option value="Эрмитаж, spb">Эрмитаж</option>
                 <option value="Аврора, spb">Аврора</option>
