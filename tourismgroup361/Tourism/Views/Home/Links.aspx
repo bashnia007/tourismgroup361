@@ -15,9 +15,16 @@
     <div id="center" align="left">
         <p>
             Мы рекомендуем ознакомиться со следующими ссылками, так или иначе посвященными Санкт-Петербургу:</p>
-        <a href="http://vk.com/piter">Это Питер, детка! [Типичный Питер]</a>
-        <br />
-        <a href="http://vk.com/blog_fiesta">Интересные события в Санкт-Петербурге</a>
+        <p>Сообщества сайта <a href="http://vk.com">ВКонтакте:</a></p>
+        <ul>
+        <li><a href="http://vk.com/piter">Это Питер, детка! [Типичный Питер]</a>
+        <li><a href="http://vk.com/blog_fiesta">Интересные события в Санкт-Петербурге</a>
+        </ul>
+        <p>Интернет-порталы:</p>
+        <ul>
+        <li><a href="http://www.peterburg.ru/">Туристический гид Peterburg.ru</a>
+        <li><a href="http://www.visit-petersburg.ru/">Городской туристический портал Visit-Peterburg.ru</a>
+        </ul>
     </div>
     </form>
 </asp:Content>
