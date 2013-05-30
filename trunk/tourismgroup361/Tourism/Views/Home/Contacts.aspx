@@ -5,15 +5,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="contactsForm" runat="server">
-        <div id="header" align="center">
-            <h1><%: Html.ViewData["header"] %></h1>
-        </div>
-        
-        <div id="left">
-            <img src="../../Img/Ryadovoy.gif" width="250" />
-        </div>
-        
-        <div id="center">
             <p>	 По вопросам работы сайта и размещения рекламы обращайтесь к разработчикам:
 		        <ul>
 		            <li>  Александру Кавокину, alexanderkavokin@gmail.com</li>
@@ -30,6 +21,12 @@
                 </ul>
             </p>
 	        <p>  Также в нашей команде зарегистрирована Альбина Борисова.</p>
-        </div>
     </form>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
+     <img src="../../Img/three.jpg" width="100%" />
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
+    <h1>
+        <%: @Html.ViewData["Header"] %></h1>
 </asp:Content>

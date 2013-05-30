@@ -1,9 +1,9 @@
 ﻿<head>
+    <link href="../../Content/Menu.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCMrc1-qJQzZlCaIwNFJkoPrWc6PGNPhds&sensor=false">
     </script>
-    <link href="../../Content/Menu.css" rel="stylesheet" type="text/css" />
-    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <script>
         var directionDisplay;
         var directionsService = new google.maps.DirectionsService();
@@ -104,8 +104,8 @@
                     endSubway = 'метро Невский проспект, spb'; break;
                 case 'Исаакиевский собор, spb':
                     endSubway = 'метро Адмиралтейская, spb'; break;
-                case "Медный всадник, spb":
-                    endSubway = 'метро Адмиралтейская, spb'; break;
+                //case "Медный всадник, spb":
+                //    endSubway = 'метро Адмиралтейская, spb'; break;
                 default:
                     endSubway = 'метро Невский проспект, spb';
             }
@@ -149,42 +149,38 @@
     </script>
 </head>
 <body onload="initialize()">
-    <div>
+    <div id="banner">
         <a href="<%= Url.Action("Index", "Home") %>">
             <img src="../../Img/main_banner.jpg" width="100%" onclick="" />
         </a>
     </div>
+    <div id="menu-wrapper">
+        <div id="menu">
+            <ul>
+                <li class="current_page_item">
+                    <%: Html.ActionLink("Главная страница", "Index", "Home") %></li>
+                <li>
+                    <%: Html.ActionLink("Составить маршрут", "Map", "Route") %></li>
+                <li>
+                    <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
+                <li>
+                    <%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
+            </ul>
+        </div>
+        <!-- end #menu -->
+    </div>
     <div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
     </div>
-    <div id="center" class="horizontalcssmenu">
-        <ul id="cssmenu1">
-            <li style="border-left: 1px solid #202020;">
-                <%: Html.ActionLink("Главная страница", "Index", "Home") %>
-                <li>
-                    <%: Html.ActionLink("Составить маршрут", "Index", "Home") %>
-                    <ul>
-                        <li>
-                            <%: Html.ActionLink("Стандартный маршрут", "Map", "Route") %></li>
-                        <li>
-                            <%: Html.ActionLink("Свой маршрут", "OwnerRoute", "Route") %></li>
-                    </ul>
-                    <li>
-                        <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
-                    <li>
-                        <%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
-        </ul>
-        <br style="clear: left;" />
-    </div>
-    <div>
         <script type="text/javascript" src="../../Scripts/calendar_ru.js"></script>
         <form action="">
         <p>
-            <big>Выберите дни, в которые вы будете осматривать достопримечательности</big>
-            <br>
+            Выберите дни, в которые вы будете осматривать достопримечательности
+            <br/>
             с
             <input type="text" id="startDate" value="dd-mm-yy" onfocus="this.select();lcs(this)"
                 onclick="event.cancelBubble=true;this.select();lcs(this)" />
+            <br/>
             по
             <input type="text" id="endDate" value="dd-mm-yy" onfocus="this.select();lcs(this)"
                 onclick="event.cancelBubble=true;this.select();lcs(this)" />
@@ -195,59 +191,60 @@
             <option value="WALKING">Пешком</option>
             <option value="DRIVING">На машине</option>
         </select>
-    </div>
-    <div id="map-canvas" style="float: right; width: 65%; height: 100%;">
-    </div>
-    <div id="control_panel" style="float: right; width: 35%; text-align: left; padding-top: 20px">
-        <div style="margin: 20px; border-width: 2px;">
-            <b>Начало пути:</b>
-            <select id="start">
-                
-                <option value="метро Адмиралтейская, spb">Адмиралтейская</option>
-                <option value="метро Горьковская, spb">Горьковская</option>
-                
-                <option value="Эрмитаж, spb">Эрмитаж</option>
-                <option value="Аврора, spb">Аврора</option>
-                <option value="Русский музей, spb">Русский музей</option>
-                <option value="Казанский собор, spb">Казанский собор</option>
-                <option value="Домик Петра Первого, spb">Домик Петра Первого</option>
-                <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
-                <option value="Спас на крови, spb">Спас на Крови</option>
-                <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
-            </select>
-            
-            <br>
-            <b>Ключевые точки:</b>
-            <br>
-            <i>(Для выбора нескольких точек используйте Ctrl + ЛКМ)</i>
-            <br>
-            <select multiple id="waypoints" size="8">
-                <option value="Аврора, spb">Аврора</option>
-                <option value="Русский музей, spb">Русский музей</option>
-                <option value="Казанский собор, spb">Казанский собор</option>
-                <option value="Домик Петра Первого, spb">Домик Петра Первого</option>
-                <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
-                <option value="Спас на крови, spb">Спас на Крови</option>
-                <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
-                <option value="Эрмитаж, spb">Эрмитаж</option>
-            </select>
-            <br>
-            <b>Конец пути:</b>
-            <select id="end">
-                <option value="Аврора, spb">Аврора</option>
-                <option value="Русский музей, spb">Русский музей</option>
-                <option value="Казанский собор, spb">Казанский собор</option>
-                <option value="Домик Петра Первого, spb">Домик Петра Первого</option>
-                <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
-                <option value="Спас на крови, spb">Спас на Крови</option>
-                <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
-                <option value="Эрмитаж, spb">Эрмитаж</option>
-            </select>
-            
-            <br>
-            <input type="submit" onclick="calcRoute();">
+
+        <div id="map-canvas" style="float: right; width: 65%; height: 100%;">
         </div>
-        <div id="directions_panel" style="margin: 20px; background-color: #f5fffa;">
+    
+        <div id="control_panel" style="float: right; width: 35%; text-align: left; padding-top: 20px">
+            <div style="margin: 20px; border-width: 2px;">
+                <b>Начало пути:</b>
+                <select id="start">
+                
+                    <option value="метро Адмиралтейская, spb">Адмиралтейская</option>
+                    <option value="метро Горьковская, spb">Горьковская</option>
+                
+                    <option value="Эрмитаж, spb">Эрмитаж</option>
+                    <option value="Аврора, spb">Аврора</option>
+                    <option value="Русский музей, spb">Русский музей</option>
+                    <option value="Казанский собор, spb">Казанский собор</option>
+                    <option value="Домик Петра Первого, spb">Домик Петра Первого</option>
+                    <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
+                    <option value="Спас на крови, spb">Спас на Крови</option>
+                    <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
+                </select>
+            
+                <br>
+                <b>Ключевые точки:</b>
+                <br>
+                <i>(Для выбора нескольких точек используйте Ctrl)</i>
+                <br>
+                <select multiple id="waypoints" size="8">
+                    <option value="Аврора, spb">Аврора</option>
+                    <option value="Русский музей, spb">Русский музей</option>
+                    <option value="Казанский собор, spb">Казанский собор</option>
+                    <option value="Домик Петра Первого, spb">Домик Петра Первого</option>
+                    <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
+                    <option value="Спас на крови, spb">Спас на Крови</option>
+                    <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
+                    <option value="Эрмитаж, spb">Эрмитаж</option>
+                </select>
+                <br>
+                <b>Конец пути:</b>
+                <select id="end">
+                    <option value="Аврора, spb">Аврора</option>
+                    <option value="Русский музей, spb">Русский музей</option>
+                    <option value="Казанский собор, spb">Казанский собор</option>
+                    <option value="Домик Петра Первого, spb">Домик Петра Первого</option>
+                    <option value="Петропавловская крепость, spb">Петропавловская крепость</option>
+                    <option value="Спас на крови, spb">Спас на Крови</option>
+                    <option value="Исаакиевский собор, spb">Исаакиевский собор</option>
+                    <option value="Эрмитаж, spb">Эрмитаж</option>
+                </select>
+            
+                <br>
+                <input type="submit" onclick="calcRoute();">
+            </div>
+            <div id="directions_panel" style="margin: 20px; background-color: #f5fffa;">
+            </div>
         </div>
-    </div>
 </body>

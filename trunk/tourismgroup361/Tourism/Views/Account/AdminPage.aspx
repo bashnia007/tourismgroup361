@@ -5,11 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="adminPageForm" runat="server">
-        <div id = "header" align="center">
-            <h1><%: ViewData["header"] %></h1>
-        </div>
-        <div id = "center">
-            Добро пожаловать в отдел администратора!
+            Добро пожаловать в администраторский раздел!
             <ul>
                 <li>
                     <%: Html.ActionLink ("Посмотреть базу культурного наследия", "ShowMonumentsDB", "Home") %>
@@ -17,10 +13,17 @@
                 <li>
                     <%: Html.ActionLink ("Посмотреть базу музеев", "ShowMuseumsDB","Home") %>
                 </li>
+                <!---
                 <li>
                     <%: Html.ActionLink("Обновить БД Культурное наследие", "UpdateKultNasDb", "Home") %>
                 </li>
+                --->
             </ul>
-        </div>
     </form>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
+    <img src="../../Img/four.jpg" width="100%" /></asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
+    <h1>
+        <%: @Html.ViewData["Header"] %></h1>
 </asp:Content>
