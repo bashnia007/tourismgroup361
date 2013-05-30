@@ -16,7 +16,7 @@ namespace Tourism.Controllers
         
         public ActionResult Index()
         {
-            ViewData["header"] = "Добро пожаловать на сайт!";
+            ViewData["header"] = "Добро пожаловать!";
             return View();
         }
 

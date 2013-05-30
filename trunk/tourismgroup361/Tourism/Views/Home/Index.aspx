@@ -10,14 +10,14 @@
             <h1><%: @Html.ViewData["Header"] %></h1>
         </div>
         <div id="left">
-            <img src="../../Img/zenit.gif" width="200px" height="200px" />
-            <img src="../../Img/matmex.gif" width="200px" height="200px" />
+            <img src="../../Img/zenit.png" width="200px" height="200px" />
+            <img src="../../Img/matmex.png" width="200px" height="200px" />
             <!---<img src="../../Img/spo_skazka.png"width="200px" height="200px"/> --->
         </div>
        
         <div id="center" align="left">
             <p>
-                "ИмяСервиса" - это сервис, помогающий автоматически составить оптимальный маршрут для осмотра достопримечательностей Санкт-Петербурга.
+                Добро пожаловать на сервис, помогающий автоматически составить оптимальный маршрут для осмотра достопримечательностей Санкт-Петербурга.
             </p>
             <p> 
                 Каждому, кто когда-либо приезжал в незнакомый город с целью
