@@ -1,21 +1,10 @@
  <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>"
     Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Главная страница
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="indexForm" runat="server">
-        <div id="header">
-            <h1><%: @Html.ViewData["Header"] %></h1>
-        </div>
-        <div id="left">
-            <img src="../../Img/zenit.png" width="200px" height="200px" />
-            <img src="../../Img/matmex.png" width="200px" height="200px" />
-            <!---<img src="../../Img/spo_skazka.png"width="200px" height="200px"/> --->
-        </div>
-       
-        <div id="center" align="left">
             <p>
                 Добро пожаловать на сервис, помогающий автоматически составить оптимальный маршрут для осмотра достопримечательностей Санкт-Петербурга.
             </p>
@@ -38,9 +27,13 @@
             маршрутов. Наша цель состоит в том, чтобы знакомство туристов с 
             городом было максимально комфортным и плодотворным.
             </p>
-        </div>
-
-        <div class = "clear">
-        </div>
     </form>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
+            <img src="../../Img/zenit.png" width="100%" />
+            <img src="../../Img/matmex.png" width="100%" />
+        <!---<img src="../../Img/spo_skazka.png"width="200px" height="200px"/> --->
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
+    <h1><%: @Html.ViewData["Header"] %></h1>
 </asp:Content>

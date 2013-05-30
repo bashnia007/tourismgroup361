@@ -2,6 +2,7 @@
 -----------------------------------------------------------*/
 body
 {
+    margin: 5px;
     background-color: #c2c9cb;
 }
 .field-validation-error
@@ -31,31 +32,41 @@ body
     display: none;
 }
 
+#banner
+{
+    margin-right: 10%;
+    margin-left: 10%;
+}
 #header
 {
     color: #194a74;
     text-align: center;
     margin-left: 0%;
     margin-top: 0%;
-    margin-right: 0%;
-    width: 100%;
+    margin-right: 15%;
+    width: 60%;
     min-width: 100px;
 }
 
 #line_for_register
 {
     color: #194a74;
-    margin-left: 0%;
+    float: right;
+    margin-left: 80%;
+    margin-right: 10%;
     margin-top: 0%;
-    width: 100%;
-    min-width: 100px;
+    text-align: right;
+    width: 20%;
+    min-width: 80px;
+    position: relative;
 }
 
 #left
 {
     color: #194a74;
     float: left;
-    margin-top: 0%;
+    margin-top: 1%;
+    margin-left: 10%;
     width: 20%;
     min-width: 100px;
     margin-bottom: 0%;
@@ -65,9 +76,11 @@ body
 {
     color: #194a74;
     float: right;
-    margin-top: 0%;
+    margin-top: 1%;
     width: 15%;
+    height: 100%;
     margin-bottom: 0%;
+    margin-right: 10%;
     min-width: 80px;
 }
 
@@ -76,7 +89,7 @@ body
     color: #194a74;
     margin-top: 0%;
     margin-left: 20%;
-    margin-right: 20%;
+    margin-right: 16%;
     text-indent: 1.5em;
     min-width: 100px;
 }

@@ -3,7 +3,7 @@
 
 <% if (Request.IsAuthenticated)
    {%>
-        <b>Привет, <%: Context.User.Identity.Name %></b>
+        <b>Привет, <%: Context.User.Identity.Name %>!</b>
         <br/>
         <% if (Context.User.Identity.Name == "админ")
            { %>

@@ -5,14 +5,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="linksContent" runat="server">
-    <div id="header" align="center">
-        <h1>
-            <%: Html.ViewData["header"] %></h1>
-    </div>
-    <div id="left">
-        <img src="../../Img/Riko.gif" width="250" />
-    </div>
-    <div id="center" align="left">
         <p>
             Мы рекомендуем ознакомиться со следующими ссылками, так или иначе посвященными Санкт-Петербургу:</p>
         <p>Сообщества сайта <a href="http://vk.com">ВКонтакте:</a></p>
@@ -25,6 +17,12 @@
         <li><a href="http://www.peterburg.ru/">Туристический гид Peterburg.ru</a>
         <li><a href="http://www.visit-petersburg.ru/">Городской туристический портал Visit-Peterburg.ru</a>
         </ul>
-    </div>
     </form>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
+    <img src="../../Img/one.jpg" width="100%" />
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
+    <h1>
+        <%: @Html.ViewData["Header"] %></h1>
 </asp:Content>
