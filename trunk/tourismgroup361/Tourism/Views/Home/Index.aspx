@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="indexForm" runat="server">
             <p>
-                Добро пожаловать на сервис, помогающий автоматически составить оптимальный маршрут для осмотра достопримечательностей Санкт-Петербурга.
+                Этот сервис создан для того, чтобы помогать автоматически составить оптимальный маршрут для осмотра достопримечательностей Санкт-Петербурга.
             </p>
             <p> 
                 Каждому, кто когда-либо приезжал в незнакомый город с целью
@@ -29,11 +29,12 @@
             </p>
     </form>
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
-            <img src="../../Img/zenit.png" width="100%" />
-            <img src="../../Img/matmex.png" width="100%" />
-        <!---<img src="../../Img/spo_skazka.png"width="200px" height="200px"/> --->
+            <img src="../../Img/Piter.png" />   
+            <a href="http://www.math.spbu.ru/rus/"><img src="../../Img/spbu.png" width="100%"/></a>
 </asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
     <h1><%: @Html.ViewData["Header"] %></h1>
 </asp:Content>

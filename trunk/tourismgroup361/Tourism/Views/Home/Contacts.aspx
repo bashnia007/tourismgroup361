@@ -24,7 +24,8 @@
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
-     <img src="../../Img/three.jpg" width="100%" />
+     <a href="http://www.math.spbu.ru/rus/"><img src="../../Img/matmex.png" width="100%" /></a>
+     <!--<img src="../../Img/three.jpg" width="100%" />-->
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
     <h1>

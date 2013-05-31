@@ -4,11 +4,8 @@
     Вход
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="header" align="center">
-        <h1>
-            <%: Html.ViewData["header"] %></h1>
-    </div>
-    <div id="center" align="center">
+    
+    <div align="center">
         <% using (Html.BeginForm())
            {%>
         <%: Html.ValidationSummary(true) %>
@@ -37,4 +34,12 @@
     <div align="center">
         <%: Html.ActionLink("Зарегистрироваться", "Register") %>
     </div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
+        <img src="../../Img/three.jpg" width="100%" />
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
+        <h1> <%: @Html.ViewData["Header"] %></h1>
 </asp:Content>

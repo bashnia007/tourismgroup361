@@ -73,6 +73,11 @@ namespace Tourism.Controllers
             return View();
         }
 
+        public ActionResult NormalMap()
+        {
+            return View();
+        }
+
         public ViewResult Search(string query)
         {
             var result = dm.Search(query);

@@ -20,7 +20,7 @@
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
-    <img src="../../Img/one.jpg" width="100%" />
+    <a href="http://www.fc-zenit.ru/main/"><img src="../../Img/zenit.png" width="100%" /></a>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
     <h1>
