@@ -3,6 +3,9 @@
 body
 {
     margin: 5px;
+    /*background-image: url("\Piter.png");
+    background-repeat: no-repeat;
+    background-attachment: center;*/
     background-color: #c2c9cb;
 }
 .field-validation-error
@@ -63,7 +66,7 @@ body
 
 #left
 {
-    color: #194a74;
+    /*color: #194a74;*/
     float: left;
     margin-top: 1%;
     margin-left: 10%;
@@ -86,7 +89,7 @@ body
 
 #center
 {
-    color: #194a74;
+    /*color: #194a74;*/
     margin-top: 0%;
     margin-left: 20%;
     margin-right: 16%;

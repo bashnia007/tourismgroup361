@@ -172,7 +172,7 @@
     <div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
     </div>
-        <script type="text/javascript" src="../../Scripts/calendar_ru.js"></script>
+        <!---<script type="text/javascript" src="../../Scripts/calendar_ru.js"></script>
         <form action="">
         <p>
             Выберите дни, в которые вы будете осматривать достопримечательности
@@ -185,18 +185,18 @@
             <input type="text" id="endDate" value="dd-mm-yy" onfocus="this.select();lcs(this)"
                 onclick="event.cancelBubble=true;this.select();lcs(this)" />
         </p>
-        </form>
-        <strong>Выберите способ передвижения: </strong>
-        <select id="mode" onchange="calcRoute();">
-            <option value="WALKING">Пешком</option>
-            <option value="DRIVING">На машине</option>
-        </select>
-
-        <div id="map-canvas" style="float: right; width: 65%; height: 100%;">
-        </div>
-    
-        <div id="control_panel" style="float: right; width: 35%; text-align: left; padding-top: 20px">
-            <div style="margin: 20px; border-width: 2px;">
+        </form>-->
+        
+        
+        <div id="left">
+            <strong>Выберите способ передвижения: </strong>
+            <select id="mode" onchange="calcRoute();">
+                <option value="WALKING">Пешком</option>
+                <option value="DRIVING">На машине</option>
+            </select>
+            
+            <div id="control_panel"> <!---style="float: left; width: 35%; text-align: left; padding-top: 20px"-->
+            <!---<div style="margin: 20px; border-width: 2px;">--->
                 <b>Начало пути:</b>
                 <select id="start">
                 
@@ -243,8 +243,15 @@
             
                 <br>
                 <input type="submit" onclick="calcRoute();">
-            </div>
-            <div id="directions_panel" style="margin: 20px; background-color: #f5fffa;">
-            </div>
+            <!---</div>--->
+            <div id="directions_panel">
+                <!--style="margin: 20px; background-color: #f5fffa;"--->
+            </div> 
         </div>
+        </div>
+        <div id="center">
+        <div id="map-canvas" style="float: right; width: 83%; height: 83%">
+        </div>
+        <!--style="float: center; width: 65%; height: 100%;"-->
+    </div>
 </body>

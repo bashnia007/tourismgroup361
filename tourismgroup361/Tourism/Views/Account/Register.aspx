@@ -4,10 +4,6 @@
     Регистрация
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="header" align="center">
-        <h1>
-            <%: Html.ViewData["header"] %></h1>
-    </div>
     <div id="center" align="center">
         <% using (Html.BeginForm())
            {%>
@@ -51,4 +47,12 @@
     <div>
         <%: Html.ActionLink("Назад", "Index", "Home") %>
     </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
+    <img src="../../Img/four.jpg" width="120%"/>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
+    <h1>
+    <%: Html.ViewData["header"] %>
+</h1>
 </asp:Content>

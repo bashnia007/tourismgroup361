@@ -91,6 +91,7 @@ namespace Tourism.Controllers
                     {
                         db.AddToUsers(user);
                         db.SaveChanges();
+                        FormsAuthentication.SetAuthCookie(user.name, false);
                         return RedirectToAction("Index", "Home");
                     }
                 }

@@ -100,6 +100,7 @@
       <DependentUpon>MuseumsDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\Menu.css" />
+    <Content Include="Content\Piter.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Img\four.jpg" />
@@ -107,9 +108,11 @@
     <Content Include="Img\main_banner.jpg" />
     <Content Include="Img\matmex.gif" />
     <Content Include="Img\one.jpg" />
+    <Content Include="Img\Piter.png" />
     <Content Include="Img\Riko.gif" />
     <Content Include="Img\Ryadovoy.gif" />
     <Content Include="Img\SHkiper1.gif" />
+    <Content Include="Img\spbu.png" />
     <Content Include="Img\spo_skazka.png" />
     <Content Include="Img\three.jpg" />
     <Content Include="Img\two.jpg" />
@@ -119,6 +122,7 @@
     <Content Include="Scripts\menu_script.js" />
     <Content Include="Views\Home\Links.aspx" />
     <Content Include="Views\Route\Map.aspx" />
+    <Content Include="Views\Route\NormalMap.aspx" />
     <Content Include="Views\Route\Search.aspx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Home\Contacts.aspx" />
@@ -202,9 +206,6 @@
   <ItemGroup>
     <Folder Include="App_LocalResources\" />
     <Folder Include="App_Themes\Theme1\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\Route.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -27,6 +27,13 @@
                     <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
                 <li>
                     <%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
+                
+                    <% if (Request.IsAuthenticated && Context.User.Identity.Name == "админ")
+                    { %>
+                        <li>
+                        <%: Html.ActionLink("Администраторский раздел", "AdminPage", "Account") %>
+                        </li>
+                    <%} %>
             </ul>
         </div>
         <!-- end #menu -->
@@ -43,6 +50,9 @@
         <script language="JavaScript">
             fulltime(); 
         </script>
+        <!---<script type="text/javascript">
+                document.write(Date());
+        </script>--->
         <% Html.RenderPartial("SearchForm"); %>
     </div>
     <div id="header" align="center">
