@@ -122,7 +122,6 @@
     <Content Include="Scripts\menu_script.js" />
     <Content Include="Views\Home\Links.aspx" />
     <Content Include="Views\Route\Map.aspx" />
-    <Content Include="Views\Route\NormalMap.aspx" />
     <Content Include="Views\Route\Search.aspx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Home\Contacts.aspx" />
