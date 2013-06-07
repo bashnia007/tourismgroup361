@@ -100,11 +100,10 @@
       <DependentUpon>MuseumsDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\Menu.css" />
-    <Content Include="Content\Piter.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Img\flag.jpg" />
     <Content Include="Img\four.jpg" />
-    <Content Include="Img\Kovalsky.gif" />
     <Content Include="Img\main_banner.jpg" />
     <Content Include="Img\matmex.gif" />
     <Content Include="Img\one.jpg" />
@@ -113,7 +112,6 @@
     <Content Include="Img\Ryadovoy.gif" />
     <Content Include="Img\SHkiper1.gif" />
     <Content Include="Img\spbu.png" />
-    <Content Include="Img\spo_skazka.png" />
     <Content Include="Img\three.jpg" />
     <Content Include="Img\two.jpg" />
     <Content Include="Img\zenit.gif" />
@@ -174,15 +172,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Route\App_LocalResources\StandartRoute.aspx.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Route\App_LocalResources\ResRoute.aspx.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Route\App_LocalResources\OwnerRoute.aspx.resx" />
-  </ItemGroup>
-  <ItemGroup>
     <EntityDeploy Include="Models\MuseumsDbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MuseumsDbModel.Designer.cs</LastGenOutput>
@@ -203,7 +192,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_LocalResources\" />
     <Folder Include="App_Themes\Theme1\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
