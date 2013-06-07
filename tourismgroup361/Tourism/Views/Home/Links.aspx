@@ -11,6 +11,7 @@
         <ul>
         <li><a href="http://vk.com/piter">Это Питер, детка! [Типичный Питер]</a>
         <li><a href="http://vk.com/blog_fiesta">Интересные события в Санкт-Петербурге</a>
+        <li><a href="http://vk.com/piter_tomorrow">Завтра в Питере</a></li>
         </ul>
         <p>Интернет-порталы:</p>
         <ul>

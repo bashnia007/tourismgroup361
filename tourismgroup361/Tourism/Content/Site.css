@@ -43,6 +43,7 @@ body
 #header
 {
     color: #194a74;
+    text: bold;
     text-align: center;
     margin-left: 0%;
     margin-top: 0%;
@@ -94,7 +95,7 @@ body
     margin-left: 20%;
     margin-right: 16%;
     text-indent: 1.5em;
-    min-width: 100px;
+    min-width: 200px;
 }
 
 .clear

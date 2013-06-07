@@ -5,6 +5,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form id="contactsForm" runat="server">
+            <p>
+                Данный сайт разработан в рамках курса "Программная инженерия" студентами кафедры системного программирования математико-механического факультета Санкт-Петербургского Государственного университета.
+            </p>
             <p>	 По вопросам работы сайта и размещения рекламы обращайтесь к разработчикам:
 		        <ul>
 		            <li>  Александру Кавокину, alexanderkavokin@gmail.com</li>
@@ -18,14 +21,15 @@
               	 <li>  Дарья Николаева, daryanika@gmail.com</li>
 		         <li>  Андрей Иванов, ivanovandrew2004@gmail.com</li>
 		         <li>  Александр Кавокин, alexanderkavokin@gmail.com</li>
+                 <li>  Альбина Борисова, borisova.albina@gmail.com</li>
                 </ul>
             </p>
-	        <p>  Также в нашей команде зарегистрирована Альбина Борисова.</p>
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
+    <a href="http://www.math.spbu.ru/rus/">
+        <img src="../../Img/spbu.png" width="100%" /></a>
      <a href="http://www.math.spbu.ru/rus/"><img src="../../Img/matmex.png" width="100%" /></a>
-     <!--<img src="../../Img/three.jpg" width="100%" />-->
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
     <h1>

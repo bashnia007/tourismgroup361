@@ -4,6 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <meta name="description" content="Самостоятельное знакомство с Санкт-Петербургом"/>
+        <meta name="keywords" content="Туризм, Петербург, Санкт-Петербург, Питер"/>
         <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
         <link href="../../Content/Menu.css" rel="stylesheet" type="text/css" />
     <script src="../../Scripts/menu_script.js" type="text/javascript"></script>
