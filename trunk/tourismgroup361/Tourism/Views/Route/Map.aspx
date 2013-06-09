@@ -200,11 +200,14 @@
             крепость<br />
             <input type="checkbox" value="Спас на крови, spb" id="monuments6" />Спас на крови<br />
             <input type="checkbox" value="Исаакиевский собор, spb" id="monuments7" />Исаакиевский
-            собор<br />
-            <br>
+            собор
+            <br />
+            <br />
             <input type="submit" value="ОК" onclick="calcRoute();">
+            <br/>
+            <input type="button" onclick="openClose('1')" value="Подробности маршрута" />
         </div>
-        <input type="button" onclick="openClose('1')" value="Подробности маршрута" />
+        
         <div class="spoilerbox" id="1" style="display: none;">
             <div id="directions_panel" style="margin: 20px; background-color: #f5fffa;" />
         </div>
