@@ -1,4 +1,4 @@
-﻿<head>
+ <head>
     <link href="../../Content/Menu.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -134,25 +134,31 @@
     </script>
 </head>
 <body onload="initialize()">
-    <div id="banner">
-        <a href="<%= Url.Action("Index", "Home") %>">
-            <img src="../../Img/main_banner.jpg" width="100%" onclick="" />
-        </a>
-    </div>
-    <div id="menu-wrapper">
-        <div id="menu">
-            <ul>
-                <li class="current_page_item">
-                    <%: Html.ActionLink("Главная страница", "Index", "Home") %></li>
-                <li>
-                    <%: Html.ActionLink("Составить маршрут", "Map", "Route") %></li>
-                <li>
-                    <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
-                <li>
-                    <%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
-            </ul>
-        </div>
-        <!-- end #menu -->
+<div id="banner">
+<a href="<%= Url.Action("Index", "Home") %>">
+<img src="../../Img/main_banner.jpg" width=100% height=15% onclick="" />
+</a>
+</div>
+<div id="menu-wrapper">
+<div id="menu">
+<ul>
+<li class="current_page_item">
+<%: Html.ActionLink("Главная страница", "Index", "Home") %></li>
+<li>
+<%: Html.ActionLink("Составить маршрут", "Map", "Route") %></li>
+<li>
+<%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
+<li>
+<%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
+
+<% if (Request.IsAuthenticated && Context.User.Identity.Name == "админ")
+{ %>
+<li>
+<%: Html.ActionLink("Администраторский раздел", "AdminPage", "Account") %>
+</li>
+<%} %>
+</ul>
+</div>        <!-- end #menu -->
     </div>
     <div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
