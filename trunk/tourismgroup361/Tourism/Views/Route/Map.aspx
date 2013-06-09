@@ -1,4 +1,7 @@
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Составить маршрут</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <link href="../../Content/Menu.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -48,34 +51,10 @@
             map.controls[google.maps.ControlPosition.TOP].push(control);
         }
 
-        function getDate()
-        {
-            promt("")
-            var start = document.getElementById("startDate").value;
-            var startDt = document.getElementById("startDate").toString;
-            promt(startDt);
-            document.right('<b> ' + start + '</b>');
-            var end = document.getElementById("endDate").value;
-            //if (isValidDates(start, end)) 
-            {
-                window.promt(startDT);
-                window.promt(end);
-            }
-        }
-
-        function isValidDates(start, end)
-        {
-            if (start.getFullYear() > end.getFullYear())
-                return false;
-            else return true;
-        }
-
         function calcRoute()
         {
             //promt('1');
             //getDate();
-
-
             var countOfMuseums = 0;
             var newWays = [];
             var isStart = true;
@@ -149,10 +128,10 @@
 <body onload="initialize()">
     <div id="banner">
         <a href="<%= Url.Action("Index", "Home") %>">
-            <img src="../../Img/main_banner.jpg" width="100%" height="15%" onclick="" />
+            <img src="../../Img/main_banner.jpg" width="100%" height="25%" onclick="" />
         </a>
     </div>
-    <div id="menu-wrapper">
+    <div id="menu-wrapper" style="height: 10%">
         <div id="menu">
             <ul>
                 <li class="current_page_item">
@@ -163,7 +142,6 @@
                     <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
                 <li>
                     <%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
-                
             </ul>
         </div>
         <!-- end #menu -->
@@ -171,49 +149,47 @@
     <div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
     </div>
-    <script type="text/javascript" src="../../Scripts/calendar_ru.js"></script>
-    <form action="">
-    </form>
-    <strong>Выберите способ передвижения: </strong>
-    <select id="mode" onchange="calcRoute();">
-        <option value="WALKING">Пешком</option>
-        <option value="DRIVING">На машине</option>
-    </select>
-    <div id="map-canvas" style="float: right; width: 65%; height: 100%;">
+    <div id="map-canvas" style="float: right; margin-right: 10%; width: 50%; height: 60%;">
     </div>
-    <div id="control_panel" style="float: right; width: 35%; text-align: left; padding-top: 20px">
-        <div style="margin: 20px; border-width: 2px;">
-            Введите количество дней:
+    <div id="control_panel" style="margin-left: 10%; width: 35%; text-align: left; padding-top: 10px">
+        <div style="border-width: 2px;">
+            <strong>Выберите способ передвижения: </strong>
+            <select id="mode" onchange="calcRoute();">
+                <option value="WALKING">Пешком</option>
+                <option value="DRIVING">На машине</option>
+            </select>
+            <br />
+            <br />
+            <b>Введите количество дней:</b>
             <input type='text' id="days" onkeyup='this.value=parseInt(this.value) | 0' />
             <br />
+            <i></i>
             <br />
-            <b>Выберите достопримечательности:</b><br />
-            <input type="checkbox" value="Эрмитаж, spb" id="monuments0" />Эрмитаж
+            <b>Выберите достопримечательности:</b>
             <br />
-            <input type="checkbox" value="Аврора, spb" id="monuments1" />Аврора<br />
-            <input type="checkbox" value="Русский музей, spb" id="monuments2" />Русский музей<br />
-            <input type="checkbox" value="Казанский собор, spb" id="monuments3" />Казанский
-            собор<br />
-            <input type="checkbox" value="Домик Петра Первого, spb" id="monuments4" />Домик
-            Петра Первого<br />
-            <input type="checkbox" value="Петропавловская крепость, spb" id="monuments5" />Петропавловская
-            крепость<br />
-            <input type="checkbox" value="Спас на крови, spb" id="monuments6" />Спас на крови<br />
-            <input type="checkbox" value="Исаакиевский собор, spb" id="monuments7" />Исаакиевский
-            собор
+            <input type="checkbox" value="Эрмитаж, spb" id="monuments0" />
+            Эрмитаж<br />
+            <input type="checkbox" value="Аврора, spb" id="monuments1" />
+            Аврора<br />
+            <input type="checkbox" value="Русский музей, spb" id="monuments2" />
+            Русский музей<br />
+            <input type="checkbox" value="Казанский собор, spb" id="monuments3" />
+            Казанский собор<br />
+            <input type="checkbox" value="Домик Петра Первого, spb" id="monuments4" />
+            Домик Петра Первого<br />
+            <input type="checkbox" value="Петропавловская крепость, spb" id="monuments5" />
+            Петропавловская крепость<br />
+            <input type="checkbox" value="Спас на крови, spb" id="monuments6" />
+            Спас на крови<br />
+            <input type="checkbox" value="Исаакиевский собор, spb" id="monuments7" />
+            Исаакиевский собор<br />
+            <input type="submit" value="ОК" onclick="calcRoute();"><br />
             <br />
-            <br />
-            <input type="submit" value="ОК" onclick="calcRoute();">
-            <br/>
             <input type="button" onclick="openClose('1')" value="Подробности маршрута" />
         </div>
-        
         <div class="spoilerbox" id="1" style="display: none;">
-            <div id="directions_panel" style="margin: 20px; background-color: #f5fffa;" />
+            <div id="directions_panel" style="background-color: #f5fffa;" />
         </div>
-        <div id="center">
-            <div id="map-canvas" style="float: right; width: 83%; height: 83%">
-            </div>
-            <!--style="float: center; width: 65%; height: 100%;"-->
-        </div>
+    </div>
 </body>
+</html>

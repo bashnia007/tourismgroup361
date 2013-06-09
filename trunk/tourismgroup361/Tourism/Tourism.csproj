@@ -115,7 +115,6 @@
     <Content Include="Img\three.jpg" />
     <Content Include="Img\two.jpg" />
     <Content Include="Img\zenit.gif" />
-    <Content Include="Scripts\calendar_ru.js" />
     <Content Include="Scripts\fullTime.js" />
     <Content Include="Scripts\menu_script.js" />
     <Content Include="Views\Home\Links.aspx" />
