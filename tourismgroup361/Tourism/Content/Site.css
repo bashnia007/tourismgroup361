@@ -45,11 +45,10 @@ body
     color: #194a74;
     text: bold;
     text-align: center;
-    margin-left: 0%;
+    margin-left: 15%;
     margin-top: 0%;
     margin-right: 15%;
     width: 60%;
-    min-width: 100px;
 }
 
 #line_for_register
@@ -61,18 +60,15 @@ body
     margin-top: 0%;
     text-align: right;
     width: 20%;
-    min-width: 80px;
     position: relative;
 }
 
 #left
 {
-    /*color: #194a74;*/
     float: left;
     margin-top: 1%;
     margin-left: 10%;
     width: 20%;
-    min-width: 100px;
     margin-bottom: 0%;
 }
 
@@ -85,7 +81,6 @@ body
     height: 100%;
     margin-bottom: 0%;
     margin-right: 10%;
-    min-width: 80px;
 }
 
 #center
@@ -95,7 +90,6 @@ body
     margin-left: 20%;
     margin-right: 16%;
     text-indent: 1.5em;
-    min-width: 200px;
 }
 
 .clear
