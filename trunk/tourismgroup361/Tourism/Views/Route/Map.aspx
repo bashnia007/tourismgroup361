@@ -1,4 +1,4 @@
- <head>
+<head>
     <link href="../../Content/Menu.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -8,7 +8,8 @@
         var directionDisplay;
         var directionsService = new google.maps.DirectionsService();
 
-        function openClose(id) {
+        function openClose(id)
+        {
             var obj = "";
             // Check browser compatibility
             if (document.getElementById)
@@ -28,7 +29,8 @@
                 obj.display = "block";
         }
 
-        function initialize() {
+        function initialize()
+        {
             directionsDisplay = new google.maps.DirectionsRenderer();
             var mapOptions =
             {
@@ -46,7 +48,8 @@
             map.controls[google.maps.ControlPosition.TOP].push(control);
         }
 
-        function getDate() {
+        function getDate()
+        {
             promt("")
             var start = document.getElementById("startDate").value;
             var startDt = document.getElementById("startDate").toString;
@@ -60,13 +63,15 @@
             }
         }
 
-        function isValidDates(start, end) {
+        function isValidDates(start, end)
+        {
             if (start.getFullYear() > end.getFullYear())
                 return false;
             else return true;
         }
 
-        function calcRoute() {
+        function calcRoute()
+        {
             //promt('1');
             //getDate();
 
@@ -76,13 +81,17 @@
             var isStart = true;
             var starting;
             var ending;
-            for (var i = 0; i < 8; i++) {
-                if (document.getElementById("monuments" + i).checked) {
+            for (var i = 0; i < 8; i++)
+            {
+                if (document.getElementById("monuments" + i).checked)
+                {
                     countOfMuseums++;
-                    if (isStart) {
+                    if (isStart)
+                    {
                         starting = document.getElementById("monuments" + i).value;
                         isStart = false;
-                    } else {
+                    } else
+                    {
                         ending = document.getElementById("monuments" + i).value;
 
                         newWays.push({
@@ -98,7 +107,7 @@
             var MPD = Math.ceil(countOfMuseums / days);
 
             var selectedMode = document.getElementById("mode").value;
-            
+
             var request = {
                 origin: starting,
                 destination: ending,
@@ -107,8 +116,10 @@
                 travelMode: google.maps.TravelMode[selectedMode]
                 //travelMode: google.maps.TravelMode.DRIVING
             };
-            directionsService.route(request, function (response, status) {
-                if (status == google.maps.DirectionsStatus.OK) {
+            directionsService.route(request, function (response, status)
+            {
+                if (status == google.maps.DirectionsStatus.OK)
+                {
                     directionsDisplay.setDirections(response);
                     var route = response.routes[0];
                     // убрать под спойлер
@@ -116,9 +127,11 @@
                     summaryPanel.innerHTML = "<b>Наше предложение по посещению выбранных достопримечательностей</b><br /><br />";
                     // For each route, display summary information.
                     var count = 1;
-                    for (var i = 0; i < route.legs.length; i++) {
+                    for (var i = 0; i < route.legs.length; i++)
+                    {
                         var routeSegment = i + 1;
-                        if (routeSegment == 1) {
+                        if (routeSegment == 1)
+                        {
                             summaryPanel.innerHTML += "<b>День №" + count++ + "</b><br />";
                         }
                         if (routeSegment % MPD == 0) summaryPanel.innerHTML += "<b>День №" + count++ + "</b><br />";
@@ -134,31 +147,26 @@
     </script>
 </head>
 <body onload="initialize()">
-<div id="banner">
-<a href="<%= Url.Action("Index", "Home") %>">
-<img src="../../Img/main_banner.jpg" width=100% height=15% onclick="" />
-</a>
-</div>
-<div id="menu-wrapper">
-<div id="menu">
-<ul>
-<li class="current_page_item">
-<%: Html.ActionLink("Главная страница", "Index", "Home") %></li>
-<li>
-<%: Html.ActionLink("Составить маршрут", "Map", "Route") %></li>
-<li>
-<%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
-<li>
-<%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
-
-<% if (Request.IsAuthenticated && Context.User.Identity.Name == "админ")
-{ %>
-<li>
-<%: Html.ActionLink("Администраторский раздел", "AdminPage", "Account") %>
-</li>
-<%} %>
-</ul>
-</div>        <!-- end #menu -->
+    <div id="banner">
+        <a href="<%= Url.Action("Index", "Home") %>">
+            <img src="../../Img/main_banner.jpg" width="100%" height="15%" onclick="" />
+        </a>
+    </div>
+    <div id="menu-wrapper">
+        <div id="menu">
+            <ul>
+                <li class="current_page_item">
+                    <%: Html.ActionLink("Главная страница", "Index", "Home") %></li>
+                <li>
+                    <%: Html.ActionLink("Составить маршрут", "Map", "Route") %></li>
+                <li>
+                    <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
+                <li>
+                    <%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
+                
+            </ul>
+        </div>
+        <!-- end #menu -->
     </div>
     <div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
@@ -193,19 +201,16 @@
             <input type="checkbox" value="Спас на крови, spb" id="monuments6" />Спас на крови<br />
             <input type="checkbox" value="Исаакиевский собор, spb" id="monuments7" />Исаакиевский
             собор<br />
-            
             <br>
             <input type="submit" value="ОК" onclick="calcRoute();">
         </div>
         <input type="button" onclick="openClose('1')" value="Подробности маршрута" />
         <div class="spoilerbox" id="1" style="display: none;">
-            
             <div id="directions_panel" style="margin: 20px; background-color: #f5fffa;" />
-        
         </div>
         <div id="center">
-        <div id="map-canvas" style="float: right; width: 83%; height: 83%">
+            <div id="map-canvas" style="float: right; width: 83%; height: 83%">
+            </div>
+            <!--style="float: center; width: 65%; height: 100%;"-->
         </div>
-        <!--style="float: center; width: 65%; height: 100%;"-->
-    </div>
 </body>
