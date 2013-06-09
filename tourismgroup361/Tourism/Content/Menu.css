@@ -84,12 +84,13 @@
     margin-right: 10%;
     height: 10%;
 	min-height: 50px;
+    min-width: 200px;
 	background: #000000;
 }
 
 #menu 
 {
-	width: 100%;
+    width: auto;
     height: 10%;
 	min-height: 55px;
 	margin: 0px auto;
