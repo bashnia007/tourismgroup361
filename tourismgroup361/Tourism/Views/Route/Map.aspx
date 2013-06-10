@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Составить маршрут</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
@@ -131,7 +131,7 @@
             <img src="../../Img/main_banner.jpg" width="100%" height="25%" onclick="" />
         </a>
     </div>
-    <div id="menu-wrapper" style="height: 10%">
+    <div id="menu-wrapper">
         <div id="menu">
             <ul>
                 <li class="current_page_item">
@@ -146,13 +146,14 @@
         </div>
         <!-- end #menu -->
     </div>
-    <div id="line_for_register" align="right">
+    <!---<div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
+    </div>--->
+    <div id="map-canvas" style="float: right; width: 64%; height: 65%; min-width: 465px; min-height: 390px">
     </div>
-    <div id="map-canvas" style="float: right; margin-right: 10%; width: 50%; height: 60%;">
-    </div>
-    <div id="control_panel" style="margin-left: 10%; width: 35%; text-align: left; padding-top: 10px">
+    <div id="control_panel" style="width: 35%; text-align: justify; min-width: 300px">
         <div style="border-width: 2px;">
+            <br/>
             <strong>Выберите способ передвижения: </strong>
             <select id="mode" onchange="calcRoute();">
                 <option value="WALKING">Пешком</option>
@@ -161,7 +162,7 @@
             <br />
             <br />
             <b>Введите количество дней:</b>
-            <input type='text' id="days" onkeyup='this.value=parseInt(this.value) | 0' />
+            <input type='text' id="days" onkeyup='this.value=parseInt(this.value) | 0' style="width: 10%" />
             <br />
             <i></i>
             <br />

@@ -21,9 +21,9 @@
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
+    <br/>
     <a href="http://www.fc-zenit.ru/main/"><img src="../../Img/zenit.png" width="100%" /></a>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
-    <h1>
-        <%: @Html.ViewData["Header"] %></h1>
+    <h1>Полезные ссылки</h1>
 </asp:Content>

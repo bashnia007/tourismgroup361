@@ -27,11 +27,12 @@
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
+    <br/>
     <a href="http://www.math.spbu.ru/rus/">
-        <img src="../../Img/spbu.png" width="100%" /></a>
+        <img src="../../Img/spbu.png" width="100%" /></a><br />
+    <br />
      <a href="http://www.math.spbu.ru/rus/"><img src="../../Img/matmex.png" width="100%" /></a>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
-    <h1>
-        <%: @Html.ViewData["Header"] %></h1>
+    <h1>Контакты</h1>
 </asp:Content>
