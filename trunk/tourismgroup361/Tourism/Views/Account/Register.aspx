@@ -44,9 +44,6 @@
         </fieldset>
         <% } %>
     </div>
-    <div>
-        <%: Html.ActionLink("Назад", "Index", "Home") %>
-    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
     <img src="../../Img/four.jpg" width="120%"/>

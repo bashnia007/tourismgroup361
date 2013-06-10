@@ -16,7 +16,6 @@ namespace Tourism.Controllers
         
         public ActionResult Index()
         {
-            ViewData["header"] = "Добро пожаловать!";
             return View();
         }
 
@@ -29,19 +28,18 @@ namespace Tourism.Controllers
 
         public ActionResult Contacts()
         {
-            ViewData["header"] = "Контакты";
             return View();
         }
-
+        /*
         public ActionResult MapOfSite()
         {
             ViewData["header"] = "Карта сайта";
             return View();
         }
+        */
 
         public ActionResult Links()
         {
-            ViewData["header"] = "Полезные ссылки";
             return View();
         }
 
@@ -64,7 +62,6 @@ namespace Tourism.Controllers
 
         public ActionResult Error404()
         {
-            ViewData["header"] = "Такой страницы не существует!";
             return View();
         }
     }
