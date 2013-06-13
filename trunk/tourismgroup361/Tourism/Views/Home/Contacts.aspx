@@ -19,9 +19,9 @@
             <p>  Разработкой документации к данному сайту занимались: 
 		        <ul>
               	 <li>  Дарья Николаева, daryanika@gmail.com</li>
-		         <li>  Андрей Иванов, ivanovandrew2004@gmail.com</li>
-		         <li>  Александр Кавокин, alexanderkavokin@gmail.com</li>
-                 <li>  Альбина Борисова, borisova.albina@gmail.com</li>
+                 <li>Александр Кавокин, alexanderkavokin@gmail.com</li>
+                 <li>  Андрей Иванов, ivanovandrew2004@gmail.com</li>
+		         <li>  Альбина Борисова, borisova.albina@gmail.com</li>
                 </ul>
             </p>
     </form>
