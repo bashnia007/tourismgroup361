@@ -1,12 +1,7 @@
-/* Стили для вспомогательных объектов проверки
------------------------------------------------------------*/
 body
 {
     margin-left: 10%;
     margin-right: 10%;
-    /*background-image: url("\Piter.png");
-    background-repeat: no-repeat;
-    background-attachment: center;*/
     background-color: #c2c9cb;
     min-height: 600px;
     min-width: 800px;
@@ -44,6 +39,19 @@ body
     min-height: 60px;
 }
 
+#container 
+{
+    width: 100%;
+    min-width: 640px;
+    position: relative;
+}
+
+#container:after 
+{
+	clear: both;
+	display: table;
+}
+
 #line_for_register
 {
     color: #194a74;
@@ -61,21 +69,21 @@ body
 {
     color: #194a74;
     text-align: center;
-    margin-left: 15%;
+    margin-left: 20%;
     margin-top: 0%;
     margin-right: 15%;
     width: 60%;
-    min-width: 465px;
+    min-width: 384px;
 }
 
 #center
 {
     margin-top: 0%;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 22%;
+    margin-right: 17%;
     text-indent: 1.5em;
     text-align: justify;
-    min-width: 465px;
+    min-width: 390px;
 }
 
 #left
@@ -83,8 +91,7 @@ body
     float: left;
     margin-top: 0%;
     width: 20%;
-    min-width: 155px;
-    margin-bottom: 0%;
+    min-width: 128px;
 }
 
 #right
@@ -93,11 +100,17 @@ body
     float: right;
     margin-top: 0%;
     width: 15%;
-    min-width: 115px;
-    margin-bottom: 0%;
+    min-width: 96px;
 }
 
 .clear
 {
     clear: both;
+}
+#footer 
+{ 
+    clear: both; /* Отменяем действие float */
+    margin-left: 20%;
+    padding: 5px; /* Отступы вокруг текста */
+    /*background: silver;  Цвет фона подвала */
 }
