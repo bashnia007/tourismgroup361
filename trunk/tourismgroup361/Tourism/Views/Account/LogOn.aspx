@@ -10,7 +10,7 @@
            {%>
         <%: Html.ValidationSummary(true) %>
         <fieldset>
-            <legend>Вход</legend>
+            <legend align="top">Вход</legend>
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.name) %>
             </div>

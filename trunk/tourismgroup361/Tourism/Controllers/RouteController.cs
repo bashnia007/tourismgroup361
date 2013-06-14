@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using Tourism.Models;
 
 namespace Tourism.Controllers
@@ -12,7 +14,8 @@ namespace Tourism.Controllers
         //
         // GET: /Route/
         private DataManager dm = new DataManager();
-        //private Museum[] _userChoice;
+        private List<MuseumViewModel> userChoice;
+        private List<Tuple<string, string>> checkedMuseums;
 
         public ActionResult StandartRoute()
         {
@@ -21,60 +24,74 @@ namespace Tourism.Controllers
             return View();
         }
 
-        /*
-        [HttpPost]
-        public ActionResult StandartRoute (RouteModel model)
-        {
-            if (model.museumCollection != null)
-            {
-                foreach (var checkBoxTestItem in model.museumCollection)
-                    ModelState.AddModelError("", string.Format("Checked CheckBox item: {0}", checkBoxTestItem));
-            }
-            GenerateListItems();
-            return View(model);
-        }*/
-
-        /*private void GenerateListItems()
-        {
-            var dm = new DataManager();
-            var checkBoxTestItems = dm.GetStandartMuseum();
-            //var checkBoxTestItemsChecked = new[] { "CheckBoxTestItem2", "CheckBoxTestItem4" };
-            ViewData["CheckBoxTestItems"] = new SelectList(checkBoxTestItems/*, checkBoxTestItemsChecked);
-        }*/
-
-        public ActionResult OwnerRoute()
+        public ActionResult OwnerRouteTypes()
         {
             ViewData["header"] = "Составление своего маршрута";
-            var types = dm.Types;
+            var types = dm.types;
             return View(types);
         }
 
-        /*public ActionResult OwnerRoute(SelectList types)
+        [HttpPost]
+        public ActionResult OwnerRouteTypes(List<TypeViewModel> lists)
         {
-            var res = new List<Museum>();
-            foreach (string type in types)
+            List<string> checkedTypes = new List<string>();
+            for (int i = 0; i < lists.Count; i++)
             {
-                res.Add(dm.GetMuseumForType(type));
-            }
-            return View();
-        }*/
+                if (lists[i].Checked)
+                {
+                    string type = dm.types.ElementAt(i).Name;
+                    checkedTypes.Add(type);
+                }
 
-        // it works incorrectly :'-(
-        /*public ActionResult ResRoute(Museum[] checkedMuseums)
+            }
+            if (checkedTypes.Count == 0)
+                return View();
+
+            userChoice = dm.GetMuseumForTypes(checkedTypes);
+
+            Session.Add("userChoice", userChoice);
+            return RedirectToAction("OwnerRouteMuseums");
+        }
+
+        public ActionResult OwnerRouteMuseums()
         {
-            ViewData["header"] = "Ваш выбор объектов:";
-            ViewData.Model = checkedMuseums;
-            return View();
-        }*/
+            userChoice = (List<MuseumViewModel>)Session["userChoice"];
+            return View(userChoice);
+        }
+
+        [HttpPost]
+        public ActionResult OwnerRouteMuseums(List<MuseumViewModel> lists)
+        {
+            checkedMuseums = new List<Tuple<string, string>>();
+            userChoice = (List<MuseumViewModel>) Session["userChoice"];
+            for (int i = 0; i < lists.Count; i++)
+            {
+                if (lists[i].Checked)
+                {
+                    string name = userChoice[i].Name;
+                    string address = userChoice[i].Address;
+                    Tuple<string, string> pair = new Tuple<string, string> (name, address);
+
+                    checkedMuseums.Add(pair);
+                }
+
+            }
+            if (checkedMuseums.Count == 0)
+                return View();
+
+            Session.Add("museums", checkedMuseums);
+            return RedirectToAction("ResRoute");
+        }
+
+        public ActionResult ResRoute()
+        {
+            var mus = Session["museums"];
+            return View(mus);
+        }
 
         public ActionResult Map()
         {
             ViewData["header"] = "Итоговый маршрут";
-            return View();
-        }
-
-        public ActionResult NormalMap()
-        {
             return View();
         }
 

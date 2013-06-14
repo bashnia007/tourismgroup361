@@ -137,7 +137,9 @@
                 <li class="current_page_item">
                     <%: Html.ActionLink("Главная страница", "Index", "Home") %></li>
                 <li>
-                    <%: Html.ActionLink("Составить маршрут", "Map", "Route") %></li>
+                    <%: Html.ActionLink("Стандартный маршрут", "Map", "Route") %></li>
+                <li>
+                    <%: Html.ActionLink("Свой маршрут", "OwnerRouteTypes", "Route") %></li>
                 <li>
                     <%: Html.ActionLink("Полезные ссылки", "Links", "Home") %></li>
                 <li>

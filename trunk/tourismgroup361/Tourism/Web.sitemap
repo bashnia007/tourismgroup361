@@ -3,7 +3,7 @@
     <siteMapNode url="Home/Index" title="Главная страница"  description="Главная страница нашего сайта">
       <siteMapNode url="" title="Выбор маршрута"  description="">
           <siteMapNode url="Route/StandartRoute" title="Получение стандартного маршрута"  description="Получение стандартного маршрута" />
-          <siteMapNode url="Route/OwnerRoute" title="Получение своего маршрута"  description="Получение маршрута по заданным пользователем объектам" />
+          <siteMapNode url="Route/OwnerRouteTypes" title="Получение своего маршрута"  description="Получение маршрута по заданным пользователем объектам" />
       </siteMapNode>
       <siteMapNode url="Home/Contacts" title="Контакты"  description="В кого кидаться помидорами в случае чего">
       </siteMapNode>

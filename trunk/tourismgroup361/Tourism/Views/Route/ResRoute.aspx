@@ -1,28 +1,34 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>"
-    Culture="auto" meta:resourcekey="PageResource2" UICulture="auto" %>
-<%@ Import Namespace="Tourism.Models" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<List<Tuple<string, string>>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    resRoutr</asp:Content>
+    Ваш маршрут
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
-    <form id="resRouteForm" runat="server">
-    
-        <div id="header" align="center">
-            <%: Html.ViewData["header"] %>
-        </div>
-
-        <div id="left">
-            Здесь всякая реклама располагается.
-        </div>
-        <div id="center">
-            Ваш выбор:
-            <% foreach (Museum value in ViewData.Model)
-                { %>
-                <input type="checkbox" value="<%: value.addressRUS %>" /><%: value.nameRUS %><br/>
-            <% } %>
+    <br />
+    Ура! А вот здесь я торжественно передаю выбранные музеи Александру, дабы он смог проложить
+    маршрут! Вот выбранные музеи (с адресами)
+    <br /><br/>
+    <% for (int i = 0; i < Model.Count; i++)
+       {%>
+            <li>
+            <%: Html.DisplayFor(it => it[i].Item1)%>
             <br/>
-            <input type="submit" value="Получить маршрут!"/>
-        </div>
-    </form>
+            <i>
+            <%: Html.DisplayFor(it => it[i].Item2)%>
+            </i>
+            <br/>
+            <br />
+            </li>
+    <% } %>
+    <br />
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Advertising" runat="server">
+    <br />
+    <img src="../../Img/flag.jpg" width="100%" /><br />
+    <br />
+    <img src="../../Img/Piter.png" width="100%" />
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="HeaderLine" runat="server">
+    <h1>
+        Ваш маршрут</h1>
 </asp:Content>
