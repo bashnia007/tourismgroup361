@@ -30,13 +30,6 @@ namespace Tourism.Controllers
         {
             return View();
         }
-        /*
-        public ActionResult MapOfSite()
-        {
-            ViewData["header"] = "Карта сайта";
-            return View();
-        }
-        */
 
         public ActionResult Links()
         {

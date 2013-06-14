@@ -83,15 +83,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
-    <Compile Include="Models\DataManager.cs" />
+    <Compile Include="Models\MuseumViewModel.cs" />
+    <Compile Include="Other\DataManager.cs" />
     <Compile Include="Models\MuseumsDbModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MuseumsDbModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\RouteModel.cs" />
-    <Compile Include="ParserKN.cs" />
-    <Compile Include="ParserMuseums.cs" />
+    <Compile Include="Models\TypeViewModel.cs" />
+    <Compile Include="Other\ParserKN.cs" />
+    <Compile Include="Other\ParserMuseums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -104,21 +105,27 @@
     <Content Include="Content\Site.css" />
     <Content Include="Img\flag.jpg" />
     <Content Include="Img\four.jpg" />
+    <Content Include="Img\Kovalsky.gif" />
     <Content Include="Img\main_banner.jpg" />
-    <Content Include="Img\matmex.gif" />
+    <Content Include="Img\matmex.png" />
     <Content Include="Img\one.jpg" />
     <Content Include="Img\Piter.png" />
+    <Content Include="Img\profi.jpg" />
     <Content Include="Img\Riko.gif" />
     <Content Include="Img\Ryadovoy.gif" />
     <Content Include="Img\SHkiper1.gif" />
+    <Content Include="Img\ska.png" />
     <Content Include="Img\spbu.png" />
     <Content Include="Img\three.jpg" />
     <Content Include="Img\two.jpg" />
-    <Content Include="Img\zenit.gif" />
-    <Content Include="Scripts\fullTime.js" />
+    <Content Include="Img\zenit.png" />
+    <Content Include="Scripts\PiterTime.js" />
     <Content Include="Scripts\menu_script.js" />
     <Content Include="Views\Home\Links.aspx" />
     <Content Include="Views\Route\Map.aspx" />
+    <Content Include="Views\Route\OwnerRouteMuseums.aspx" />
+    <Content Include="Views\Route\OwnerRouteTypes.aspx" />
+    <Content Include="Views\Route\ResRoute.aspx" />
     <Content Include="Views\Route\Search.aspx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Home\Contacts.aspx" />
@@ -128,9 +135,7 @@
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Account\LogOn.aspx" />
     <Content Include="Views\Home\MapOfSite.aspx" />
-    <Content Include="Views\Route\OwnerRoute.aspx" />
     <Content Include="Views\Account\Register.aspx" />
-    <Content Include="Views\Route\ResRoute.aspx" />
     <Content Include="Views\Home\ShowMonumentsDB.aspx" />
     <Content Include="Views\Home\ShowMuseumsDB.aspx" />
     <Content Include="Views\Route\StandartRoute.aspx" />
@@ -208,7 +213,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50719</DevelopmentServerPort>
+          <DevelopmentServerPort>60287</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
