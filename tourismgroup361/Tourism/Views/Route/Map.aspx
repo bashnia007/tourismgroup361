@@ -151,47 +151,55 @@
     <!---<div id="line_for_register" align="right">
         <%: Html.Partial("_LoginPartial") %>
     </div>--->
-    <div id="map-canvas" style="float: right; width: 64%; height: 65%; min-width: 465px; min-height: 390px">
-    </div>
-    <div id="control_panel" style="width: 35%; text-align: justify; min-width: 300px">
-        <div style="border-width: 2px;">
-            <br/>
-            <strong>Выберите способ передвижения: </strong>
-            <select id="mode" onchange="calcRoute();">
-                <option value="WALKING">Пешком</option>
-                <option value="DRIVING">На машине</option>
-            </select>
-            <br />
-            <br />
-            <b>Введите количество дней:</b>
-            <input type='text' id="days" onkeyup='this.value=parseInt(this.value) | 0' style="width: 10%" />
-            <br />
-            <i></i>
-            <br />
-            <b>Выберите достопримечательности:</b>
-            <br />
-            <input type="checkbox" value="Эрмитаж, spb" id="monuments0" />
-            Эрмитаж<br />
-            <input type="checkbox" value="Аврора, spb" id="monuments1" />
-            Аврора<br />
-            <input type="checkbox" value="Русский музей, spb" id="monuments2" />
-            Русский музей<br />
-            <input type="checkbox" value="Казанский собор, spb" id="monuments3" />
-            Казанский собор<br />
-            <input type="checkbox" value="Домик Петра Первого, spb" id="monuments4" />
-            Домик Петра Первого<br />
-            <input type="checkbox" value="Петропавловская крепость, spb" id="monuments5" />
-            Петропавловская крепость<br />
-            <input type="checkbox" value="Спас на крови, spb" id="monuments6" />
-            Спас на крови<br />
-            <input type="checkbox" value="Исаакиевский собор, spb" id="monuments7" />
-            Исаакиевский собор<br />
-            <input type="submit" value="ОК" onclick="calcRoute();"><br />
-            <br />
-            <input type="button" onclick="openClose('1')" value="Подробности маршрута" />
+    <div id="container">
+        <div id="inform_panel">
+            <div id="control_panel" style="width: 35%; text-align: justify; min-width: 300px">
+                <div style="border-width: 2px;">
+                    <br />
+                    <strong>Выберите способ передвижения: </strong>
+                    <select id="mode" onchange="calcRoute();">
+                        <option value="WALKING">Пешком</option>
+                        <option value="DRIVING">На машине</option>
+                    </select>
+                    <br />
+                    <br />
+                    <b>Введите количество дней:</b>
+                    <input type='text' id="days" onkeyup='this.value=parseInt(this.value) | 0' style="width: 10%" />
+                    <br />
+                    <i></i>
+                    <br />
+                    <b>Выберите достопримечательности:</b>
+                    <br />
+                    <input type="checkbox" value="Эрмитаж, spb" id="monuments0" />
+                    Эрмитаж<br />
+                    <input type="checkbox" value="Аврора, spb" id="monuments1" />
+                    Аврора<br />
+                    <input type="checkbox" value="Русский музей, spb" id="monuments2" />
+                    Русский музей<br />
+                    <input type="checkbox" value="Казанский собор, spb" id="monuments3" />
+                    Казанский собор<br />
+                    <input type="checkbox" value="Домик Петра Первого, spb" id="monuments4" />
+                    Домик Петра Первого<br />
+                    <input type="checkbox" value="Петропавловская крепость, spb" id="monuments5" />
+                    Петропавловская крепость<br />
+                    <input type="checkbox" value="Спас на крови, spb" id="monuments6" />
+                    Спас на крови<br />
+                    <input type="checkbox" value="Исаакиевский собор, spb" id="monuments7" />
+                    Исаакиевский собор<br />
+                    <input type="submit" value="ОК" onclick="calcRoute();"><br />
+                    <br />
+                    <input type="button" onclick="openClose('1')" value="Подробности маршрута" />
+                </div>
+            </div>
         </div>
-        <div class="spoilerbox" id="1" style="display: none;">
-            <div id="directions_panel" style="background-color: #f5fffa;" />
+        <div id="cart_panel">
+            <div id="map-canvas" style="width: 100%; height: 65%;">
+            </div>
+            <div class="spoilerbox" id="1" style="display: none; float: right;">
+                <div id="directions_panel" style="background-color: #f5fffa;" />
+            </div>
+            <!--style="float: right;  min-width: 465px;
+                min-height: 390px"00 -->
         </div>
     </div>
 </body>
