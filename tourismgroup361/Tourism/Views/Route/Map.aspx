@@ -78,7 +78,6 @@
                             stopover: true
                         });
                     }
-
                 }
             }
             var days = parseInt(document.getElementById("days").value);
@@ -146,11 +145,8 @@
                     <%: Html.ActionLink("Контакты", "Contacts", "Home") %></li>
             </ul>
         </div>
-        <!-- end #menu -->
     </div>
-    <!---<div id="line_for_register" align="right">
-        <%: Html.Partial("_LoginPartial") %>
-    </div>--->
+    <!---menu-wrapper end--->
     <div id="container">
         <div id="inform_panel">
             <div id="control_panel" style="width: 35%; text-align: justify; min-width: 300px">
@@ -192,15 +188,16 @@
                 </div>
             </div>
         </div>
+        <!-- inform-panel end -->
         <div id="cart_panel">
-            <div id="map-canvas" style="width: 100%; height: 65%;">
+            <div id="map-canvas" style="width: 100%; height: 68%; min-width: 465px; min-height: 390px">
             </div>
             <div class="spoilerbox" id="1" style="display: none; float: right;">
                 <div id="directions_panel" style="background-color: #f5fffa;" />
             </div>
-            <!--style="float: right;  min-width: 465px;
-                min-height: 390px"00 -->
         </div>
+        <!--cart_panel end-->
     </div>
+    <!--container end-->
 </body>
 </html>
