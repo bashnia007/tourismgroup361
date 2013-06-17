@@ -108,10 +108,9 @@ body
 }
 #footer 
 { 
-    clear: both; /* Отменяем действие float */
+    clear: both;
     margin-left: 20%;
-    padding: 5px; /* Отступы вокруг текста */
-    /*background: silver;  Цвет фона подвала */
+    padding: 5px;
 }
 
 #inform_panel 
