@@ -120,7 +120,6 @@
     <Content Include="Img\two.jpg" />
     <Content Include="Img\zenit.png" />
     <Content Include="Scripts\fullTime.js" />
-    <Content Include="Scripts\PiterTime.js" />
     <Content Include="Scripts\menu_script.js" />
     <Content Include="Views\Home\Links.aspx" />
     <Content Include="Views\Route\Map.aspx" />

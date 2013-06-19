@@ -7,15 +7,16 @@
     <form id="linksContent" runat="server">
     <p>
         Мы рекомендуем ознакомиться со следующими ссылками, так или иначе посвященными Санкт-Петербургу:</p>
-        <br/>
+    <br />
     <p>
         Сообщества сайта <a href="http://vk.com">ВКонтакте:</a></p>
     <ul style="margin: 1px">
         <li><a href="http://vk.com/piter">Это Питер, детка! [Типичный Питер]</a>
             <li><a href="http://vk.com/blog_fiesta">Интересные события в Санкт-Петербурге</a>
                 <li><a href="http://vk.com/piter_tomorrow">Завтра в Питере</a></li>
+                <li><a href="http://vk.com/le_profito">Полезный Питер</a></li>
     </ul>
-    <br/>
+    <br />
     <p>
         Интернет-порталы:</p>
     <ul style="margin: 1px">
