@@ -10,7 +10,7 @@
     <script>
         var directionDisplay;
         var directionsService = new google.maps.DirectionsService();
-
+        
         function openClose(id)
         {
             var obj = "";
@@ -79,7 +79,9 @@
                 }
             }
             var days = parseInt(document.getElementById("days").value);
-
+            if (countOfMuseums <= 1) alert("Отметьте более одного музея", "арл");
+            else if (days > countOfMuseums) alert("Количество дней больше, чем количество музеев!");
+            
             var MPD = Math.ceil(countOfMuseums / days);
 
             var selectedMode = document.getElementById("mode").value;
@@ -102,20 +104,17 @@
                     var summaryPanel = document.getElementById("directions_panel");
                     summaryPanel.innerHTML = "<b>Наше предложение по посещению выбранных достопримечательностей</b><br /><br />";
                     // For each route, display summary information.
-                    var count = 1;
+                    var dayCount = 1;
                     {
                         for (var i = 0; i < route.legs.length; i++)
                         {
-                            var routeSegment = i + 1;
+                            var routeSegment = i;
                             //normal user
-                            if (days < countOfMuseums)
+                            if (days <= countOfMuseums)
                             {
-                                if (routeSegment == 1)
-                                {
-                                    summaryPanel.innerHTML += "<b>День №" + count++ + "</b><br />";
-                                }
-                                if (routeSegment % MPD == 0) summaryPanel.innerHTML += "<b>День №" + count++ + "</b><br />";
-                                summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment + "</b><br />";
+                                alert("routeSegment: " + routeSegment + "MDP: " + MPD);
+                                if (routeSegment % MPD == 0) summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
+                                summaryPanel.innerHTML += "<b>Участок пути: " + ++routeSegment + "</b><br />";
                                 summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
                                 summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
                                 summaryPanel.innerHTML += route.legs[i].duration.text + "<br />";
@@ -123,7 +122,7 @@
                             }
                             else //user is stupid
                             {
-                                if (routeSegment % MPD == 0) summaryPanel.innerHTML += "<b>День №" + count++ + "</b><br />";
+                                summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
                                 summaryPanel.innerHTML += route.legs[i].start_address + "<br /><br/>";
                             }
                         }
