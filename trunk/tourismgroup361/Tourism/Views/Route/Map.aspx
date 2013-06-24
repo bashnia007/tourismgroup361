@@ -112,7 +112,6 @@
                             //normal user
                             if (days <= countOfMuseums)
                             {
-                                alert("routeSegment: " + routeSegment + "MDP: " + MPD);
                                 if (routeSegment % MPD == 0) summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
                                 summaryPanel.innerHTML += "<b>Участок пути: " + ++routeSegment + "</b><br />";
                                 summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
