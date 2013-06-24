@@ -77,6 +77,7 @@
                         });
                     }
                 }
+                newWays.pop();
             }
             var days = parseInt(document.getElementById("days").value);
             if (countOfMuseums <= 1) alert("Отметьте более одного музея", "арл");
