@@ -108,28 +108,26 @@
                     summaryPanel.innerHTML = "<b>Наше предложение по посещению выбранных достопримечательностей</b><br /><br />";
                     // For each route, display summary information.
                     var dayCount = 1;
+
+                    var routeSegment = 1;
+                    for (var i = 0; i < route.legs.length; i++)
                     {
-                        for (var i = 0; i < route.legs.length; i++)
+                        //normal user
+                        if (days <= countOfMuseums)
                         {
-                            var routeSegment = i;
-                            //normal user
-                            if (days <= countOfMuseums)
-                            {
-                                if (routeSegment % MPD == 0) summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
-                                if ((i == route.legs.length - 1) || (i + 1) % MPD > 0) 
-                                {
-                                    summaryPanel.innerHTML += "<b>Участок пути: " + ++routeSegment + "</b><br />";
-                                    summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
-                                    summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
-                                    summaryPanel.innerHTML += route.legs[i].duration.text + "<br />";
-                                    summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
-                                }
+                            if (i % MPD == 0) summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
+                            if ((i == route.legs.length - 1) || (i + 1) % MPD > 0) {
+                                summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment++ + "</b><br />";
+                                summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
+                                summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
+                                summaryPanel.innerHTML += route.legs[i].duration.text + "<br />";
+                                summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
                             }
-                            else //user is stupid
-                            {
-                                summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
-                                summaryPanel.innerHTML += route.legs[i].start_address + "<br /><br/>";
-                            }
+                        }
+                        else //user is stupid
+                        {
+                            summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
+                            summaryPanel.innerHTML += route.legs[i].start_address + "<br /><br/>";
                         }
                     }
                 }
