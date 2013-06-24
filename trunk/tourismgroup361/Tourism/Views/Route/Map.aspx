@@ -53,8 +53,6 @@
 
         function calcRoute()
         {
-            //promt('1');
-            //getDate();
             var countOfMuseums = 0;
             var newWays = [];
             var isStart = true;
@@ -105,19 +103,30 @@
                     summaryPanel.innerHTML = "<b>Наше предложение по посещению выбранных достопримечательностей</b><br /><br />";
                     // For each route, display summary information.
                     var count = 1;
-                    for (var i = 0; i < route.legs.length; i++)
                     {
-                        var routeSegment = i + 1;
-                        if (routeSegment == 1)
+                        for (var i = 0; i < route.legs.length; i++)
                         {
-                            summaryPanel.innerHTML += "<b>День №" + count++ + "</b><br />";
+                            var routeSegment = i + 1;
+                            //normal user
+                            if (days < countOfMuseums)
+                            {
+                                if (routeSegment == 1)
+                                {
+                                    summaryPanel.innerHTML += "<b>День №" + count++ + "</b><br />";
+                                }
+                                if (routeSegment % MPD == 0) summaryPanel.innerHTML += "<b>День №" + count++ + "</b><br />";
+                                summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment + "</b><br />";
+                                summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
+                                summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
+                                summaryPanel.innerHTML += route.legs[i].duration.text + "<br />";
+                                summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
+                            }
+                            else //user is stupid
+                            {
+                                if (routeSegment % MPD == 0) summaryPanel.innerHTML += "<b>День №" + count++ + "</b><br />";
+                                summaryPanel.innerHTML += route.legs[i].start_address + "<br /><br/>";
+                            }
                         }
-                        if (routeSegment % MPD == 0) summaryPanel.innerHTML += "<b>День №" + count++ + "</b><br />";
-                        summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment + "</b><br />";
-                        summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
-                        summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
-                        summaryPanel.innerHTML += route.legs[i].duration.text + "<br />";
-                        summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
                     }
                 }
             });
