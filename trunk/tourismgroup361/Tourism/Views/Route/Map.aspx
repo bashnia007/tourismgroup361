@@ -77,8 +77,10 @@
                         });
                     }
                 }
-                newWays.pop();
+
             }
+            newWays.pop();
+            //alert(ending)
             var days = parseInt(document.getElementById("days").value);
             if (countOfMuseums <= 1) alert("Отметьте более одного музея", "арл");
             else if (days > countOfMuseums) alert("Количество дней больше, чем количество музеев!");
