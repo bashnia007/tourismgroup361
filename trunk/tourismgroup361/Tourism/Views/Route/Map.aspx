@@ -116,11 +116,14 @@
                             if (days <= countOfMuseums)
                             {
                                 if (routeSegment % MPD == 0) summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
-                                summaryPanel.innerHTML += "<b>Участок пути: " + ++routeSegment + "</b><br />";
-                                summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
-                                summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
-                                summaryPanel.innerHTML += route.legs[i].duration.text + "<br />";
-                                summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
+                                if ((i == route.legs.length - 1) || (i + 1) % MPD > 0) 
+                                {
+                                    summaryPanel.innerHTML += "<b>Участок пути: " + ++routeSegment + "</b><br />";
+                                    summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
+                                    summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
+                                    summaryPanel.innerHTML += route.legs[i].duration.text + "<br />";
+                                    summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
+                                }
                             }
                             else //user is stupid
                             {
