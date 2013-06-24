@@ -116,7 +116,7 @@
                         //if (days <= countOfMuseums)
                         {
                             //if (i % MPD == 0) summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
-                            if ((i == route.legs.length - 1) || (i + 1) % MPD > 0) {
+                            if ((i == route.legs.length - 1)) {
                                 summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment++ + "</b><br />";
                                 summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
                                 summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
