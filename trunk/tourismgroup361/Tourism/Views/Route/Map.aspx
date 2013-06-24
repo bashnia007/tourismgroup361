@@ -81,11 +81,11 @@
             }
             newWays.pop();
             //alert(ending)
-            var days = parseInt(document.getElementById("days").value);
+            //var days = parseInt(document.getElementById("days").value);
             if (countOfMuseums <= 1) alert("Отметьте более одного музея", "арл");
-            else if (days > countOfMuseums) alert("Количество дней больше, чем количество музеев!");
+            //5else if (days > countOfMuseums) alert("Количество дней больше, чем количество музеев!");
             
-            var MPD = Math.ceil(countOfMuseums / days);
+            //var MPD = Math.ceil(countOfMuseums / days);
 
             var selectedMode = document.getElementById("mode").value;
 
@@ -105,7 +105,7 @@
                     var route = response.routes[0];
                     // убрать под спойлер
                     var summaryPanel = document.getElementById("directions_panel");
-                    summaryPanel.innerHTML = "<b>Наше предложение по посещению выбранных достопримечательностей</b><br /><br />";
+                    summaryPanel.innerHTML = "<b>Подробности маршрута</b><br /><br />";
                     // For each route, display summary information.
                     var dayCount = 1;
 
@@ -113,9 +113,9 @@
                     for (var i = 0; i < route.legs.length; i++)
                     {
                         //normal user
-                        if (days <= countOfMuseums)
+                        //if (days <= countOfMuseums)
                         {
-                            if (i % MPD == 0) summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
+                            //if (i % MPD == 0) summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
                             if ((i == route.legs.length - 1) || (i + 1) % MPD > 0) {
                                 summaryPanel.innerHTML += "<b>Участок пути: " + routeSegment++ + "</b><br />";
                                 summaryPanel.innerHTML += route.legs[i].start_address + "<br />" + " до " + "<br />";
@@ -124,10 +124,10 @@
                                 summaryPanel.innerHTML += route.legs[i].distance.text + "<br /><br />";
                             }
                         }
-                        else //user is stupid
+                        //else //user is stupid
                         {
-                            summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
-                            summaryPanel.innerHTML += route.legs[i].start_address + "<br /><br/>";
+                            /*summaryPanel.innerHTML += "<b>День №" + dayCount++ + "</b><br />";
+                            summaryPanel.innerHTML += route.legs[i].start_address + "<br /><br/>";*/
                         }
                     }
                 }
@@ -170,8 +170,8 @@
                     </select>
                     <br />
                     <br />
-                    <b>Введите количество дней:</b>
-                    <input type='text' id="days" onkeyup='this.value=parseInt(this.value) | 0' style="width: 10%" />
+                    <!--<b>Введите количество дней:</b>
+                    <input type='text' id="days" onkeyup='this.value=parseInt(this.value) | 0' style="width: 10%" />--->
                     <br />
                     <i></i>
                     <br />
